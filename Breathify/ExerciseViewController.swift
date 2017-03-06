@@ -22,8 +22,6 @@ class ExerciseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        nameLabel.text = nameText
-//        ratingLabel.text = ratingText + " / 5"
 
         nameLabel.text = exercise.name
         ratingLabel.text = "\(exercise.rating) / 5"

@@ -12,12 +12,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBOutlet weak var exerciseTableView: UITableView!
 
-    // Sample data
-    let data:[String] = ["Item 1", "Item 2", "Item 3", "Item A", "Item B", "Item C"]
-    let ratings:[String] = ["1", "2", "3", "4", "5", "6"]
-    
     var selectedRow = 0
-    
     var exercises:[Exercise] = []
     
     override func viewDidLoad() {
@@ -55,12 +50,6 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         cell.nameLabel.text = exercises[indexPath.row].name
         cell.ratingLabel.text = "\(exercises[indexPath.row].rating)"
         
-//        cell.nameLabel.text = data[indexPath.row]
-//        cell.ratingLabel.text = ratings[indexPath.row] + " / 5"
-        
-//        cell.nameLabel.text = data[indexPath.section][indexPath.row]
-//        cell.ratingLabel.text = ratings[indexPath.section][indexPath.row]
-        
         return cell
     }
     
@@ -79,10 +68,8 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         if (segue.identifier == "cellSelect") {
             if let indexPath:IndexPath = exerciseTableView.indexPathForSelectedRow {
                 selectedRow = indexPath.row
-                
                 newView.exercise = exercises[selectedRow]
             }
-            
         }
     }
 
