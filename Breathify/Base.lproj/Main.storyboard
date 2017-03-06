@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="2511.1999999999998" y="-321.58920539730138"/>
         </scene>
-        <!--About View Controller-->
+        <!--Resources View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="AboutViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="ResourcesViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
         </scene>
-        <!--View Controller-->
+        <!--App Info-->
         <scene sceneID="1pV-m8-eDd">
             <objects>
-                <viewController id="GpR-bS-Uze" sceneMemberID="viewController">
+                <viewController title="App Info" id="GpR-bS-Uze" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qrv-JH-CaE"/>
                         <viewControllerLayoutGuide type="bottom" id="mrJ-AT-Iis"/>
@@ -306,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="2509.5999999999999" y="358.4707646176912"/>
         </scene>
-        <!--View Controller-->
+        <!--About Us-->
         <scene sceneID="P3d-i1-UXm">
             <objects>
-                <viewController id="5Lp-hV-hYv" sceneMemberID="viewController">
+                <viewController title="About Us" id="5Lp-hV-hYv" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IQu-ya-FW9"/>
                         <viewControllerLayoutGuide type="bottom" id="3Wt-2m-cM6"/>
