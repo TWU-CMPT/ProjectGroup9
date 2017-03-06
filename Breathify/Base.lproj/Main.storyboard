@@ -102,61 +102,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI1-F2-8Ws">
-                                <rect key="frame" x="166" y="324" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmk-Fw-DyU">
-                                <rect key="frame" x="16" y="101" width="343" height="215"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmk-Fw-DyU">
+                                <rect key="frame" x="16" y="101" width="343" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="0WB-qe-KWv"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-GD-epZ">
-                                <rect key="frame" x="16" y="353" width="164" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="164" id="HTh-de-Bi0"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxS-GD-epZ">
+                                <rect key="frame" x="16" y="361" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Timer Based Trainer"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eld-Sx-60x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eld-Sx-60x">
                                 <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP4-hm-mk4">
-                                <rect key="frame" x="195" y="353" width="164" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP4-hm-mk4">
+                                <rect key="frame" x="195" y="361" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Game Based Trainer"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbs-Fy-i7Y">
+                                <rect key="frame" x="167" y="313" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="didRate3:" destination="7gu-81-uM7" eventType="touchUpInside" id="7FA-dd-oMV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSF-gg-98A">
+                                <rect key="frame" x="319" y="313" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="didRate5:" destination="7gu-81-uM7" eventType="touchUpInside" id="Pa1-f5-ISO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU5-Ka-aUi">
+                                <rect key="frame" x="242" y="313" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="didRate4:" destination="7gu-81-uM7" eventType="touchUpInside" id="pfo-43-M16"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19F-yz-oIR">
+                                <rect key="frame" x="16" y="313" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="didRate1:" destination="7gu-81-uM7" eventType="touchUpInside" id="LzU-12-JBa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4a-9W-lHf">
+                                <rect key="frame" x="90" y="313" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="didRate2:" destination="7gu-81-uM7" eventType="touchUpInside" id="LmL-qp-yuz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HP4-hm-mk4" firstAttribute="top" secondItem="UI1-F2-8Ws" secondAttribute="bottom" constant="8" symbolic="YES" id="2Ys-wv-v6y"/>
-                            <constraint firstItem="Eld-Sx-60x" firstAttribute="leading" secondItem="44Y-Ve-sdn" secondAttribute="leadingMargin" id="5vN-Sh-kUd"/>
-                            <constraint firstItem="HP4-hm-mk4" firstAttribute="trailing" secondItem="Nmk-Fw-DyU" secondAttribute="trailing" id="68O-Rb-64e"/>
-                            <constraint firstItem="Nmk-Fw-DyU" firstAttribute="trailing" secondItem="Eld-Sx-60x" secondAttribute="trailing" id="C1R-IL-m3P"/>
-                            <constraint firstItem="HP4-hm-mk4" firstAttribute="leading" secondItem="bxS-GD-epZ" secondAttribute="trailing" constant="15" id="SX4-w3-GhM"/>
-                            <constraint firstItem="Nmk-Fw-DyU" firstAttribute="leading" secondItem="Eld-Sx-60x" secondAttribute="leading" id="X87-vB-uXB"/>
-                            <constraint firstItem="Eld-Sx-60x" firstAttribute="trailing" secondItem="44Y-Ve-sdn" secondAttribute="trailingMargin" id="YP8-Ti-uCw"/>
-                            <constraint firstItem="Eld-Sx-60x" firstAttribute="top" secondItem="Hdf-Hh-KCu" secondAttribute="bottom" constant="8" symbolic="YES" id="Zb0-9E-MNA"/>
-                            <constraint firstItem="UI1-F2-8Ws" firstAttribute="top" secondItem="Nmk-Fw-DyU" secondAttribute="bottom" constant="8" symbolic="YES" id="Ziv-jt-3yz"/>
-                            <constraint firstItem="bxS-GD-epZ" firstAttribute="leading" secondItem="Nmk-Fw-DyU" secondAttribute="leading" id="hFc-0O-6FF"/>
-                            <constraint firstItem="HP4-hm-mk4" firstAttribute="baseline" secondItem="bxS-GD-epZ" secondAttribute="baseline" id="mgG-uH-L6O"/>
-                            <constraint firstItem="Nmk-Fw-DyU" firstAttribute="top" secondItem="Eld-Sx-60x" secondAttribute="bottom" constant="8" symbolic="YES" id="wfL-cm-IPk"/>
-                            <constraint firstItem="UI1-F2-8Ws" firstAttribute="centerX" secondItem="Nmk-Fw-DyU" secondAttribute="centerX" id="xP1-uI-uds"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnRating1" destination="19F-yz-oIR" id="JcO-7f-3kh"/>
+                        <outlet property="btnRating2" destination="Q4a-9W-lHf" id="Im6-DK-SZG"/>
+                        <outlet property="btnRating3" destination="Nbs-Fy-i7Y" id="wQ3-Ag-cnB"/>
+                        <outlet property="btnRating4" destination="aU5-Ka-aUi" id="14D-1J-87g"/>
+                        <outlet property="btnRating5" destination="hSF-gg-98A" id="paJ-qX-PSy"/>
                         <outlet property="descriptionTextView" destination="Nmk-Fw-DyU" id="5va-ks-SaH"/>
                         <outlet property="nameLabel" destination="Eld-Sx-60x" id="YVu-D9-C2A"/>
-                        <outlet property="ratingLabel" destination="UI1-F2-8Ws" id="327-MK-Ygx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hG-mZ-wcU" userLabel="First Responder" sceneMemberID="firstResponder"/>

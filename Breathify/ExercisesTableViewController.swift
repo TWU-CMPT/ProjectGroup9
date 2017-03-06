@@ -19,12 +19,20 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         exercises.append(Exercise(name:"Ex 1", rating:5, description:"Description 1"))
-        exercises.append(Exercise(name:"Ex 2", rating:3, description:"Description 2"))
-        exercises.append(Exercise(name:"Ex 3", rating:4, description:"Description 3"))
+        exercises.append(Exercise(name:"Ex 2", rating:4, description:"Description 2"))
+        exercises.append(Exercise(name:"Ex 3", rating:3, description:"Description 3"))
         exercises.append(Exercise(name:"Ex 4", rating:2, description:"Description 4"))
         exercises.append(Exercise(name:"Ex 5", rating:1, description:"Description 5"))
+    }
+    
+    // On returning to table view
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // Reload data that may have changed in detailed view
+        exerciseTableView.reloadData()
     }
     
     // Number of rows
