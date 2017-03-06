@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -162,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="2511.1999999999998" y="-321.58920539730138"/>
         </scene>
-        <!--About-->
+        <!--About View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="AboutViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,33 +175,168 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="About" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="140.5" y="313" width="94.5" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Breathify and Group Nein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="85" y="362.5" width="206" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-Dl-XwH">
+                                <rect key="frame" x="16" y="64" width="343" height="267"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breathify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0v-br-fhk">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="267"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Oec-3N-t1x">
+                                <rect key="frame" x="0.0" y="331" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU6-Wx-YKk">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <state key="normal" title="Resource Library"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZl-se-1Yf">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <state key="normal" title="Contacts"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQn-X6-uY8">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <state key="normal" title="App Info"/>
+                                        <connections>
+                                            <segue destination="GpR-bS-Uze" kind="show" id="mZ8-Os-WnI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDT-dB-R0c">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                        <state key="normal" title="About Us"/>
+                                        <connections>
+                                            <segue destination="5Lp-hV-hYv" kind="show" id="irh-W2-cPX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I1t-Dl-XwH" secondAttribute="trailing" id="9dg-go-8gP"/>
+                            <constraint firstItem="Oec-3N-t1x" firstAttribute="top" secondItem="I1t-Dl-XwH" secondAttribute="bottom" id="Bid-83-3mW"/>
+                            <constraint firstItem="Oec-3N-t1x" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.3" id="Ln6-lg-XQN"/>
+                            <constraint firstAttribute="trailing" secondItem="Oec-3N-t1x" secondAttribute="trailing" id="SB3-LE-1Qv"/>
+                            <constraint firstItem="I1t-Dl-XwH" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="ecM-Hw-cwZ"/>
+                            <constraint firstItem="Oec-3N-t1x" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="q6X-YQ-Q0R"/>
+                            <constraint firstItem="I1t-Dl-XwH" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="vOh-o4-b56"/>
+                            <constraint firstItem="I1t-Dl-XwH" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="ztW-H1-p1S"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="Tsa-N3-nGW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1pV-m8-eDd">
+            <objects>
+                <viewController id="GpR-bS-Uze" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qrv-JH-CaE"/>
+                        <viewControllerLayoutGuide type="bottom" id="mrJ-AT-Iis"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ehj-OM-i7i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="6pq-BM-DuW">
+                                <rect key="frame" x="16" y="64" width="343" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-Ua-Y0E">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3s5-vR-7OY">
+                                <rect key="frame" x="16" y="224" width="343" height="333.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-Kk-Ete">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="333.5"/>
+                                        <mutableString key="text">'Breathify' is a breathing exercise designed to promote healthier lifestyles by helping people improve their health through regular breathing exercises. This will be a useful tool for those who suffer from anxiety and/or stress. The app allows for users to engage in a variety of breathing exercises using an interactive game version or a countdown timer version. The interactive game version will provide a more engaging way to focus on breathing. As an alternative, the countdown timer version will have additional audio cues so that the breathing exercises can be done without having to look at the screen. </mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3s5-vR-7OY" secondAttribute="trailing" id="20f-KS-hYY"/>
+                            <constraint firstItem="3s5-vR-7OY" firstAttribute="height" secondItem="ehj-OM-i7i" secondAttribute="height" multiplier="0.5" id="5Mn-cY-VMa"/>
+                            <constraint firstItem="3s5-vR-7OY" firstAttribute="leading" secondItem="ehj-OM-i7i" secondAttribute="leadingMargin" id="BGd-vv-ie2"/>
+                            <constraint firstItem="6pq-BM-DuW" firstAttribute="top" secondItem="Qrv-JH-CaE" secondAttribute="bottom" id="Hkx-UF-ptU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6pq-BM-DuW" secondAttribute="trailing" id="TgM-XG-yAG"/>
+                            <constraint firstItem="6pq-BM-DuW" firstAttribute="height" secondItem="ehj-OM-i7i" secondAttribute="height" multiplier="0.24" id="aeg-sq-ZQQ"/>
+                            <constraint firstItem="6pq-BM-DuW" firstAttribute="leading" secondItem="ehj-OM-i7i" secondAttribute="leadingMargin" id="oIO-vj-Mnr"/>
+                            <constraint firstItem="3s5-vR-7OY" firstAttribute="top" secondItem="6pq-BM-DuW" secondAttribute="bottom" id="xoX-M4-82c"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXm-T9-4I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509.5999999999999" y="358.4707646176912"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="P3d-i1-UXm">
+            <objects>
+                <viewController id="5Lp-hV-hYv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IQu-ya-FW9"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Wt-2m-cM6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zuJ-ww-oja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I7U-EG-4Hc">
+                                <rect key="frame" x="16" y="224" width="343" height="334"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-xN-tbq">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="334"/>
+                                        <string key="text">We are Group Nein, a team of four students in CMPT 276.  Our team members are Hans Kim, Princess Macanlalay, Jason Xu, and Keith Chan.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9zj-ig-gqF">
+                                <rect key="frame" x="16" y="64" width="343" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-AJ-q5J">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I7U-EG-4Hc" firstAttribute="top" secondItem="9zj-ig-gqF" secondAttribute="bottom" id="KRr-Ve-g9p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I7U-EG-4Hc" secondAttribute="trailing" id="TxZ-7x-vDs"/>
+                            <constraint firstItem="I7U-EG-4Hc" firstAttribute="leading" secondItem="zuJ-ww-oja" secondAttribute="leadingMargin" id="XPb-6Z-n03"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9zj-ig-gqF" secondAttribute="trailing" id="XTw-wd-dMb"/>
+                            <constraint firstItem="9zj-ig-gqF" firstAttribute="top" secondItem="IQu-ya-FW9" secondAttribute="bottom" id="fVo-ET-hSp"/>
+                            <constraint firstItem="9zj-ig-gqF" firstAttribute="leading" secondItem="zuJ-ww-oja" secondAttribute="leadingMargin" id="iXu-5A-7RA"/>
+                            <constraint firstItem="I7U-EG-4Hc" firstAttribute="height" secondItem="zuJ-ww-oja" secondAttribute="height" multiplier="0.5" id="rBD-OP-qn0"/>
+                            <constraint firstItem="9zj-ig-gqF" firstAttribute="height" secondItem="zuJ-ww-oja" secondAttribute="height" multiplier="0.24" id="z4O-24-ttO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUu-Nk-LCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2511" y="1074"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -214,7 +350,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="pLY-eY-s70" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="3nC-xG-qBV" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -239,6 +375,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd1-cu-J1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="m9b-bG-nNP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3nC-xG-qBV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lRm-bl-59Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Lg4-ka-9zs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uM-sg-q8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
     </scenes>
     <resources>
