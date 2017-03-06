@@ -106,7 +106,7 @@
                                 <rect key="frame" x="16" y="101" width="343" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -281,7 +281,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-Kk-Ete">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="333.5"/>
-                                        <mutableString key="text">'Breathify' is a breathing exercise designed to promote healthier lifestyles by helping people improve their health through regular breathing exercises. This will be a useful tool for those who suffer from anxiety and/or stress. The app allows for users to engage in a variety of breathing exercises using an interactive game version or a countdown timer version. The interactive game version will provide a more engaging way to focus on breathing. As an alternative, the countdown timer version will have additional audio cues so that the breathing exercises can be done without having to look at the screen. </mutableString>
+                                        <string key="text">'Breathify' is a breathing exercise designed to promote healthier lifestyles by helping people improve their health through regular breathing exercises. This will be a useful tool for those who suffer from anxiety and/or stress. The app allows for users to engage in a variety of breathing exercises using an interactive game version or a countdown timer version. The interactive game version will provide a more engaging way to focus on breathing. As an alternative, the countdown timer version will have additional audio cues so that the breathing exercises can be done without having to look at the screen. </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -397,11 +397,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--About-->
+        <!--Resources-->
         <scene sceneID="m9b-bG-nNP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3nC-xG-qBV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lRm-bl-59Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
