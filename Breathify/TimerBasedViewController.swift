@@ -36,7 +36,7 @@ class TimerBasedViewController: UIViewController {
     }
     func action()
     {
-        if(time > 1){
+        if(time > 0){
             time -= 1
             TimerLabel.text = String(time)
         }
