@@ -12,7 +12,7 @@
 		891317891E6D570400C11D71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891317871E6D570400C11D71 /* Main.storyboard */; };
 		8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913178A1E6D5AE600C11D71 /* Exercise.swift */; };
 		8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913178E1E6D5BA400C11D71 /* Feedback.swift */; };
-		891317911E6E322100C11D71 /* TimeBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317901E6E322100C11D71 /* TimeBasedViewController.swift */; };
+		891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317901E6E322100C11D71 /* TimerBasedViewController.swift */; };
 		8986A53F1E67941000665557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A53E1E67941000665557 /* AppDelegate.swift */; };
 		8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5401E67941000665557 /* ExercisesTableViewController.swift */; };
 		8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5421E67941000665557 /* ResourcesViewController.swift */; };
@@ -45,7 +45,7 @@
 		891317881E6D570400C11D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8913178A1E6D5AE600C11D71 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8913178E1E6D5BA400C11D71 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		891317901E6E322100C11D71 /* TimeBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBasedViewController.swift; sourceTree = "<group>"; };
+		891317901E6E322100C11D71 /* TimerBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedViewController.swift; sourceTree = "<group>"; };
 		8986A53B1E67941000665557 /* Breathify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breathify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8986A53E1E67941000665557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8986A5401E67941000665557 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
 				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
-				891317901E6E322100C11D71 /* TimeBasedViewController.swift */,
+				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				8986A5471E67941000665557 /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
@@ -282,7 +282,7 @@
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
-				891317911E6E322100C11D71 /* TimeBasedViewController.swift in Sources */,
+				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 			);

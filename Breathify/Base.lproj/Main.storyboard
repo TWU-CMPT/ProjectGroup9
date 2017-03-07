@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="2511.1999999999998" y="-321.58920539730138"/>
         </scene>
-        <!--Time Based View Controller-->
+        <!--Timer Based View Controller-->
         <scene sceneID="JET-cE-bZ1">
             <objects>
-                <viewController id="6Td-Yy-CEW" customClass="TimeBasedViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Td-Yy-CEW" customClass="TimerBasedViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Az-2B-uPm"/>
                         <viewControllerLayoutGuide type="bottom" id="2e7-hq-2tb"/>
