@@ -9,7 +9,59 @@
 import UIKit
 
 class TimerBasedViewController: UIViewController {
+    
+    var time:Double = 0
+    var timer = Timer()
+    var breathIn:Double = 4.0
+    var breathHold:Double = 7.0
+    var breathOut:Double = 8.0
+    var breathSwitch = 1
+    
 
+    @IBOutlet weak var TimerLabel: UILabel!
+    @IBOutlet weak var BreathLabel: UILabel!
+    @IBAction func TimerStart(_ sender: UIButton) {
+        time = breathIn
+        TimerLabel.text = String(time)
+        BreathLabel.text = String("Breath In")
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
+    }
+    @IBAction func TimerStop(_ sender: UIButton) {
+        timer.invalidate()
+        time = breathIn
+        TimerLabel.text = String(time)
+        breathSwitch = 1
+        BreathLabel.text = String("4/7/8 exercise")
+        timer.invalidate()
+    }
+    func action()
+    {
+        if(time > 1){
+            time -= 1
+            TimerLabel.text = String(time)
+        }
+        else{
+            if(breathSwitch == 1){
+                time = breathHold
+                BreathLabel.text = String("Hold")
+                TimerLabel.text = String(time)
+                breathSwitch = 2
+            }
+            else if(breathSwitch == 2){
+                time = breathOut
+                BreathLabel.text = String("Breath Out")
+                TimerLabel.text = String(time)
+                breathSwitch = 0
+            }
+            else if(breathSwitch == 0){
+                time = breathIn
+                BreathLabel.text = String("Breath In")
+                TimerLabel.text = String(time)
+                breathSwitch = 1
+            }
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
