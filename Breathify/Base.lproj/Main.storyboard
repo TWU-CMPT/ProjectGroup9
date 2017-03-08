@@ -192,7 +192,7 @@
                         <viewControllerLayoutGuide type="top" id="4Az-2B-uPm"/>
                         <viewControllerLayoutGuide type="bottom" id="2e7-hq-2tb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nFY-us-UJE">
+                    <view key="view" contentMode="scaleToFill" id="nFY-us-UJE" customClass="MBCircularProgressBarView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -247,9 +247,28 @@
                             <constraint firstItem="dkB-Xm-W5f" firstAttribute="centerY" secondItem="nFY-us-UJE" secondAttribute="centerY" id="hUe-6Q-ljB"/>
                             <constraint firstItem="uUR-Y5-PY9" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="rgS-sn-O9V"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                <real key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="BreathLabel" destination="uUR-Y5-PY9" id="9Gc-Z9-hUC"/>
+                        <outlet property="ProgressBarView" destination="nFY-us-UJE" id="8Qm-bk-JXm"/>
                         <outlet property="TimerLabel" destination="dkB-Xm-W5f" id="1y7-JS-lfy"/>
                     </connections>
                 </viewController>

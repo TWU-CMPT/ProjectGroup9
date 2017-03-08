@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBCircularProgressBar
 
 class TimerBasedViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class TimerBasedViewController: UIViewController {
     var breathSwitch = 1
     
 
+    @IBOutlet weak var ProgressBarView: MBCircularProgressBarView!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var BreathLabel: UILabel!
     @IBAction func TimerStart(_ sender: UIButton) {
@@ -25,6 +27,25 @@ class TimerBasedViewController: UIViewController {
         TimerLabel.text = String(time)
         BreathLabel.text = String("Breath In")
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
+        UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseOut, animations: {
+            self.ProgressBarView.value = 100
+        } , completion: ({finished in
+            if(finished){
+                UIView.animate(withDuration:7.0, delay:0.0,options:.curveEaseOut,animations:{
+                    self.ProgressBarView.value = 0
+                } , completion: ({finished in
+                    if(finished){
+                        UIView.animate(withDuration:8.0, delay:0.0, options:.curveEaseOut,animations: {
+                            self.ProgressBarView.value = 100
+                        })
+                        
+                    }}))
+            }
+            
+        }))
+    
+    
+    
     }
     @IBAction func TimerStop(_ sender: UIButton) {
         timer.invalidate()
@@ -36,7 +57,7 @@ class TimerBasedViewController: UIViewController {
     }
     func action()
     {
-        if(time > 0){
+        if(time > 1){
             time -= 1
             TimerLabel.text = String(time)
         }

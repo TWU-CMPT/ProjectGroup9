@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Breathify/TimerBasedViewController.swift"
-            timestampString = "510547434.703215"
+            timestampString = "510691517.920311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "TimerStart(_:)"
             landmarkType = "7">
          </BreakpointContent>
