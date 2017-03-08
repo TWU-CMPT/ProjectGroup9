@@ -12,6 +12,9 @@ class ExerciseViewController: UIViewController {
     
     var exercise:Exercise = Exercise()
     
+    let filledStar = UIImage(named: "filled_star", in: bundle, compatibleWith: self.traitCollection)
+    let emptyStar = UIImage(named: "empty_star", in: bundle, compatibleWith: self.traitCollection)
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var btnRating1: UIButton!
@@ -32,41 +35,77 @@ class ExerciseViewController: UIViewController {
     func updateRating(rating:Int) {
         exercise.rating = rating
         
-        btnRating1.setTitle("1", for: UIControlState.normal)
-        btnRating2.setTitle("2", for: UIControlState.normal)
-        btnRating3.setTitle("3", for: UIControlState.normal)
-        btnRating4.setTitle("4", for: UIControlState.normal)
-        btnRating5.setTitle("5", for: UIControlState.normal)
+        btnRating1.setImage(emptyStar, for: .normal)
+        btnRating2.setImage(emptyStar, for: .normal)
+        btnRating3.setImage(emptyStar, for: .normal)
+        btnRating4.setImage(emptyStar, for: .normal)
+        btnRating5.setImage(emptyStar, for: .normal)
         
         switch (exercise.rating) {
         case 1:
-            btnRating1.setTitle("A", for: UIControlState.normal)
+            btnRating1.setImage(filledStar, for: .normal)
             break
         case 2:
-            btnRating1.setTitle("A", for: UIControlState.normal)
-            btnRating2.setTitle("B", for: UIControlState.normal)
+            btnRating1.setImage(filledStar, for: .normal)
+            btnRating2.setImage(filledStar, for: .normal)
             break
         case 3:
-            btnRating1.setTitle("A", for: UIControlState.normal)
-            btnRating2.setTitle("B", for: UIControlState.normal)
-            btnRating3.setTitle("C", for: UIControlState.normal)
+            btnRating1.setImage(filledStar, for: .normal)
+            btnRating2.setImage(filledStar, for: .normal)
+            btnRating3.setImage(filledStar, for: .normal)
             break
         case 4:
-            btnRating1.setTitle("A", for: UIControlState.normal)
-            btnRating2.setTitle("B", for: UIControlState.normal)
-            btnRating3.setTitle("C", for: UIControlState.normal)
-            btnRating4.setTitle("D", for: UIControlState.normal)
+            btnRating1.setImage(filledStar, for: .normal)
+            btnRating2.setImage(filledStar, for: .normal)
+            btnRating3.setImage(filledStar, for: .normal)
+            btnRating4.setImage(filledStar, for: .normal)
             break
         case 5:
-            btnRating1.setTitle("A", for: UIControlState.normal)
-            btnRating2.setTitle("B", for: UIControlState.normal)
-            btnRating3.setTitle("C", for: UIControlState.normal)
-            btnRating4.setTitle("D", for: UIControlState.normal)
-            btnRating5.setTitle("E", for: UIControlState.normal)
+            btnRating1.setImage(filledStar, for: .normal)
+            btnRating2.setImage(filledStar, for: .normal)
+            btnRating3.setImage(filledStar, for: .normal)
+            btnRating4.setImage(filledStar, for: .normal)
+            btnRating5.setImage(filledStar, for: .normal)
             break
         default:
             break
         }
+        
+//        btnRating1.setTitle("1", for: UIControlState.normal)
+//        btnRating2.setTitle("2", for: UIControlState.normal)
+//        btnRating3.setTitle("3", for: UIControlState.normal)
+//        btnRating4.setTitle("4", for: UIControlState.normal)
+//        btnRating5.setTitle("5", for: UIControlState.normal)
+//        
+//        switch (exercise.rating) {
+//        case 1:
+//            btnRating1.setTitle("A", for: UIControlState.normal)
+//            break
+//        case 2:
+//            btnRating1.setTitle("A", for: UIControlState.normal)
+//            btnRating2.setTitle("B", for: UIControlState.normal)
+//            break
+//        case 3:
+//            btnRating1.setTitle("A", for: UIControlState.normal)
+//            btnRating2.setTitle("B", for: UIControlState.normal)
+//            btnRating3.setTitle("C", for: UIControlState.normal)
+//            break
+//        case 4:
+//            btnRating1.setTitle("A", for: UIControlState.normal)
+//            btnRating2.setTitle("B", for: UIControlState.normal)
+//            btnRating3.setTitle("C", for: UIControlState.normal)
+//            btnRating4.setTitle("D", for: UIControlState.normal)
+//            break
+//        case 5:
+//            btnRating1.setTitle("A", for: UIControlState.normal)
+//            btnRating2.setTitle("B", for: UIControlState.normal)
+//            btnRating3.setTitle("C", for: UIControlState.normal)
+//            btnRating4.setTitle("D", for: UIControlState.normal)
+//            btnRating5.setTitle("E", for: UIControlState.normal)
+//            break
+//        default:
+//            break
+//        }
     }
 
     @IBAction func didRate1(_ sender: Any) {
