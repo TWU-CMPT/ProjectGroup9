@@ -18,14 +18,23 @@ class TimerBasedViewController: UIViewController {
     var breathOut:Double = 8.0
     var breathSwitch = 1
     
-
+    var exercise:Exercise = Exercise()
+    
     @IBOutlet weak var ProgressBarView: MBCircularProgressBarView!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var BreathLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+
     @IBAction func TimerStart(_ sender: UIButton) {
         time = breathIn
         TimerLabel.text = String(time)
-        BreathLabel.text = String("Breath In")
+        BreathLabel.text = String("Breathe In")
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
         
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseOut, animations: {
@@ -44,10 +53,8 @@ class TimerBasedViewController: UIViewController {
             }
             
         }))
-    
-    
-    
     }
+    
     @IBAction func TimerStop(_ sender: UIButton) {
         timer.invalidate()
         time = breathIn
@@ -56,6 +63,7 @@ class TimerBasedViewController: UIViewController {
         BreathLabel.text = String("4/7/8 exercise")
         timer.invalidate()
     }
+    
     func action()
     {
         if(time > 1){
@@ -71,13 +79,13 @@ class TimerBasedViewController: UIViewController {
             }
             else if(breathSwitch == 2){
                 time = breathOut
-                BreathLabel.text = String("Breath Out")
+                BreathLabel.text = String("Breathe Out")
                 TimerLabel.text = String(time)
                 breathSwitch = 0
             }
             else if(breathSwitch == 0){
                 time = breathIn
-                BreathLabel.text = String("Breath In")
+                BreathLabel.text = String("Breathe In")
                 TimerLabel.text = String(time)
                 breathSwitch = 1
                 timer.invalidate()
@@ -85,12 +93,7 @@ class TimerBasedViewController: UIViewController {
         }
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

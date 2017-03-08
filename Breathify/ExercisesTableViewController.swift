@@ -20,11 +20,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         
         // Do any additional setup after loading the view, typically from a nib.
 
-        exercises.append(Exercise(name:"Ex 1", rating:5, description:"Description 1"))
-        exercises.append(Exercise(name:"Ex 2", rating:4, description:"Description 2"))
-        exercises.append(Exercise(name:"Ex 3", rating:3, description:"Description 3"))
-        exercises.append(Exercise(name:"Ex 4", rating:2, description:"Description 4"))
-        exercises.append(Exercise(name:"Ex 5", rating:1, description:"Description 5"))
+        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"Description 1"))
     }
     
     // On returning to table view

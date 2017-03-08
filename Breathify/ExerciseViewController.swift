@@ -85,6 +85,14 @@ class ExerciseViewController: UIViewController {
         updateRating(rating: 5)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newView = segue.destination as! TimerBasedViewController
+       
+        if (segue.identifier == "timerSelect") {
+            newView.exercise = self.exercise
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
