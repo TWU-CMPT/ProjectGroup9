@@ -12,8 +12,9 @@ class ExerciseViewController: UIViewController {
     
     var exercise:Exercise = Exercise()
     
-    let filledStar = UIImage(named: "filled_star", in: bundle, compatibleWith: self.traitCollection)
-    let emptyStar = UIImage(named: "empty_star", in: bundle, compatibleWith: self.traitCollection)
+    //let bundle = Bundle(for: type(of: self))
+    let filledStar = UIImage(named: "filled_star")
+    let emptyStar = UIImage(named: "empty_star")
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
