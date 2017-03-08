@@ -27,16 +27,17 @@ class TimerBasedViewController: UIViewController {
         TimerLabel.text = String(time)
         BreathLabel.text = String("Breath In")
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
+        
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseOut, animations: {
             self.ProgressBarView.value = 100
         } , completion: ({finished in
             if(finished){
-                UIView.animate(withDuration:7.0, delay:0.0,options:.curveEaseOut,animations:{
-                    self.ProgressBarView.value = 0
+                UIView.animate(withDuration:0.0, delay: 7.0,options:.curveEaseOut,animations:{
+                    self.ProgressBarView.value = 99
                 } , completion: ({finished in
                     if(finished){
                         UIView.animate(withDuration:8.0, delay:0.0, options:.curveEaseOut,animations: {
-                            self.ProgressBarView.value = 100
+                            self.ProgressBarView.value = 0
                         })
                         
                     }}))
@@ -79,6 +80,7 @@ class TimerBasedViewController: UIViewController {
                 BreathLabel.text = String("Breath In")
                 TimerLabel.text = String(time)
                 breathSwitch = 1
+                timer.invalidate()
             }
         }
         
