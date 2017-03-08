@@ -9,12 +9,13 @@
 import UIKit
 
 class Exercise {
-
+    
     var name:String
     var rating:Int
     var avgRating:Float?
     var description:String
     var feedback:[Feedback]?
+    var sequence:[[String]]?
     
     init() {
         self.name = ""
@@ -28,11 +29,32 @@ class Exercise {
         self.description = description
     }
     
+    init(name:String, rating:Int, description:String, sequence:String) {
+        self.name = name
+        self.rating = rating
+        self.description = description
+        self.sequence = parseSequence(sequence: sequence)
+    }
+    
     init(name:String, rating:Int, avgRating:Float, description:String, feedback:[Feedback]) {
         self.name = name
         self.rating = rating
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
+    }
+    
+    func parseSequence(sequence:String) -> [[String]] {
+        var seq:[[String]] = []
+        let instructions = sequence.components(separatedBy: ",")
+        
+        for step in instructions {
+            let instruction = step.startIndex
+            let duration = step.index(after: step.startIndex)..<step.endIndex
+            let x:[String] = [String(step[instruction]), step[duration]]
+            seq.append(x)
+        }
+        
+        return seq
     }
 }
