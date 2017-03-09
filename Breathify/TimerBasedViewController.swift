@@ -32,7 +32,7 @@ class TimerBasedViewController: UIViewController {
 
     @IBAction func TimerStart(_ sender: UIButton) {
         time = breathIn
-        TimerLabel.text = String(time)
+        TimerLabel.text = String(Int(time))
         BreathLabel.text = String("Breathe In")
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
@@ -58,7 +58,7 @@ class TimerBasedViewController: UIViewController {
     @IBAction func TimerStop(_ sender: UIButton) {
         timer.invalidate()
         time = breathIn
-        TimerLabel.text = String(time)
+        TimerLabel.text = String(Int(time))
         breathSwitch = 1
         BreathLabel.text = String("4/7/8 exercise")
         timer.invalidate()
@@ -68,25 +68,25 @@ class TimerBasedViewController: UIViewController {
     {
         if(time > 1){
             time -= 1
-            TimerLabel.text = String(time)
+            TimerLabel.text = String(Int(time))
         }
         else{
             if(breathSwitch == 1){
                 time = breathHold
                 BreathLabel.text = String("Hold")
-                TimerLabel.text = String(time)
+                TimerLabel.text = String(Int(time))
                 breathSwitch = 2
             }
             else if(breathSwitch == 2){
                 time = breathOut
                 BreathLabel.text = String("Breathe Out")
-                TimerLabel.text = String(time)
+                TimerLabel.text = String(Int(time))
                 breathSwitch = 0
             }
             else if(breathSwitch == 0){
                 time = breathIn
                 BreathLabel.text = String("Breathe In")
-                TimerLabel.text = String(time)
+                TimerLabel.text = String(Int(time))
                 breathSwitch = 1
                 timer.invalidate()
             }

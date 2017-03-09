@@ -31,6 +31,7 @@ class ExerciseViewController: UIViewController {
 
         nameLabel.text = exercise.name
         descriptionTextView.text = exercise.description
+        updateRating(rating: exercise.rating)
     }
     
     func updateRating(rating:Int) {
