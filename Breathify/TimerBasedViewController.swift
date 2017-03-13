@@ -29,6 +29,14 @@ class TimerBasedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Example of how sequence is stored in Exercise
+        print("\(exercise.name)")
+        if ((exercise.sequence) != nil) {
+            for step in exercise.sequence! {
+                print("\(step)")
+            }
+        }
     }
     
     @IBAction func Holddown(_ sender: UIButton) {

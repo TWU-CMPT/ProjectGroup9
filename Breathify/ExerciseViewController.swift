@@ -128,7 +128,7 @@ class ExerciseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newView = segue.destination as! TimerBasedViewController
-       
+        
         if (segue.identifier == "timerSelect") {
             newView.exercise = self.exercise
         }

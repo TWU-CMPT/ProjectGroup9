@@ -15,7 +15,7 @@ class Exercise {
     var avgRating:Float?
     var description:String
     var feedback:[Feedback]?
-    var sequence:[[String]]?
+    var sequence:[[Any]]?
     
     init() {
         self.name = ""
@@ -44,14 +44,14 @@ class Exercise {
         self.feedback = feedback
     }
     
-    func parseSequence(sequence:String) -> [[String]] {
-        var seq:[[String]] = []
+    func parseSequence(sequence:String) -> [[Any]] {
+        var seq:[[Any]] = []
         let instructions = sequence.components(separatedBy: ",")
         
         for step in instructions {
             let instruction = step.startIndex
             let duration = step.index(after: step.startIndex)..<step.endIndex
-            let x:[String] = [String(step[instruction]), step[duration]]
+            let x:[Any] = [step[instruction], Int(step[duration])!]
             seq.append(x)
         }
         
