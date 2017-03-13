@@ -12,7 +12,7 @@ class ExerciseViewController: UIViewController {
     
     var exercise:Exercise = Exercise()
     
-    //let bundle = Bundle(for: type(of: self))
+    // Rating star assets
     let filledStar = UIImage(named: "filled_star")
     let emptyStar = UIImage(named: "empty_star")
     
@@ -34,6 +34,7 @@ class ExerciseViewController: UIViewController {
         updateRating(rating: exercise.rating)
     }
     
+    // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
         exercise.rating = rating
         
@@ -72,44 +73,9 @@ class ExerciseViewController: UIViewController {
         default:
             break
         }
-        
-//        btnRating1.setTitle("1", for: UIControlState.normal)
-//        btnRating2.setTitle("2", for: UIControlState.normal)
-//        btnRating3.setTitle("3", for: UIControlState.normal)
-//        btnRating4.setTitle("4", for: UIControlState.normal)
-//        btnRating5.setTitle("5", for: UIControlState.normal)
-//        
-//        switch (exercise.rating) {
-//        case 1:
-//            btnRating1.setTitle("A", for: UIControlState.normal)
-//            break
-//        case 2:
-//            btnRating1.setTitle("A", for: UIControlState.normal)
-//            btnRating2.setTitle("B", for: UIControlState.normal)
-//            break
-//        case 3:
-//            btnRating1.setTitle("A", for: UIControlState.normal)
-//            btnRating2.setTitle("B", for: UIControlState.normal)
-//            btnRating3.setTitle("C", for: UIControlState.normal)
-//            break
-//        case 4:
-//            btnRating1.setTitle("A", for: UIControlState.normal)
-//            btnRating2.setTitle("B", for: UIControlState.normal)
-//            btnRating3.setTitle("C", for: UIControlState.normal)
-//            btnRating4.setTitle("D", for: UIControlState.normal)
-//            break
-//        case 5:
-//            btnRating1.setTitle("A", for: UIControlState.normal)
-//            btnRating2.setTitle("B", for: UIControlState.normal)
-//            btnRating3.setTitle("C", for: UIControlState.normal)
-//            btnRating4.setTitle("D", for: UIControlState.normal)
-//            btnRating5.setTitle("E", for: UIControlState.normal)
-//            break
-//        default:
-//            break
-//        }
     }
 
+    // Actions for rating buttons
     @IBAction func didRate1(_ sender: Any) {
         updateRating(rating: 1)
     }
@@ -127,9 +93,10 @@ class ExerciseViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newView = segue.destination as! TimerBasedViewController
         
         if (segue.identifier == "timerSelect") {
+            let newView = segue.destination as! TimerBasedViewController
+            
             newView.exercise = self.exercise
         }
     }
