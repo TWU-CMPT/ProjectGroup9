@@ -9,11 +9,31 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    // Temporary hardcoded user
+    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", email:"joejoe@email.com", id:1234, gender:"Male", optStatus:true)
 
+    // Variables labels to display user information
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var optStatusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        nameLabel.text = userprofile.name
+        usernameLabel.text = userprofile.username
+        emailLabel.text = userprofile.email
+        genderLabel.text = userprofile.gender
+        if (userprofile.optStatus == true){
+            optStatusLabel.text = "Online"
+        }
+        else {
+            optStatusLabel.text = "Local"
+        }
     }
 
     override func didReceiveMemoryWarning() {

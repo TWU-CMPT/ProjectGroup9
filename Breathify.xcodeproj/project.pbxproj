@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5730BB7D1E77068100998DCF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730BB7C1E77068100998DCF /* UserProfile.swift */; };
 		573AF5DF1E7627690042578C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AF5DE1E7627690042578C /* ProfileViewController.swift */; };
 		891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317831E6D3D1600C11D71 /* ExerciseCell.swift */; };
 		891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317851E6D429F00C11D71 /* ExerciseViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5730BB7C1E77068100998DCF /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		573AF5DE1E7627690042578C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		891317831E6D3D1600C11D71 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		891317851E6D429F00C11D71 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
+				5730BB7C1E77068100998DCF /* UserProfile.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
@@ -283,6 +286,7 @@
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				573AF5DF1E7627690042578C /* ProfileViewController.swift in Sources */,
+				5730BB7D1E77068100998DCF /* UserProfile.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

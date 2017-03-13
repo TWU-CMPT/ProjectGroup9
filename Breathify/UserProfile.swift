@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Profile {
+class UserProfile {
     
     // Required fields: name, username, id, gender, optStatus
     var name:String
