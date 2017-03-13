@@ -221,48 +221,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4/7/8 Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-Y5-PY9">
-                                <rect key="frame" x="99" y="148" width="177" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="20" y="72" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBx-xV-xFs">
-                                <rect key="frame" x="147" y="430" width="80" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="start">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="TimerStart:" destination="6Td-Yy-CEW" eventType="touchUpInside" id="FTl-kg-Ezz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTW-RH-hS5">
-                                <rect key="frame" x="147" y="501" width="80" height="63"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="stop">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="TimerStop:" destination="6Td-Yy-CEW" eventType="touchUpInside" id="cVk-ot-g9Q"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Xm-W5f">
-                                <rect key="frame" x="139" y="285" width="96" height="96"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breathify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Xm-W5f">
+                                <rect key="frame" x="67" y="281" width="281" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr7-es-1Pn">
+                                <rect key="frame" x="152" y="565" width="111" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Holddown:" destination="6Td-Yy-CEW" eventType="touchDown" id="Vy6-xU-300"/>
+                                    <action selector="Release:" destination="6Td-Yy-CEW" eventType="touchUpInside" id="eWD-rd-LIQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mTW-RH-hS5" firstAttribute="top" secondItem="ZBx-xV-xFs" secondAttribute="bottom" constant="8" id="1d1-R2-MHU"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="top" secondItem="uUR-Y5-PY9" secondAttribute="bottom" constant="101" id="3Ag-5o-ifP"/>
-                            <constraint firstItem="ZBx-xV-xFs" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="La8-ux-cjR"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="UhY-RU-aPd"/>
-                            <constraint firstItem="ZBx-xV-xFs" firstAttribute="top" secondItem="dkB-Xm-W5f" secondAttribute="bottom" constant="49" id="ZqN-cr-nVZ"/>
-                            <constraint firstItem="mTW-RH-hS5" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="fnZ-ZQ-Cnx"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="centerY" secondItem="nFY-us-UJE" secondAttribute="centerY" id="hUe-6Q-ljB"/>
-                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="rgS-sn-O9V"/>
+                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="3bv-MR-s92"/>
+                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="md3-mR-kW8"/>
+                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="top" secondItem="4Az-2B-uPm" secondAttribute="bottom" constant="10" id="xU7-88-MSY"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
@@ -279,8 +264,22 @@
                                 <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
-                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
+                                <real key="value" value="75"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="unitString" value=" "/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
@@ -291,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V39-m0-S47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3388" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="3386.9565217391305" y="-322.01086956521743"/>
         </scene>
         <!--Resources View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -324,11 +323,11 @@
                                         <state key="normal" title="Resource Library"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZl-se-1Yf">
-                                        <rect key="frame" x="0.0" y="55.333333333333371" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333371" width="414" height="55.333333333333314"/>
                                         <state key="normal" title="Contacts"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQn-X6-uY8">
-                                        <rect key="frame" x="0.0" y="110.33333333333337" width="414" height="55.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="110.66666666666669" width="414" height="55"/>
                                         <state key="normal" title="App Info"/>
                                         <connections>
                                             <segue destination="GpR-bS-Uze" kind="show" id="mZ8-Os-WnI"/>

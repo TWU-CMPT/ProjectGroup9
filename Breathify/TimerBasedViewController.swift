@@ -12,7 +12,9 @@ import MBCircularProgressBar
 class TimerBasedViewController: UIViewController {
     
     var time:Double = 0
+    var temp:Double = 0
     var timer = Timer()
+    var timer2 = Timer()
     var breathIn:Double = 4.0
     var breathHold:Double = 7.0
     var breathOut:Double = 8.0
@@ -22,77 +24,95 @@ class TimerBasedViewController: UIViewController {
     
     @IBOutlet weak var ProgressBarView: MBCircularProgressBarView!
     @IBOutlet weak var TimerLabel: UILabel!
-    @IBOutlet weak var BreathLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func Holddown(_ sender: UIButton) {
+        runBreathIn()
+    }
+    
+    @IBAction func Release(_ sender: UIButton) {
+        runBreathOut()
+    }
+    
+    func runBreathOut(){
+        timer.invalidate()
+        time = breathOut
+        temp = breathOut + 1
+        
+        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathOutControl), userInfo: nil, repeats: true)
+        
+        UIView.animate(withDuration: temp, delay: 0.0, options: .beginFromCurrentState, animations: {
+            self.ProgressBarView.value = 0
+        }, completion: nil)
 
-    @IBAction func TimerStart(_ sender: UIButton) {
-        time = breathIn
-        TimerLabel.text = String(Int(time))
-        BreathLabel.text = String("Breathe In")
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.action), userInfo: nil, repeats: true)
-        
-        UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseOut, animations: {
-            self.ProgressBarView.value = 100
-        } , completion: ({finished in
-            if(finished){
-                UIView.animate(withDuration:0.0, delay: 7.0,options:.curveEaseOut,animations:{
-                    self.ProgressBarView.value = 99
-                } , completion: ({finished in
-                    if(finished){
-                        UIView.animate(withDuration:8.0, delay:0.0, options:.curveEaseOut,animations: {
-                            self.ProgressBarView.value = 0
-                        })
-                        
-                    }}))
-            }
-            
-        }))
     }
     
-    @IBAction func TimerStop(_ sender: UIButton) {
-        timer.invalidate()
+    func runBreathIn(){
         time = breathIn
-        TimerLabel.text = String(Int(time))
         breathSwitch = 1
-        BreathLabel.text = String("4/7/8 exercise")
-        timer.invalidate()
+        TimerLabel.text = String("Breath In")
+
+        UIView.animate(withDuration: 4.0, delay: 0.0, options: .beginFromCurrentState, animations: {
+            self.ProgressBarView.value = 100
+        }, completion: ({finished in
+            if(finished){
+                self.TimerLabel.text = String("Hold")
+                self.time = self.breathHold
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathHoldControl), userInfo: nil, repeats: true)
+            }
+        }))
+
+        
     }
     
-    func action()
-    {
-        if(time > 1){
-            time -= 1
+    func BreathInControl(){
+        if(time > 0){
             TimerLabel.text = String(Int(time))
+            time -= 1
         }
         else{
             if(breathSwitch == 1){
-                time = breathHold
-                BreathLabel.text = String("Hold")
                 TimerLabel.text = String(Int(time))
+                time = breathHold
                 breathSwitch = 2
             }
             else if(breathSwitch == 2){
-                time = breathOut
-                BreathLabel.text = String("Breathe Out")
                 TimerLabel.text = String(Int(time))
-                breathSwitch = 0
-            }
-            else if(breathSwitch == 0){
-                time = breathIn
-                BreathLabel.text = String("Breathe In")
-                TimerLabel.text = String(Int(time))
-                breathSwitch = 1
                 timer.invalidate()
+                time = 8.0
             }
         }
-        
     }
+    
+    func BreathOutControl(){
+        if(time > 0){
+            TimerLabel.text = String(Int(time))
+            time -= 1
+        }
+        else{
+            TimerLabel.text = String("Next Breath")
+            timer2.invalidate()
+            
+        }
+    }
+    
+    func BreathHoldControl(){
+        if(time > 0){
+            TimerLabel.text = String(Int(time))
+            time -= 1
+        }
+        else{
+            TimerLabel.text = String("Release to Breath Out")
+            timer.invalidate()
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
