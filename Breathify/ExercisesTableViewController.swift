@@ -19,8 +19,9 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8"))
 
-        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8"))
     }
     
     // On returning to table view
@@ -67,10 +68,11 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
     
     // Preparing to change to detailed exercise view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newView = segue.destination as! ExerciseViewController
         
         if (segue.identifier == "cellSelect") {
             if let indexPath:IndexPath = exerciseTableView.indexPathForSelectedRow {
+                let newView = segue.destination as! ExerciseViewController
+                
                 selectedRow = indexPath.row
                 newView.exercise = exercises[selectedRow]
             }

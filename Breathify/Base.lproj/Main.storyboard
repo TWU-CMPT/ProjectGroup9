@@ -109,7 +109,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Timer Based Trainer"/>
                                 <connections>
-                                    <segue destination="6Td-Yy-CEW" kind="show" id="vQ0-bp-de0"/>
+                                    <segue destination="6Td-Yy-CEW" kind="show" identifier="timerSelect" id="vQ0-bp-de0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eld-Sx-60x">
