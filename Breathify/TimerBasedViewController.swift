@@ -19,6 +19,7 @@ class TimerBasedViewController: UIViewController {
     var breathHold:Double = 7.0
     var breathOut:Double = 8.0
     var breathSwitch = 1
+    var breathPattern = 1
     
     var exercise:Exercise = Exercise()
     
@@ -48,23 +49,40 @@ class TimerBasedViewController: UIViewController {
     }
     
     func runBreathOut(){
+        
         timer.invalidate()
-        time = breathOut
-        temp = breathOut + 1
         
-        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathOutControl), userInfo: nil, repeats: true)
+        if(time != 0){
+            TimerLabel.text = String("Please Try Again.")
+            UIView.animate(withDuration: 2.0, delay: 0.0, options: .beginFromCurrentState, animations: {
+                self.ProgressBarView.value = 0
+            }, completion: nil)
+            
+        }
+        else{
+            time = breathOut
+            temp = breathOut + 1
         
-        UIView.animate(withDuration: temp, delay: 0.0, options: .beginFromCurrentState, animations: {
-            self.ProgressBarView.value = 0
-        }, completion: nil)
+            timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathOutControl), userInfo: nil, repeats: true)
+        
+            UIView.animate(withDuration: temp, delay: 0.0, options: .beginFromCurrentState, animations: {
+                self.ProgressBarView.value = 0
+            }, completion: nil)
+            
+            breathPattern -= 1
+        }
 
         
     }
     
     func runBreathIn(){
+        
+        
         time = breathIn
         breathSwitch = 1
         TimerLabel.text = String("Breath In")
+        print(breathPattern)
+        
 
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .beginFromCurrentState, animations: {
             self.ProgressBarView.value = 100
@@ -77,25 +95,6 @@ class TimerBasedViewController: UIViewController {
         }))
 
         
-    }
-    
-    func BreathInControl(){
-        if(time > 0){
-            TimerLabel.text = String(Int(time))
-            time -= 1
-        }
-        else{
-            if(breathSwitch == 1){
-                TimerLabel.text = String(Int(time))
-                time = breathHold
-                breathSwitch = 2
-            }
-            else if(breathSwitch == 2){
-                TimerLabel.text = String(Int(time))
-                timer.invalidate()
-                time = 8.0
-            }
-        }
     }
     
     func BreathOutControl(){
