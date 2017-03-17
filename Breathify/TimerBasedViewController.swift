@@ -20,7 +20,7 @@ class TimerBasedViewController: UIViewController {
     var breathHold:Double = 7.0
     var breathOut:Double = 8.0
     var breathSwitch = 1
-    var breathPattern = 2
+    var breathPattern = 4
     
     var exercise:Exercise = Exercise()
     
@@ -64,7 +64,11 @@ class TimerBasedViewController: UIViewController {
         }
         
         else if(breathPattern == 0){
-            patternLabel.text = String("Exercise Ends Here")
+            
+            //treigger the result screen....
+            
+
+            patternLabel.text = String(String(breathPattern) + " left")
             print("Exercise Ends here")
         }
         
@@ -100,9 +104,15 @@ class TimerBasedViewController: UIViewController {
                 self.ProgressBarView.value = 100
             }, completion: ({finished in
                 if(finished){
-                    self.TimerLabel.text = String("Hold")
-                    self.time = self.breathHold
-                    self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathHoldControl), userInfo: nil, repeats: true)
+                    if(self.breathHold != 0){
+                        self.TimerLabel.text = String("Hold")
+                        self.time = self.breathHold
+                        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathHoldControl), userInfo: nil, repeats: true)
+                    }
+                    else{
+                        self.TimerLabel.text = String("Release to Breath Out")
+                        self.time = 0
+                    }
                 }
             }))
         }
@@ -122,7 +132,7 @@ class TimerBasedViewController: UIViewController {
         }
         else{
             if(breathPattern == 0){
-                patternLabel.text = String("Exercise Ends Here")
+                patternLabel.text = String(String(breathPattern) + " left")
                 TimerLabel.text = String("Ends Here")
                 timer2.invalidate()
             }

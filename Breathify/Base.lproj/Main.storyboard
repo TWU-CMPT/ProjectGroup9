@@ -220,41 +220,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4/7/8 Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-Y5-PY9">
-                                <rect key="frame" x="20" y="72" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breathify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Xm-W5f">
-                                <rect key="frame" x="67" y="281" width="281" height="174"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Breathify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkB-Xm-W5f">
+                                <rect key="frame" x="20" y="281" width="374" height="174"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr7-es-1Pn">
-                                <rect key="frame" x="152" y="565" width="111" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#/#/# Breath Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luq-Sz-jYI">
+                                <rect key="frame" x="20" y="64" width="374" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr7-es-1Pn">
+                                <rect key="frame" x="20" y="591" width="374" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="PRESS_AND_HOLD ">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="Holddown:" destination="6Td-Yy-CEW" eventType="touchDown" id="Vy6-xU-300"/>
                                     <action selector="Release:" destination="6Td-Yy-CEW" eventType="touchUpInside" id="eWD-rd-LIQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luq-Sz-jYI">
-                                <rect key="frame" x="152" y="104" width="112" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="3bv-MR-s92"/>
-                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="md3-mR-kW8"/>
-                            <constraint firstItem="uUR-Y5-PY9" firstAttribute="top" secondItem="4Az-2B-uPm" secondAttribute="bottom" constant="10" id="xU7-88-MSY"/>
+                            <constraint firstItem="2e7-hq-2tb" firstAttribute="top" secondItem="dr7-es-1Pn" secondAttribute="bottom" constant="20" id="EFy-O7-RmL"/>
+                            <constraint firstItem="luq-Sz-jYI" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="Jwf-Zv-3MT"/>
+                            <constraint firstItem="luq-Sz-jYI" firstAttribute="top" secondItem="4Az-2B-uPm" secondAttribute="bottom" constant="20" id="UKH-cu-r72"/>
+                            <constraint firstItem="dr7-es-1Pn" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="avH-q5-4YD"/>
+                            <constraint firstItem="dr7-es-1Pn" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="iNy-eA-mcJ"/>
+                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="nFB-An-a85"/>
+                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="top" secondItem="luq-Sz-jYI" secondAttribute="bottom" constant="129" id="psW-YP-S3H"/>
+                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="qCb-yb-R1B"/>
+                            <constraint firstItem="luq-Sz-jYI" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="spW-qk-wdQ"/>
+                            <constraint firstItem="dr7-es-1Pn" firstAttribute="top" secondItem="dkB-Xm-W5f" secondAttribute="bottom" constant="136" id="t94-QU-s6P"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
