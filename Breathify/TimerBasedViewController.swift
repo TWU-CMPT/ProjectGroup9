@@ -4,22 +4,32 @@
 //
 //  Created by Hans Kim on 2017-03-06.
 //  Copyright © 2017 Group Nein. All rights reserved.
-//
 
 import UIKit
 import MBCircularProgressBar
 
 class TimerBasedViewController: UIViewController {
     
+    let inText = "Breath In"
+    let hoText = "Hold"
+    let outText = "Breath Out"
+    let errDet = "Please Try Again"
+    
     @IBOutlet weak var patternLabel: UILabel!
+    
+    //Two timers
+
     var time:Double = 0
     var temp:Double = 0
     var timer = Timer()
     var timer2 = Timer()
+    
+    //for the sequence parsing, need to code the information into this four variables
+    
     var breathIn:Double = 4.0
     var breathHold:Double = 7.0
     var breathOut:Double = 8.0
-    var breathSwitch = 1
+    var breathHold2:Double = 0
     var breathPattern = 4
     
     var exercise:Exercise = Exercise()
@@ -31,8 +41,6 @@ class TimerBasedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-
         // Example of how sequence is stored in Exercise
         print("\(exercise.name)")
         if ((exercise.sequence) != nil) {
@@ -55,24 +63,26 @@ class TimerBasedViewController: UIViewController {
         timer.invalidate()
         
         if(time != 0){
-            TimerLabel.text = String("Please Try Again.")
-            patternLabel.text = String(String(breathPattern) + " left")
-            UIView.animate(withDuration: 2.0, delay: 0.0, options: .beginFromCurrentState, animations: {
+            //error checking
+            TimerLabel.text = errDet
+            patternLabel.text = String(String(breathPattern) + " breath left")
+            UIView.animate(withDuration: 1.0, delay: 0.0, options: .beginFromCurrentState, animations: {
                 self.ProgressBarView.value = 0
             }, completion: nil)
             
         }
         
         else if(breathPattern == 0){
-            
-            //treigger the result screen....
-            
-
-            patternLabel.text = String(String(breathPattern) + " left")
+            //End checking
+            patternLabel.text = String(String(breathPattern) + " breath left")
             print("Exercise Ends here")
+            
+            //Adding the method for result screen later...
         }
         
         else{
+            //Breath Out Process
+            TimerLabel.text = outText
             time = breathOut
             temp = breathOut + 1
         
@@ -80,7 +90,15 @@ class TimerBasedViewController: UIViewController {
         
             UIView.animate(withDuration: temp, delay: 0.0, options: .beginFromCurrentState, animations: {
                 self.ProgressBarView.value = 0
-            }, completion: nil)
+            }, completion:  ({finished in
+                if(finished){
+                    
+                    if(self.breathHold2 != 0){
+                        //waiting method(possible to add later)
+                    }
+
+                }
+            }))
             
             breathPattern -= 1
         }
@@ -91,12 +109,11 @@ class TimerBasedViewController: UIViewController {
     func runBreathIn(){
         
         if(breathPattern != 0){
-        
+        //breath in Process
         
             time = breathIn
-            breathSwitch = 1
-            TimerLabel.text = String("Breath In")
-            patternLabel.text = String(String(breathPattern - 1) + " left")
+            TimerLabel.text = inText
+            patternLabel.text = String(String(breathPattern - 1) + " breath left")
             print(breathPattern)
         
 
@@ -104,8 +121,10 @@ class TimerBasedViewController: UIViewController {
                 self.ProgressBarView.value = 100
             }, completion: ({finished in
                 if(finished){
+                    //with or without hold
+
                     if(self.breathHold != 0){
-                        self.TimerLabel.text = String("Hold")
+                        self.TimerLabel.text = self.hoText
                         self.time = self.breathHold
                         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathHoldControl), userInfo: nil, repeats: true)
                     }
@@ -117,13 +136,12 @@ class TimerBasedViewController: UIViewController {
             }))
         }
         else{
-            
-            print(breathPattern)
-            print("Exercise ends Here")
+            //do nothing for now
         }
 
         
     }
+
     
     func BreathOutControl(){
         if(time > 0){
@@ -132,7 +150,10 @@ class TimerBasedViewController: UIViewController {
         }
         else{
             if(breathPattern == 0){
-                patternLabel.text = String(String(breathPattern) + " left")
+                //END CHECKING
+                //IT IS POSSIBLE TO CHANGE THE BUTTON VIEW TO "FINISH",THEN PRESS FOR THE RESULT SCREEN
+                
+                patternLabel.text = String(String(breathPattern) + " exercise left")
                 TimerLabel.text = String("Ends Here")
                 timer2.invalidate()
             }

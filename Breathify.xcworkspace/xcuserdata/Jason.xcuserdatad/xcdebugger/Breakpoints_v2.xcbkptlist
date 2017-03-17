@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Breathify/TimerBasedViewController.swift"
-            timestampString = "511417710.802364"
+            timestampString = "511421422.186933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "runBreathOut()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Breathify/TimerBasedViewController.swift"
-            timestampString = "511413801.020404"
+            timestampString = "511421422.186933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "TimerBasedViewController"
             landmarkType = "3">
             <Locations>
@@ -38,16 +38,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Breathify.TimerBasedViewController.patternLabel.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  symbolName = "Breathify.TimerBasedViewController.time.setter : Swift.Double"
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511418443.107991"
+                  timestampString = "511421423.249519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "42">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "25">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -57,12 +57,12 @@
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511418443.110424"
+                  timestampString = "511421423.251589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "70">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "371">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -72,12 +72,12 @@
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511418443.112612"
+                  timestampString = "511421423.254115"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "31">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "295">
                </Location>
             </Locations>
          </BreakpointContent>

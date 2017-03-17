@@ -247,14 +247,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2e7-hq-2tb" firstAttribute="top" secondItem="dr7-es-1Pn" secondAttribute="bottom" constant="20" id="EFy-O7-RmL"/>
+                            <constraint firstItem="luq-Sz-jYI" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="H12-9R-qdc"/>
                             <constraint firstItem="luq-Sz-jYI" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="Jwf-Zv-3MT"/>
+                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="centerY" secondItem="nFY-us-UJE" secondAttribute="centerY" id="KzH-jT-F9K"/>
                             <constraint firstItem="luq-Sz-jYI" firstAttribute="top" secondItem="4Az-2B-uPm" secondAttribute="bottom" constant="20" id="UKH-cu-r72"/>
                             <constraint firstItem="dr7-es-1Pn" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="avH-q5-4YD"/>
+                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="centerX" secondItem="nFY-us-UJE" secondAttribute="centerX" id="emo-vd-1eK"/>
                             <constraint firstItem="dr7-es-1Pn" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="iNy-eA-mcJ"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="leading" secondItem="nFY-us-UJE" secondAttribute="leadingMargin" id="nFB-An-a85"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="top" secondItem="luq-Sz-jYI" secondAttribute="bottom" constant="129" id="psW-YP-S3H"/>
-                            <constraint firstItem="dkB-Xm-W5f" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="qCb-yb-R1B"/>
-                            <constraint firstItem="luq-Sz-jYI" firstAttribute="trailing" secondItem="nFY-us-UJE" secondAttribute="trailingMargin" id="spW-qk-wdQ"/>
                             <constraint firstItem="dr7-es-1Pn" firstAttribute="top" secondItem="dkB-Xm-W5f" secondAttribute="bottom" constant="136" id="t94-QU-s6P"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
