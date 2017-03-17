@@ -56,6 +56,7 @@ class TimerBasedViewController: UIViewController {
         
         if(time != 0){
             TimerLabel.text = String("Please Try Again.")
+            patternLabel.text = String(String(breathPattern) + " left")
             UIView.animate(withDuration: 2.0, delay: 0.0, options: .beginFromCurrentState, animations: {
                 self.ProgressBarView.value = 0
             }, completion: nil)
@@ -91,7 +92,7 @@ class TimerBasedViewController: UIViewController {
             time = breathIn
             breathSwitch = 1
             TimerLabel.text = String("Breath In")
-            patternLabel.text = String(breathPattern - 1)
+            patternLabel.text = String(String(breathPattern - 1) + " left")
             print(breathPattern)
         
 
