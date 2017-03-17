@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     // Temporary hardcoded user
-    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", email:"joejoe@email.com", id:1234, gender:"Male", optStatus:true)
+    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", password:"abc123", email:"joejoe@email.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)
 
     // Variables labels to display user information
     @IBOutlet weak var usernameLabel: UILabel!

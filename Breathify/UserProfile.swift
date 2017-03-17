@@ -14,15 +14,15 @@ class UserProfile {
     var name:String
     var username:String
     var email:String
-    private var password:String // used for "Remember me" option
+    var password:String // used for "Remember me" option
     var id:Int
     var gender:String
     var optStatus:Bool
     var onlineStatus:Bool
-    //var exerciseHistory:[ExerciseHistory]?
-    //var friendList:[FriendList]?
+    var exerciseHistory:[ExerciseHistory] = []
+    //var friendList:[FriendList] = []
     
-    init(name:String, username:String, email:String, password:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
+    init(name:String, username:String, password:String, email:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
         self.name = name
         self.username = username
         self.email = email
@@ -33,10 +33,26 @@ class UserProfile {
         self.onlineStatus = onlineStatus
     }
     
-    // Should be used for Remember Me option
-    func getPassword() -> String {
-        return password
+    // function to add history for Game Based Trainer
+    func addGameHistory(exerciseID:Int, score:Int) {
+        let newGameHistory = ExerciseHistory(type:"game")
+        newGameHistory.exerciseID = exerciseID
+        newGameHistory.gameScore = score
+        //newGameHistory.heartData = heartdata
+        
+        self.exerciseHistory.append(newGameHistory)
     }
+    
+    // function to add history for Timer Based Trainer
+    func addTimerHistory(exerciseID:Int, score:Int){
+        let newTimerHistory = ExerciseHistory(type:"timer")
+        newTimerHistory.exerciseID = exerciseID
+        newTimerHistory.timerScore = score
+        //newTimerHistory.heartData = heartdata
+        
+        self.exerciseHistory.append(newTimerHistory)
+    }
+    
     
     
 }
