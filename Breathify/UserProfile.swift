@@ -22,6 +22,17 @@ class UserProfile {
     var exerciseHistory:[ExerciseHistory] = []
     //var friendList:[FriendList] = []
     
+    init() {
+        self.name = ""
+        self.username = ""
+        self.email = ""
+        self.password = ""
+        self.id = 0
+        self.gender = ""
+        self.optStatus = false
+        self.onlineStatus = false
+    }
+    
     init(name:String, username:String, password:String, email:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
         self.name = name
         self.username = username
