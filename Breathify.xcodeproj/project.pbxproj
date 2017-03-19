@@ -23,6 +23,7 @@
 		8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8986A5491E67941000665557 /* LaunchScreen.storyboard */; };
 		8986A5561E67941100665557 /* BreathifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5551E67941100665557 /* BreathifyTests.swift */; };
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
+		8F0049961E7E46B3002E6ADF /* ExerciseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0049951E7E46B3002E6ADF /* ExerciseResult.swift */; };
 		9B6985971E7DCD5F00C3FB8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */; };
 		9B6985991E7DD06000C3FB8A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6985981E7DD06000C3FB8A /* EditProfileViewController.swift */; };
 		9B69859B1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69859A1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift */; };
@@ -74,6 +75,7 @@
 		8986A55C1E67941100665557 /* BreathifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8986A5601E67941100665557 /* BreathifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathifyUITests.swift; sourceTree = "<group>"; };
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F0049951E7E46B3002E6ADF /* ExerciseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseResult.swift; sourceTree = "<group>"; };
 		9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B6985981E7DD06000C3FB8A /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9B69859A1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOnlineUserViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				5730BB7C1E77068100998DCF /* UserProfile.swift */,
 				9B6985981E7DD06000C3FB8A /* EditProfileViewController.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
+				8F0049951E7E46B3002E6ADF /* ExerciseResult.swift */,
 				57AC40381E7C70DD00F82034 /* ExerciseHistory.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0049961E7E46B3002E6ADF /* ExerciseResult.swift in Sources */,
 				9B6985991E7DD06000C3FB8A /* EditProfileViewController.swift in Sources */,
 				57AC40391E7C70DD00F82034 /* ExerciseHistory.swift in Sources */,
 				9B69859B1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class CreateOnlineUserViewController: UIViewController {
+class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
     var userprofile: UserProfile = UserProfile()
@@ -50,6 +50,17 @@ class CreateOnlineUserViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // Exit software Keyboard when user presses Done form the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    // Exit the software keyboard if the user touches the view that is not the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     override func viewDidLoad() {

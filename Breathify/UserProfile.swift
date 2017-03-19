@@ -10,7 +10,6 @@ import UIKit
 
 class UserProfile {
     
-    // Required fields: name, username, password, id, gender, optStatus, onlineStatus
     var name:String
     var username:String
     var email:String
@@ -19,7 +18,7 @@ class UserProfile {
     var gender:String
     var optStatus:Bool
     var onlineStatus:Bool
-    var exerciseHistory:[ExerciseHistory] = []
+    var exerciseHistory:ExerciseHistory
     //var friendList:[FriendList] = []
     
     init() {
@@ -31,6 +30,8 @@ class UserProfile {
         self.gender = ""
         self.optStatus = false
         self.onlineStatus = false
+        self.exerciseHistory = ExerciseHistory()
+        //self.friendList = FriendList()
     }
     
     init(name:String, username:String, password:String, email:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
@@ -42,28 +43,9 @@ class UserProfile {
         self.gender = gender
         self.optStatus = optStatus
         self.onlineStatus = onlineStatus
+        self.exerciseHistory = ExerciseHistory()
+        //self.friendList = FriendList()
     }
-    
-    // function to add history for Game Based Trainer
-    func addGameHistory(exerciseID:Int, score:Int) {
-        let newGameHistory = ExerciseHistory(type:"game")
-        newGameHistory.exerciseID = exerciseID
-        newGameHistory.gameScore = score
-        //newGameHistory.heartData = heartdata
-        
-        self.exerciseHistory.append(newGameHistory)
-    }
-    
-    // function to add history for Timer Based Trainer
-    func addTimerHistory(exerciseID:Int, score:Int){
-        let newTimerHistory = ExerciseHistory(type:"timer")
-        newTimerHistory.exerciseID = exerciseID
-        newTimerHistory.timerScore = score
-        //newTimerHistory.heartData = heartdata
-        
-        self.exerciseHistory.append(newTimerHistory)
-    }
-    
     
     
 }

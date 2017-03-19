@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Outlets
     @IBOutlet weak var usernameField: UITextField!
@@ -28,7 +28,22 @@ class EditProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveChanges(_ sender: Any) {
+        let name = usernameField.text
+        user.name = name!
+        usernameField.resignFirstResponder()
+    }
 
+    // Exit software Keyboard when user presses Done form the keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    // Exit the software keyboard if the user touches the view that is not the keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     // MARK: - Navigation
 

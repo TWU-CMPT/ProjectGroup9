@@ -14,33 +14,27 @@ class ProfileViewController: UIViewController {
     var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", password:"abc123", email:"joejoe@email.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)
 
     // Variables labels to display user information
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var optStatusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         nameLabel.text = userprofile.name
-        usernameLabel.text = userprofile.username
-        emailLabel.text = userprofile.email
-        genderLabel.text = userprofile.gender
-        if (userprofile.optStatus == true){
-            optStatusLabel.text = "Online"
-        }
-        else {
-            optStatusLabel.text = "Local"
-        }
+    }
+    
+    // On returning to table view
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        // Reload data that may have changed in detailed view
+        nameLabel.text = userprofile.name
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
 
     // MARK: - Navigation
