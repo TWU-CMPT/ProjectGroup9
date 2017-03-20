@@ -19,11 +19,11 @@
 		8986A53F1E67941000665557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A53E1E67941000665557 /* AppDelegate.swift */; };
 		8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5401E67941000665557 /* ExercisesTableViewController.swift */; };
 		8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5421E67941000665557 /* ResourcesViewController.swift */; };
-		8986A5481E67941000665557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8986A5471E67941000665557 /* Assets.xcassets */; };
 		8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8986A5491E67941000665557 /* LaunchScreen.storyboard */; };
 		8986A5561E67941100665557 /* BreathifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5551E67941100665557 /* BreathifyTests.swift */; };
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
 		8F0049961E7E46B3002E6ADF /* ExerciseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0049951E7E46B3002E6ADF /* ExerciseResult.swift */; };
+		8F04A1E51E7E95C60085C57B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F04A1E41E7E95C60085C57B /* Assets.xcassets */; };
 		9B6985971E7DCD5F00C3FB8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */; };
 		9B6985991E7DD06000C3FB8A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6985981E7DD06000C3FB8A /* EditProfileViewController.swift */; };
 		9B69859B1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69859A1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift */; };
@@ -66,7 +66,6 @@
 		8986A53E1E67941000665557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8986A5401E67941000665557 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
 		8986A5421E67941000665557 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		8986A5471E67941000665557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8986A54A1E67941000665557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8986A54C1E67941000665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8986A5511E67941000665557 /* BreathifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +75,7 @@
 		8986A5601E67941100665557 /* BreathifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathifyUITests.swift; sourceTree = "<group>"; };
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0049951E7E46B3002E6ADF /* ExerciseResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseResult.swift; sourceTree = "<group>"; };
+		8F04A1E41E7E95C60085C57B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B6985981E7DD06000C3FB8A /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9B69859A1E7DE0CB00C3FB8A /* CreateOnlineUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOnlineUserViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				573AF5DE1E7627690042578C /* ProfileViewController.swift */,
-				8986A5471E67941000665557 /* Assets.xcassets */,
+				8F04A1E41E7E95C60085C57B /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
 				9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */,
@@ -318,8 +318,8 @@
 			files = (
 				891317891E6D570400C11D71 /* Main.storyboard in Resources */,
 				9B6985971E7DCD5F00C3FB8A /* GoogleService-Info.plist in Resources */,
+				8F04A1E51E7E95C60085C57B /* Assets.xcassets in Resources */,
 				8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */,
-				8986A5481E67941000665557 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
