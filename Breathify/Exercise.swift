@@ -16,6 +16,8 @@ class Exercise {
     var avgRating:Float?
     var feedback:[Feedback]?
     var sequence:[[Any]]?
+    var repetitions:Int?
+    
     
     // Default constructor
     init() {
@@ -49,13 +51,14 @@ class Exercise {
     }
     
     // Constructor for online exercise
-    init(name:String, rating:Int, avgRating:Float, description:String, feedback:[Feedback], sequence:String) {
+    init(name:String, rating:Int, avgRating:Float, description:String, feedback:[Feedback], sequence:String, repetitions:Int) {
         self.name = name
         self.rating = rating
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
         self.sequence = parseSequence(sequence: sequence)
+        self.repetitions = repetitions
     }
     
     // Parses sequence from String
