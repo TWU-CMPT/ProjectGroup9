@@ -519,6 +519,9 @@
                                 <rect key="frame" x="121" y="417" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="ijZ-x2-Rvh" eventType="touchUpInside" id="bWw-8M-IHS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfh-9M-mWw">
                                 <rect key="frame" x="159" y="500" width="38" height="30"/>
@@ -534,6 +537,14 @@
                                 <state key="normal" title="Create Online User"/>
                                 <connections>
                                     <segue destination="yFT-bA-v2K" kind="show" identifier="createOnlineUser" action="showDetailViewController:sender:" id="FAQ-zl-2bw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Av-hm-ND6">
+                                <rect key="frame" x="158" y="563" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="Logout:" destination="ijZ-x2-Rvh" eventType="touchUpInside" id="Lda-nk-iXT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -788,7 +799,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabHome" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>

@@ -37,7 +37,7 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
                     self.userprofile.email = self.emailField.text!
                     self.userprofile.password = self.passwordField.text!
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileHome")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabHome")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
