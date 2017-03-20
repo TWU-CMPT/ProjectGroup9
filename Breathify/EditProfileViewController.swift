@@ -55,6 +55,10 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
             let newView = segue.destination as! CreateOnlineUserViewController
             newView.userprofile = user
         }
+        if (segue.identifier == "login") {
+            let newView = segue.destination as! LoginViewController
+            newView.userprofile = user
+        }
     }
  
 

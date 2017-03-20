@@ -18,7 +18,7 @@ class UserProfile {
     var gender:String
     var optStatus:Bool
     var onlineStatus:Bool
-    var exerciseHistory:ExerciseHistory
+    //var exerciseHistory:ExerciseHistory
     //var friendList:[FriendList] = []
     
     init() {
@@ -30,7 +30,7 @@ class UserProfile {
         self.gender = ""
         self.optStatus = false
         self.onlineStatus = false
-        self.exerciseHistory = ExerciseHistory()
+//        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
     }
     
@@ -43,7 +43,7 @@ class UserProfile {
         self.gender = gender
         self.optStatus = optStatus
         self.onlineStatus = onlineStatus
-        self.exerciseHistory = ExerciseHistory()
+//        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
     }
     
