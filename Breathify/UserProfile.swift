@@ -18,6 +18,7 @@ class UserProfile {
     var gender:String
     var optStatus:Bool
     var onlineStatus:Bool
+    var profilePicture: UIImage
     //var exerciseHistory:ExerciseHistory
     //var friendList:[FriendList] = []
     
@@ -32,6 +33,7 @@ class UserProfile {
         self.onlineStatus = false
 //        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
+        self.profilePicture = #imageLiteral(resourceName: "Gender Neutral User-50")
     }
     
     init(name:String, username:String, password:String, email:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
@@ -45,6 +47,7 @@ class UserProfile {
         self.onlineStatus = onlineStatus
 //        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
+        self.profilePicture = #imageLiteral(resourceName: "Gender Neutral User-50")
     }
     
     

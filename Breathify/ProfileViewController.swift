@@ -10,8 +10,9 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    // Temporary hardcoded user
-    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", password:"testtest", email:"test@test.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)
+//    // Temporary hardcoded user
+//    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", password:"testtest", email:"test@test.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)
+    var userprofile: UserProfile = UserProfile()
 
     // Variables labels to display user information
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,6 +21,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tbvc = self.tabBarController as? TabViewController
+        userprofile = (tbvc?.user)!
         nameLabel.text = userprofile.name
     }
     

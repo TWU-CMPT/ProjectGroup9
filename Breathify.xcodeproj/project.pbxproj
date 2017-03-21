@@ -27,7 +27,8 @@
 		9B6517B71E7FAF46006DDF67 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517B61E7FAF46006DDF67 /* EditProfileViewController.swift */; };
 		9B6517B91E7FAF4E006DDF67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517B81E7FAF4E006DDF67 /* LoginViewController.swift */; };
 		9B6517BB1E809774006DDF67 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517BA1E809774006DDF67 /* UserSelectViewController.swift */; };
-		9B6517BD1E809B53006DDF67 /* UserSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517BC1E809B53006DDF67 /* UserSelect.swift */; };
+		9B6517C11E80AAB7006DDF67 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517C01E80AAB7006DDF67 /* UserCollectionViewCell.swift */; };
+		9B6517C61E80BEBC006DDF67 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6517C51E80BEBC006DDF67 /* TabViewController.swift */; };
 		9B6985971E7DCD5F00C3FB8A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */; };
 		B0F7C53E641A29E93A9A3AE5 /* Pods_BreathifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78908B88BC92307012D1D67E /* Pods_BreathifyUITests.framework */; };
 		E37ACD591FCBDD47767B7343 /* Pods_BreathifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28BE96304FCE67202C87B2B /* Pods_BreathifyTests.framework */; };
@@ -81,7 +82,8 @@
 		9B6517B61E7FAF46006DDF67 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9B6517B81E7FAF4E006DDF67 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B6517BA1E809774006DDF67 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
-		9B6517BC1E809B53006DDF67 /* UserSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelect.swift; sourceTree = "<group>"; };
+		9B6517C01E80AAB7006DDF67 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B6517C51E80BEBC006DDF67 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		9B6985961E7DCD5F00C3FB8A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6EB86C1E8A90B833E10F8DA /* Pods-BreathifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyTests/Pods-BreathifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		B28BE96304FCE67202C87B2B /* Pods_BreathifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,21 +157,14 @@
 		8986A53D1E67941000665557 /* Breathify */ = {
 			isa = PBXGroup;
 			children = (
+				9B6517C41E80BB38006DDF67 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
-				9B6517B41E7FAF41006DDF67 /* CreateOnlineUserViewController.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				57AC40381E7C70DD00F82034 /* ExerciseHistory.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
-				9B6517B61E7FAF46006DDF67 /* EditProfileViewController.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
-				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
-				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
-				9B6517B81E7FAF4E006DDF67 /* LoginViewController.swift */,
-				9B6517B21E7FAF07006DDF67 /* ProfileViewController.swift */,
-				8986A5421E67941000665557 /* ResourcesViewController.swift */,
+				9B6517C01E80AAB7006DDF67 /* UserCollectionViewCell.swift */,
 				5730BB7C1E77068100998DCF /* UserProfile.swift */,
-				9B6517BC1E809B53006DDF67 /* UserSelect.swift */,
-				9B6517BA1E809774006DDF67 /* UserSelectViewController.swift */,
 				8F04A1E41E7E95C60085C57B /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
@@ -195,6 +190,22 @@
 				8986A5621E67941100665557 /* Info.plist */,
 			);
 			path = BreathifyUITests;
+			sourceTree = "<group>";
+		};
+		9B6517C41E80BB38006DDF67 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B6517B41E7FAF41006DDF67 /* CreateOnlineUserViewController.swift */,
+				9B6517B61E7FAF46006DDF67 /* EditProfileViewController.swift */,
+				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
+				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
+				8986A5421E67941000665557 /* ResourcesViewController.swift */,
+				9B6517B81E7FAF4E006DDF67 /* LoginViewController.swift */,
+				9B6517B21E7FAF07006DDF67 /* ProfileViewController.swift */,
+				9B6517BA1E809774006DDF67 /* UserSelectViewController.swift */,
+				9B6517C51E80BEBC006DDF67 /* TabViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		AD29F2C81AA8C87FD6F80344 /* Frameworks */ = {
@@ -493,11 +504,12 @@
 				891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */,
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
-				9B6517BD1E809B53006DDF67 /* UserSelect.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				9B6517B31E7FAF07006DDF67 /* ProfileViewController.swift in Sources */,
+				9B6517C61E80BEBC006DDF67 /* TabViewController.swift in Sources */,
 				9B6517B71E7FAF46006DDF67 /* EditProfileViewController.swift in Sources */,
+				9B6517C11E80AAB7006DDF67 /* UserCollectionViewCell.swift in Sources */,
 				5730BB7D1E77068100998DCF /* UserProfile.swift in Sources */,
 				9B6517B51E7FAF41006DDF67 /* CreateOnlineUserViewController.swift in Sources */,
 				9B6517BB1E809774006DDF67 /* UserSelectViewController.swift in Sources */,
