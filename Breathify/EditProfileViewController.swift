@@ -21,6 +21,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     
     @IBAction func forgotPassword(_ sender: Any) {
+        // if user profile does not have an email
         if user.email == "" {
             let alertController = UIAlertController(title: "Oops!", message: "You haven't registered yet!", preferredStyle: .alert)
             
@@ -32,9 +33,11 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         } else {
             FIRAuth.auth()?.sendPasswordReset(withEmail: user.email, completion: { (error) in
                 
+                // initialize title and message
                 var title = ""
                 var message = ""
                 
+                // implement title and message depending on if there is an error
                 if error != nil {
                     title = "Error!"
                     message = (error?.localizedDescription)!
@@ -43,6 +46,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
                     message = "Password reset email sent."
                 }
                 
+                // send out message on whether password reset is successful
                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -57,6 +61,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         if FIRAuth.auth()?.currentUser != nil {
             do {
                 try FIRAuth.auth()?.signOut()
+                
+                // go back to Home (maybe change to go back to user select page?)
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabHome")
                 present(vc, animated: true, completion: nil)
                 
@@ -101,8 +107,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        // pass on user to next views
         if (segue.identifier == "createOnlineUser") {
             let newView = segue.destination as! CreateOnlineUserViewController
             newView.userprofile = user

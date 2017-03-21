@@ -11,6 +11,8 @@ import UIKit
 class TabViewController: UITabBarController {
 
     // MARK: Properties
+    
+    // This is the user that has been selected from previous view
     var user: UserProfile = UserProfile()
     
     override func viewDidLoad() {

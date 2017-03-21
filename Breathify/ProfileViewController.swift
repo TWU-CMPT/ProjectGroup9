@@ -20,9 +20,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load in user from Tab Bar Controller
         let tbvc = self.tabBarController as? TabViewController
         userprofile = (tbvc?.user)!
+        
+        // Set user's name Label
         nameLabel.text = userprofile.name
     }
     
@@ -48,6 +50,7 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
      
      if (segue.identifier == "editProfile") {
+        // pass on user to next view
         let newView = segue.destination as! EditProfileViewController
         newView.user = userprofile
      }
