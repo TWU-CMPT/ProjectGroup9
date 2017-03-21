@@ -104,6 +104,7 @@ class TimerBasedViewController: UIViewController {
             }, completion:  ({finished in
                 if(finished){
                     self.patternLabel.text = String(String(self.breathPattern) + " breath left")
+                    self.step = 0
                     if(self.breathHold2 != 0){
                         //waiting method(possible to add later)
                         

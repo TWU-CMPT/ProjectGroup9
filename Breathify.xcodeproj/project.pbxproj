@@ -21,6 +21,8 @@
 		8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8986A5491E67941000665557 /* LaunchScreen.storyboard */; };
 		8986A5561E67941100665557 /* BreathifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5551E67941100665557 /* BreathifyTests.swift */; };
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
+		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
+		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
 		A26FD11593EF697322529E23 /* Pods_BreathifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */; };
 		A3774EEA3F571DE47C5779A5 /* Pods_Breathify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE849FB3E37FD798EA5AE03E /* Pods_Breathify.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		8986A55C1E67941100665557 /* BreathifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8986A5601E67941100665557 /* BreathifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathifyUITests.swift; sourceTree = "<group>"; };
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
+		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
 		AEFEE57CCE61EA1C879F7063 /* Pods-Breathify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.release.xcconfig"; sourceTree = "<group>"; };
 		B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C6F899DE743A1D06BB043 /* Pods-BreathifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
+				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
+				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
 				8986A5471E67941000665557 /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
@@ -469,8 +475,10 @@
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
+				96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */,
 				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
+				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

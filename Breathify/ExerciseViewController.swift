@@ -99,6 +99,10 @@ class ExerciseViewController: UIViewController {
             
             newView.exercise = self.exercise
         }
+        else if (segue.identifier == "timerMode") {
+            let newView = segue.destination as! TimerModeViewController
+            newView.exercise = self.exercise
+        }
     }
     
     override func didReceiveMemoryWarning() {
