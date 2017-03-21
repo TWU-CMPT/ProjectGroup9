@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Breathify/TimerBasedViewController.swift"
-            timestampString = "511421422.186933"
+            timestampString = "511766507.389964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "runBreathOut()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Breathify/TimerBasedViewController.swift"
-            timestampString = "511421422.186933"
+            timestampString = "511469244.739947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "TimerBasedViewController"
             landmarkType = "3">
             <Locations>
@@ -42,11 +42,11 @@
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511421423.249519"
+                  timestampString = "511766507.494677"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
                   offsetFromSymbolStart = "25">
                </Location>
                <Location
@@ -57,11 +57,11 @@
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511421423.251589"
+                  timestampString = "511766507.496845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
                   offsetFromSymbolStart = "371">
                </Location>
                <Location
@@ -72,11 +72,11 @@
                   moduleName = "Breathify"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jason/Desktop/ProjectGroup9/Breathify/TimerBasedViewController.swift"
-                  timestampString = "511421423.254115"
+                  timestampString = "511766507.499772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
                   offsetFromSymbolStart = "295">
                </Location>
             </Locations>

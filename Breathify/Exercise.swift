@@ -34,11 +34,12 @@ class Exercise {
     }
     
     // Constructor for offline exercise
-    init(name:String, rating:Int, description:String, sequence:String) {
+    init(name:String, rating:Int, description:String, sequence:String, repetitions:Int) {
         self.name = name
         self.rating = rating
         self.description = description
         self.sequence = parseSequence(sequence: sequence)
+        self.repetitions = repetitions
     }
     
     // Constructor for online sequence-less exercise

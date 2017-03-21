@@ -20,7 +20,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8"))
+        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 4))
 
     }
     
