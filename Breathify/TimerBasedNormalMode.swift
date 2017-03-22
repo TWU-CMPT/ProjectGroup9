@@ -54,11 +54,11 @@ class TimerBasedNormalMode: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.title = exercise.name
         numSteps = (exercise.sequence?.count)!
         nextStep = (exercise.sequence?[step])!
         
-        nameLabel.text = String(exercisePeriod) + String(" Breath left")
+        nameLabel.text = String(exercisePeriod) + String(" Breaths left")
         exercisePeriod = (exercise.repetitions)!
         
         progressBarView.value = 0
@@ -124,7 +124,12 @@ class TimerBasedNormalMode: UIViewController {
         
         nextStep = (exercise.sequence?[step])!
         
-        nameLabel.text = String(exercisePeriod) + String(" Breath left")
+        if (exercisePeriod == 1) {
+            nameLabel.text = String(exercisePeriod) + String(" Breath left")
+        }
+        else {
+            nameLabel.text = String(exercisePeriod) + String(" Breaths left")
+        }
         
         
         let instruction = String(nextStep[0] as! Character)
