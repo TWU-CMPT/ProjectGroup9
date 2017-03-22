@@ -53,8 +53,9 @@ class TimerBasedViewController: UIViewController {
         }
         
         breathPattern = (exercise.repetitions)!
-        patternLabel.text = String(String(breathPattern) + " Breath left")
+        patternLabel.text = String(String(breathPattern) + " Breaths left")
         ProgressBarView.value = 0
+        self.title = exercise.name
     }
     
     @IBAction func Holddown(_ sender: UIButton) {
@@ -73,7 +74,7 @@ class TimerBasedViewController: UIViewController {
             //error checking
             timer3.invalidate()
             TimerLabel.text = errDet
-            patternLabel.text = String(String(breathPattern) + " Breath left")
+            patternLabel.text = String(String(breathPattern) + " Breaths left")
             UIView.animate(withDuration: 1.0, delay: 0.0, options: .beginFromCurrentState, animations: {
                 self.ProgressBarView.value = 0
             }, completion: nil)
@@ -83,7 +84,7 @@ class TimerBasedViewController: UIViewController {
         
         else if(breathPattern == 0){
             //End checking
-            patternLabel.text = String(String(breathPattern) + " Breath left")
+            patternLabel.text = String(String(breathPattern) + " Breaths left")
             print("Exercise Ends here")
             step  = 0
             //Adding the method for result screen later...
@@ -104,7 +105,7 @@ class TimerBasedViewController: UIViewController {
                 self.ProgressBarView.value = 0
             }, completion:  ({finished in
                 if(finished){
-                    self.patternLabel.text = String(String(self.breathPattern) + " Breath left")
+                    self.patternLabel.text = String(String(self.breathPattern) + " Breaths left")
                     self.step = 0
                     if(self.breathHold2 != 0){
                         //waiting method(possible to add later)
@@ -131,7 +132,13 @@ class TimerBasedViewController: UIViewController {
             
             time = breathIn
             TimerLabel.text = inText
-            patternLabel.text = String(String(breathPattern) + " Breath left")
+            if (breathPattern == 1) {
+                patternLabel.text = String(String(breathPattern) + " Breath left")
+            }
+            else {
+                patternLabel.text = String(String(breathPattern) + " Breaths left")
+            }
+            
             print(breathPattern)
             
             timer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathInControl), userInfo: nil, repeats: true)
