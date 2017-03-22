@@ -58,8 +58,10 @@ class TimerBasedNormalMode: UIViewController {
         numSteps = (exercise.sequence?.count)!
         nextStep = (exercise.sequence?[step])!
         
-        nameLabel.text = String(exercisePeriod) + String(" left")
+        nameLabel.text = String(exercisePeriod) + String(" Breath left")
         exercisePeriod = (exercise.repetitions)!
+        
+        progressBarView.value = 0
         
         
     }
@@ -95,7 +97,7 @@ class TimerBasedNormalMode: UIViewController {
     func tick() {
         stepTime -= 1
         
-        timerLabel.text = String(stepTime)
+        timerLabel.text = String(Int(stepTime))
         
         if (stepTime <= 0) {
             timer.invalidate()
@@ -122,7 +124,7 @@ class TimerBasedNormalMode: UIViewController {
         
         nextStep = (exercise.sequence?[step])!
         
-        nameLabel.text = String(exercisePeriod) + String(" left")
+        nameLabel.text = String(exercisePeriod) + String(" Breath left")
         
         
         let instruction = String(nextStep[0] as! Character)
@@ -161,6 +163,7 @@ class TimerBasedNormalMode: UIViewController {
     func startExercise() {
         timerLabel.text = String(startTime)
         startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tickS),userInfo: nil, repeats: true)
+        stateButton.setTitle("STOP", for: .normal)
         
     }
     
@@ -170,9 +173,10 @@ class TimerBasedNormalMode: UIViewController {
         startTimer.invalidate()
         self.progressBarView.value = 0
         startTime = 3
-        nameLabel.text = String(exercisePeriod) + String(" left")
+        nameLabel.text = String(exercisePeriod) + String(" Breath left")
         timerLabel.text = String("Breathify")
         step = 0
+        stateButton.setTitle("START", for: .normal)
     }
     
     func resetExercise() {

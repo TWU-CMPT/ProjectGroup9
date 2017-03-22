@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="4171" y="-823"/>
         </scene>
-        <!--Timer Mode View Controller-->
+        <!--Select Mode-->
         <scene sceneID="C6s-hd-4zs">
             <objects>
-                <viewController id="oun-rF-qjm" customClass="TimerModeViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Select Mode" id="oun-rF-qjm" customClass="TimerModeViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DO4-n1-b33"/>
                         <viewControllerLayoutGuide type="bottom" id="Zb2-WK-wFT"/>
@@ -305,17 +305,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asG-QP-YZn">
-                                <rect key="frame" x="123" y="199" width="93" height="39"/>
+                                <rect key="frame" x="20" y="273" width="374" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <state key="normal" title="Normal Mode"/>
                                 <connections>
                                     <segue destination="sM7-HZ-cGz" kind="show" identifier="timerNormalMode" id="JPM-O3-BrM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySn-qM-b1t">
-                                <rect key="frame" x="132" y="461" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySn-qM-b1t">
+                                <rect key="frame" x="20" y="396" width="374" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Press Hold"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Touch Mode"/>
                                 <connections>
                                     <segue destination="6Td-Yy-CEW" kind="show" identifier="pressHoldMode" id="f4y-6c-BBO"/>
                                 </connections>
@@ -326,12 +328,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7L2-2N-Ayf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3364" y="-321"/>
+            <point key="canvasLocation" x="3363.7681159420295" y="-321.19565217391306"/>
         </scene>
-        <!--Timer Based Normal Mode-->
+        <!--4/7/8 Exercise-->
         <scene sceneID="As1-ei-bCI">
             <objects>
-                <viewController id="sM7-HZ-cGz" customClass="TimerBasedNormalMode" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="4/7/8 Exercise" id="sM7-HZ-cGz" customClass="TimerBasedNormalMode" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QXl-hR-iWn"/>
                         <viewControllerLayoutGuide type="bottom" id="yZj-ob-mrh"/>
