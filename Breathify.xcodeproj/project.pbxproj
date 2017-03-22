@@ -23,6 +23,15 @@
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
+		9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED441E833D260032C8E5 /* LoginViewController.swift */; };
+		9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */; };
+		9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */; };
+		9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED471E833D260032C8E5 /* TabViewController.swift */; };
+		9BC9ED4E1E833D370032C8E5 /* CreateOnlineUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */; };
+		9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */; };
+		9BC9ED521E833DC10032C8E5 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */; };
+		9BC9ED531E833DC10032C8E5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED511E833DC10032C8E5 /* UserProfile.swift */; };
+		9BC9ED551E833E400032C8E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */; };
 		A26FD11593EF697322529E23 /* Pods_BreathifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */; };
 		A3774EEA3F571DE47C5779A5 /* Pods_Breathify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE849FB3E37FD798EA5AE03E /* Pods_Breathify.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +80,15 @@
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
+		9BC9ED441E833D260032C8E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
+		9BC9ED471E833D260032C8E5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOnlineUserViewController.swift; sourceTree = "<group>"; };
+		9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BC9ED511E833DC10032C8E5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEFEE57CCE61EA1C879F7063 /* Pods-Breathify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.release.xcconfig"; sourceTree = "<group>"; };
 		B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C6F899DE743A1D06BB043 /* Pods-BreathifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +158,7 @@
 		8986A53D1E67941000665557 /* Breathify */ = {
 			isa = PBXGroup;
 			children = (
+				9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
@@ -150,6 +169,14 @@
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
+				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
+				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
+				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
+				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
+				9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */,
+				9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */,
+				9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */,
+				9BC9ED511E833DC10032C8E5 /* UserProfile.swift */,
 				8986A5471E67941000665557 /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
@@ -306,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				891317891E6D570400C11D71 /* Main.storyboard in Resources */,
+				9BC9ED551E833E400032C8E5 /* GoogleService-Info.plist in Resources */,
 				8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */,
 				8986A5481E67941000665557 /* Assets.xcassets in Resources */,
 			);
@@ -470,16 +498,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
 				891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */,
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
+				9BC9ED4E1E833D370032C8E5 /* CreateOnlineUserViewController.swift in Sources */,
+				9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */,
+				9BC9ED531E833DC10032C8E5 /* UserProfile.swift in Sources */,
 				96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */,
+				9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */,
+				9BC9ED521E833DC10032C8E5 /* UserCollectionViewCell.swift in Sources */,
 				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
+				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,
+				9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
