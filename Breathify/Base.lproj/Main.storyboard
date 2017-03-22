@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m5c-qT-ds9" id="hbY-gU-QwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-Mo-Ow1">
@@ -308,6 +308,9 @@
                                 <rect key="frame" x="123" y="199" width="93" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Normal Mode"/>
+                                <connections>
+                                    <segue destination="sM7-HZ-cGz" kind="show" identifier="timerNormalMode" id="JPM-O3-BrM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySn-qM-b1t">
                                 <rect key="frame" x="132" y="461" width="75" height="30"/>
@@ -325,18 +328,42 @@
             </objects>
             <point key="canvasLocation" x="3364" y="-321"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer Based Normal Mode-->
         <scene sceneID="As1-ei-bCI">
             <objects>
-                <viewController id="sM7-HZ-cGz" sceneMemberID="viewController">
+                <viewController id="sM7-HZ-cGz" customClass="TimerBasedNormalMode" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QXl-hR-iWn"/>
                         <viewControllerLayoutGuide type="bottom" id="yZj-ob-mrh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="O3q-zX-98t">
+                    <view key="view" contentMode="scaleToFill" id="O3q-zX-98t" customClass="MBCircularProgressBarView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                <real key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                <real key="value" value="35"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
+                                <real key="value" value="75"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6g1-lA-Fj9" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,6 +29,12 @@ class TimerModeViewController: UIViewController {
             newView.exercise = self.exercise
         
         }
+        else if(segue.identifier == "timerNormalMode") {
+            let newView = segue.destination as! TimerBasedNormalMode
+            
+            newView.exercise = self.exercise
+            
+        }
     }
     
 }
