@@ -36,6 +36,7 @@ class TimerBasedViewController: UIViewController {
     var breathHold2:Double = 0
     var nextStep:[Any] = []
     var step:Int = 0
+    var isHold:Int = 0
     
     @IBOutlet weak var ProgressBarView: MBCircularProgressBarView!
     @IBOutlet weak var TimerLabel: UILabel!
@@ -69,7 +70,7 @@ class TimerBasedViewController: UIViewController {
         
         timer.invalidate()
         
-        if(time != 0){
+        if((time != 1) || (isHold == 0)){
             //error checking
             timer3.invalidate()
             TimerLabel.text = errDet
@@ -96,7 +97,7 @@ class TimerBasedViewController: UIViewController {
             //Breath Out Process
             TimerLabel.text = outText
             time = breathOut
-            temp = breathOut + 1
+            temp = breathOut
         
             timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathOutControl), userInfo: nil, repeats: true)
         
@@ -105,6 +106,7 @@ class TimerBasedViewController: UIViewController {
             }, completion:  ({finished in
                 if(finished){
                     self.patternLabel.text = String(String(self.breathPattern) + " Breath left")
+                    self.isHold = 0
                     self.step = 0
                     if(self.breathHold2 != 0){
                         //waiting method(possible to add later)
@@ -136,7 +138,7 @@ class TimerBasedViewController: UIViewController {
             
             timer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.BreathInControl), userInfo: nil, repeats: true)
             
-            UIView.animate(withDuration: breathIn + 1, delay: 0.0, options: .beginFromCurrentState, animations: {
+            UIView.animate(withDuration: breathIn, delay: 0.0, options: .beginFromCurrentState, animations: {
                 self.ProgressBarView.value = 100
             }, completion: ({finished in
                 if(finished){
@@ -144,6 +146,8 @@ class TimerBasedViewController: UIViewController {
                     self.step += 1
                     self.nextStep = (self.exercise.sequence?[self.step])!
                     self.breathHold = Double(self.nextStep[1] as! Int)
+                    
+                    self.isHold = 1
                     
                     if(self.breathHold != 0){
                         
@@ -166,9 +170,9 @@ class TimerBasedViewController: UIViewController {
     }
     
     func BreathInControl(){
-        if(time > 0){
-            TimerLabel.text = String(Int(time))
+        if(time > 1){
             time -= 1
+            TimerLabel.text = String(Int(time))
         }
         else{
             timer3.invalidate()
@@ -178,9 +182,10 @@ class TimerBasedViewController: UIViewController {
 
     
     func BreathOutControl(){
-        if(time > 0){
-            TimerLabel.text = String(Int(time))
+        if(time > 1){
             time -= 1
+            TimerLabel.text = String(Int(time))
+            
         }
         else{
             if(breathPattern == 0){
@@ -200,9 +205,10 @@ class TimerBasedViewController: UIViewController {
     }
     
     func BreathHoldControl(){
-        if(time > 0){
-            TimerLabel.text = String(Int(time))
+        if(time > 1){
             time -= 1
+            TimerLabel.text = String(Int(time))
+            
         }
         else{
             TimerLabel.text = String("Release to Breath Out")
