@@ -588,7 +588,7 @@
         <!--Tab View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabHome" id="49e-Tb-3d3" customClass="TabViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kFr-vV-TjX"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -806,6 +806,9 @@
                     <navigationItem key="navigationItem" title="Profile" id="cj0-Nl-EO9"/>
                     <connections>
                         <outlet property="nameLabel" destination="LBc-LP-5Iz" id="cS6-MM-CbV"/>
+                        <segue destination="5xv-KC-rhC" kind="show" identifier="logIn" id="hf7-BC-7ms"/>
+                        <segue destination="8tj-3J-SQT" kind="show" identifier="settings" id="QVT-bZ-hrk"/>
+                        <segue destination="Enu-wO-evE" kind="showDetail" identifier="userSelect" id="Mxu-2Q-ZCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJy-tE-VH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1054,4 +1057,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hf7-BC-7ms"/>
+    </inferredMetricsTieBreakers>
 </document>
