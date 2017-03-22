@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Breathify.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE098B40659191F4D80BA799F210E798</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>CAC840DD7C14BED838F74AD37CD7CBBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EB0961CD8173CE023560580FBF74CFC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED7E1CDD8CFD01D6C5CABE4297EB2A78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F579AA4D4755DD9570010BC36D0422F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
