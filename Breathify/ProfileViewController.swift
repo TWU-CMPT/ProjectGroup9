@@ -8,11 +8,36 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    
-//    // Temporary hardcoded user
-//    var userprofile:UserProfile = UserProfile(name:"Joe Joe", username:"JoeX2", password:"testtest", email:"test@test.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
     var userprofile: UserProfile = UserProfile()
+    
+    let profileData:[[String]] = [["Settings", "Log In", "Log Out"]]
+    let profileHeader:[String] = ["Account"]
+    let cellIdentifiers:[[String]] = [["settings", "logIn", "userSelect"]]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileData[section].count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return profileData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
+        cell.textLabel?.text = profileData[indexPath.section][indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return profileHeader[section]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = cellIdentifiers[indexPath.section][indexPath.row]
+        self.performSegue(withIdentifier: vc, sender: nil)
+    }
 
     // Variables labels to display user information
     @IBOutlet weak var nameLabel: UILabel!
@@ -48,13 +73,18 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-     
-     if (segue.identifier == "editProfile") {
-        // pass on user to next view
-        let newView = segue.destination as! EditProfileViewController
-        newView.user = userprofile
-     }
-}
-
-
+        if (segue.identifier == "editProfile") {
+            // pass on user to next view
+            let newView = segue.destination as! EditProfileViewController
+            newView.user = userprofile
+        }
+        else if (segue.identifier == "settings") {
+            let newView = segue.destination as! EditProfileViewController
+            newView.user = userprofile
+        }
+        else if (segue.identifier == "logIn") {
+            let newView = segue.destination as! LoginViewController
+            newView.userprofile = userprofile
+        }
+    }
 }
