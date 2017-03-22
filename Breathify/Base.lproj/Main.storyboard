@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m5c-qT-ds9" id="hbY-gU-QwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-Mo-Ow1">
@@ -339,7 +339,39 @@
                     <view key="view" contentMode="scaleToFill" id="O3q-zX-98t" customClass="MBCircularProgressBarView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#/#/# Breath exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFm-uJ-LRu">
+                                <rect key="frame" x="20" y="72" width="374" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Breathify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRP-Vp-7PK">
+                                <rect key="frame" x="20" y="289" width="374" height="158"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJU-y4-5Xp">
+                                <rect key="frame" x="20" y="580" width="374" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="didPressState:" destination="sM7-HZ-cGz" eventType="touchUpInside" id="q52-FZ-NEb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yZj-ob-mrh" firstAttribute="top" secondItem="MJU-y4-5Xp" secondAttribute="bottom" constant="30" id="5EG-vY-wvi"/>
+                            <constraint firstItem="MJU-y4-5Xp" firstAttribute="leading" secondItem="O3q-zX-98t" secondAttribute="leadingMargin" id="6dN-a6-Jc0"/>
+                            <constraint firstItem="bRP-Vp-7PK" firstAttribute="centerX" secondItem="O3q-zX-98t" secondAttribute="centerX" id="8Px-rQ-4Fo"/>
+                            <constraint firstItem="bRP-Vp-7PK" firstAttribute="centerY" secondItem="O3q-zX-98t" secondAttribute="centerY" id="ISq-as-Cgf"/>
+                            <constraint firstItem="FFm-uJ-LRu" firstAttribute="top" secondItem="QXl-hR-iWn" secondAttribute="bottom" constant="8" id="NRl-O5-S5X"/>
+                            <constraint firstItem="FFm-uJ-LRu" firstAttribute="trailing" secondItem="O3q-zX-98t" secondAttribute="trailingMargin" id="O7c-Cs-PRB"/>
+                            <constraint firstItem="FFm-uJ-LRu" firstAttribute="leading" secondItem="O3q-zX-98t" secondAttribute="leadingMargin" id="XwH-mg-6xv"/>
+                            <constraint firstItem="MJU-y4-5Xp" firstAttribute="trailing" secondItem="O3q-zX-98t" secondAttribute="trailingMargin" id="rMv-bW-2Bg"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
@@ -365,10 +397,16 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="FFm-uJ-LRu" id="V6p-fw-tyc"/>
+                        <outlet property="progressBarView" destination="O3q-zX-98t" id="dey-XD-0hJ"/>
+                        <outlet property="stateButton" destination="MJU-y4-5Xp" id="jJy-3s-EjN"/>
+                        <outlet property="timerLabel" destination="bRP-Vp-7PK" id="hg0-1v-89o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6g1-lA-Fj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4166" y="69"/>
+            <point key="canvasLocation" x="4165.217391304348" y="68.478260869565219"/>
         </scene>
         <!--Resources View Controller-->
         <scene sceneID="wg7-f3-ORb">
