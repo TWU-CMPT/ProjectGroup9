@@ -8,6 +8,7 @@ target 'Breathify' do
   # Pods for Breathify
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'MBCircularProgressBar'
 
   target 'BreathifyTests' do

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class Exercise {
     
@@ -17,6 +19,7 @@ class Exercise {
     var feedback:[Feedback]?
     var sequence:[[Any]]?
     var repetitions:Int?
+    let ref: FIRDatabaseReference?
     
     
     // Default constructor
@@ -24,6 +27,7 @@ class Exercise {
         self.name = ""
         self.rating = 0
         self.description = ""
+        self.ref = nil
     }
     
     // Constructor for offline sequence-less exercise
@@ -31,6 +35,7 @@ class Exercise {
         self.name = name
         self.rating = rating
         self.description = description
+        self.ref = nil
     }
     
     // Constructor for offline exercise
@@ -38,8 +43,9 @@ class Exercise {
         self.name = name
         self.rating = rating
         self.description = description
-        self.sequence = parseSequence(sequence: sequence)
         self.repetitions = repetitions
+        self.ref = nil
+        self.sequence = parseSequence(sequence: sequence)
     }
     
     // Constructor for online sequence-less exercise
@@ -49,6 +55,7 @@ class Exercise {
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
+        self.ref = nil
     }
     
     // Constructor for online exercise
@@ -58,8 +65,22 @@ class Exercise {
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
-        self.sequence = parseSequence(sequence: sequence)
         self.repetitions = repetitions
+        self.ref = nil
+        self.sequence = parseSequence(sequence: sequence)
+    }
+    
+    // Constructor for Firebase exercises
+    init(snapshot: FIRDataSnapshot) {
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        name = snapshotValue["name"] as! String
+        self.rating = 0
+        avgRating = snapshotValue["avgRating"] as? Float
+        description = snapshotValue["description"] as! String
+        let unparsedSequence: String = snapshotValue["sequence"] as! String
+        repetitions = snapshotValue["repetitions"] as? Int
+        ref = snapshot.ref
+        self.sequence = parseSequence(sequence: unparsedSequence)
     }
     
     // Parses sequence from String

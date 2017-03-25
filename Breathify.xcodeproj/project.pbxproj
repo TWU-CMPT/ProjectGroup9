@@ -158,28 +158,18 @@
 		8986A53D1E67941000665557 /* Breathify */ = {
 			isa = PBXGroup;
 			children = (
-				9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */,
+				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
-				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
-				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
-				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
-				8986A5421E67941000665557 /* ResourcesViewController.swift */,
-				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
-				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
-				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
-				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
-				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
-				9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */,
-				9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */,
 				9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */,
 				9BC9ED511E833DC10032C8E5 /* UserProfile.swift */,
 				8986A5471E67941000665557 /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
+				9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */,
 				8986A54C1E67941000665557 /* Info.plist */,
 			);
 			path = Breathify;
@@ -201,6 +191,24 @@
 				8986A5621E67941100665557 /* Info.plist */,
 			);
 			path = BreathifyUITests;
+			sourceTree = "<group>";
+		};
+		9B68F4851E85E77500DE1E36 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */,
+				9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */,
+				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
+				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
+				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
+				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
+				8986A5421E67941000665557 /* ResourcesViewController.swift */,
+				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
+				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
+				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
+				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		C02A9AE2186BD20ECB1C2118 /* Pods */ = {
