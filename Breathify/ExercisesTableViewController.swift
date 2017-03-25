@@ -20,17 +20,18 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
     
     var selectedRow = 0
     var exercises:[Exercise] = []
+    var user: UserProfile = UserProfile()
     // Firebase database reference
     let ref = FIRDatabase.database().reference(withPath: "Exercise")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
+                
+        // Single offline exercise
         exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2))
 
+        // Load exercises from Firebase
         ref.observe(.value, with: { snapshot in
             print(snapshot.value!)
             var newExercises: [Exercise] = []
@@ -43,6 +44,10 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
             self.exercises = newExercises
             self.exerciseTableView.reloadData()
         })
+        
+        // Load in user from Tab Bar Controller
+        let tbvc = self.tabBarController as? TabViewController
+        user = (tbvc?.user)!
     }
     
     // On returning to table view
@@ -96,6 +101,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
                 
                 selectedRow = indexPath.row
                 newView.exercise = exercises[selectedRow]
+                newView.user = user
             }
         }
     }

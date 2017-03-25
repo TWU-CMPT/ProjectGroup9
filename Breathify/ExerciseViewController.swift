@@ -10,7 +10,10 @@ import UIKit
 
 class ExerciseViewController: UIViewController {
     
+    // MARK: Properties
+    
     var exercise:Exercise = Exercise()
+    var user: UserProfile = UserProfile()
     
     // Rating star assets
     let filledStar = UIImage(named: "filled_star")
@@ -37,6 +40,7 @@ class ExerciseViewController: UIViewController {
     // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
         exercise.rating = rating
+        //var feedback = Feedback(username: user.name, rating: rating, comment: "")
         
         btnRating1.setImage(emptyStar, for: .normal)
         btnRating2.setImage(emptyStar, for: .normal)
