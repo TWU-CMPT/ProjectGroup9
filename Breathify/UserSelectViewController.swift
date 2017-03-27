@@ -15,7 +15,7 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
     // MARK: Outlets
     @IBOutlet weak var UserCollectionView: UICollectionView!
     
-    // MARK: Temporary hard-coded user
+    // MARK: Temporary hard-coded users
     
     var users = [UserProfile(name:"Joe Joe", username:"JoeX2", password:"testtest", email:"test@test.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true), UserProfile(name:"Jim Jim", username:"JimX2", password:"testtest", email:"test2@test.com", id:1234, gender:"Male", optStatus:true, onlineStatus:true)]
 
@@ -67,6 +67,7 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
                 let cell = sender as? UserCollectionViewCell
                 let indexPath = UserCollectionView.indexPath(for: cell!)
                 
+                // lets the tab bar controller know which user has been selected
                 if let indexPath = indexPath {
                     let vc = segue.destination as? TabViewController
                     vc?.user = users[indexPath.row]

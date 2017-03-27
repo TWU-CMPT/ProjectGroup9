@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class Exercise {
     
@@ -17,6 +19,8 @@ class Exercise {
     var feedback:[Feedback]?
     var sequence:[[Any]]?
     var repetitions:Int?
+    var key: String
+    let ref: FIRDatabaseReference?
     
     
     // Default constructor
@@ -24,6 +28,8 @@ class Exercise {
         self.name = ""
         self.rating = 0
         self.description = ""
+        self.key = ""
+        self.ref = nil
     }
     
     // Constructor for offline sequence-less exercise
@@ -31,6 +37,8 @@ class Exercise {
         self.name = name
         self.rating = rating
         self.description = description
+        self.key = ""
+        self.ref = nil
     }
     
     // Constructor for offline exercise
@@ -38,8 +46,10 @@ class Exercise {
         self.name = name
         self.rating = rating
         self.description = description
-        self.sequence = parseSequence(sequence: sequence)
         self.repetitions = repetitions
+        self.key = ""
+        self.ref = nil
+        self.sequence = parseSequence(sequence: sequence)
     }
     
     // Constructor for online sequence-less exercise
@@ -49,6 +59,8 @@ class Exercise {
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
+        self.ref = nil
+        self.key = ""
     }
     
     // Constructor for online exercise
@@ -58,8 +70,30 @@ class Exercise {
         self.avgRating = avgRating
         self.description = description
         self.feedback = feedback
-        self.sequence = parseSequence(sequence: sequence)
         self.repetitions = repetitions
+        self.key = ""
+        self.ref = nil
+        self.sequence = parseSequence(sequence: sequence)
+    }
+    
+    // Constructor for Firebase exercises
+    init(snapshot: FIRDataSnapshot) {
+        
+        // set FIRDatabaseReference's
+        ref = snapshot.ref
+        let feedbackRef = ref?.child("feedback")
+        
+        // use snapshotValue to initialize properties
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        key = snapshot.key
+        name = snapshotValue["name"] as! String
+        self.rating = 0
+        avgRating = snapshotValue["avgRating"] as? Float
+        description = snapshotValue["description"] as! String
+        repetitions = snapshotValue["repetitions"] as? Int
+        let unparsedSequence: String = snapshotValue["sequence"] as! String
+        self.sequence = parseSequence(sequence: unparsedSequence)
+        feedback = loadFeedback(ref: feedbackRef!)
     }
     
     // Parses sequence from String
@@ -75,5 +109,22 @@ class Exercise {
         }
         
         return seq
+    }
+    
+    // Load items from Firebase Feedback array
+    func loadFeedback(ref:FIRDatabaseReference) -> [Feedback] {
+        
+        var newFeedback: [Feedback] = []
+        
+        ref.observe(.value, with: { snapshot in
+            print(snapshot.value!)
+            
+            for item in snapshot.children {
+                let feedbackItem = Feedback(snapshot: item as! FIRDataSnapshot)
+                newFeedback.append(feedbackItem)
+            }
+        })
+        
+        return newFeedback
     }
 }

@@ -10,8 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var userprofile: UserProfile = UserProfile()
+    // MARK: Properties
     
+    var user: UserProfile = UserProfile()
+    
+    // table cells
     let profileData:[[String]] = [["Settings", "Log In", "Log Out"]]
     let profileHeader:[String] = ["Account"]
     let cellIdentifiers:[[String]] = [["settings", "logIn", "userSelect"]]
@@ -47,10 +50,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
         // Load in user from Tab Bar Controller
         let tbvc = self.tabBarController as? TabViewController
-        userprofile = (tbvc?.user)!
+        user = (tbvc?.user)!
         
         // Set user's name Label
-        nameLabel.text = userprofile.name
+        nameLabel.text = user.name
     }
     
     // On returning to table view
@@ -58,7 +61,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(true)
         
         // Reload data that may have changed in detailed view
-        nameLabel.text = userprofile.name
+        nameLabel.text = user.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,15 +79,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         if (segue.identifier == "editProfile") {
             // pass on user to next view
             let newView = segue.destination as! EditProfileViewController
-            newView.user = userprofile
+            newView.user = user
         }
         else if (segue.identifier == "settings") {
             let newView = segue.destination as! EditProfileViewController
-            newView.user = userprofile
+            newView.user = user
         }
         else if (segue.identifier == "logIn") {
             let newView = segue.destination as! LoginViewController
-            newView.userprofile = userprofile
+            newView.userprofile = user
         }
     }
 }
