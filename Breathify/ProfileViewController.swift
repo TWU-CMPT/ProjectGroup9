@@ -87,7 +87,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         else if (segue.identifier == "logIn") {
             let newView = segue.destination as! LoginViewController
-            newView.userprofile = user
+            newView.user = user
         }
     }
 }

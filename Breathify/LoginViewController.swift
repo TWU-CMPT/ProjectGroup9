@@ -13,7 +13,7 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     
     // MARK: Properties
-    var userprofile : UserProfile = UserProfile()
+    var user : UserProfile = UserProfile()
     
     // MARK: Outlets
     @IBOutlet weak var emailField: UITextField!
@@ -62,8 +62,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        emailField.text = userprofile.email
-        passwordField.text = userprofile.password
+        emailField.text = user.email
+        passwordField.text = user.password
     }
 
     override func didReceiveMemoryWarning() {

@@ -32,4 +32,12 @@ class Feedback {
         key = snapshot.key
         ref = snapshot.ref
     }
+    
+    func toAnyObject() -> Any {
+        return [
+            "username": username,
+            "rating": rating,
+            "comment": comment ?? ""
+        ]
+    }
 }
