@@ -40,7 +40,7 @@ class ExerciseViewController: UIViewController {
     // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
         exercise.rating = rating
-        //var feedback = Feedback(username: user.name, rating: rating, comment: "")
+        //feedback = Feedback(username: user.name, rating: rating, comment: "")
         
         btnRating1.setImage(emptyStar, for: .normal)
         btnRating2.setImage(emptyStar, for: .normal)

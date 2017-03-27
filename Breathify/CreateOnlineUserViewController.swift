@@ -13,7 +13,7 @@ import FirebaseAuth
 class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
-    var userprofile: UserProfile = UserProfile()
+    var user: UserProfile = UserProfile()
     
     // MARK: Outlets
     @IBOutlet weak var emailField: UITextField!
@@ -34,8 +34,8 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
                 
                 if error == nil {
                     print("You have successfully signed up")
-                    self.userprofile.email = self.emailField.text!
-                    self.userprofile.password = self.passwordField.text!
+                    self.user.email = self.emailField.text!
+                    self.user.password = self.passwordField.text!
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabHome")
                     self.present(vc!, animated: true, completion: nil)

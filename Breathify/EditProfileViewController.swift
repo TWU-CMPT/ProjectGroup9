@@ -111,11 +111,11 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         // pass on user to next views
         if (segue.identifier == "createOnlineUser") {
             let newView = segue.destination as! CreateOnlineUserViewController
-            newView.userprofile = user
+            newView.user = user
         }
         if (segue.identifier == "login") {
             let newView = segue.destination as! LoginViewController
-            newView.userprofile = user
+            newView.user = user
         }
     }
  
