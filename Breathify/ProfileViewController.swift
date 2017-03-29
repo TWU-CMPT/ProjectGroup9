@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -15,9 +17,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var user: UserProfile = UserProfile()
     
     // table cells
-    let profileData:[[String]] = [["Settings", "Log In", "Log Out"]]
+    let profileData:[[String]] = [["Settings", "Log In", "Log Out", "Register"]]
     let profileHeader:[String] = ["Account"]
-    let cellIdentifiers:[[String]] = [["settings", "logIn", "userSelect"]]
+    let cellIdentifiers:[[String]] = [["settings", "logIn", "userSelect","createOnlineUser"]]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileData[section].count
@@ -74,19 +76,33 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "editProfile") {
-            // pass on user to next view
-            let newView = segue.destination as! EditProfileViewController
-            newView.user = user
-        }
-        else if (segue.identifier == "settings") {
+        
+        if (segue.identifier == "settings") {
             let newView = segue.destination as! EditProfileViewController
             newView.user = user
         }
         else if (segue.identifier == "logIn") {
             let newView = segue.destination as! LoginViewController
+            newView.user = user
+        }
+        else if (segue.identifier == "userSelect") {
+            if FIRAuth.auth()?.currentUser != nil {
+                do {
+                    try FIRAuth.auth()?.signOut()
+                    
+                    // go back to Home (maybe change to go back to user select page?)
+                    /*
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabHome")
+                    present(vc, animated: true, completion: nil)
+                    */
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        else if (segue.identifier == "createOnlineUser") {
+            let newView = segue.destination as! CreateOnlineUserViewController
             newView.user = user
         }
     }

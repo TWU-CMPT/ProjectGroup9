@@ -37,8 +37,7 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
                     self.user.email = self.emailField.text!
                     self.user.password = self.passwordField.text!
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabHome")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "Home", sender: nil)
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -67,6 +66,8 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.emailField.text = user.email
+        self.passwordField.text = user.password
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,14 +76,18 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "Home" {
+            let vc = segue.destination as! TabViewController
+            vc.user = user
+        }
     }
-    */
+    
 
 }
