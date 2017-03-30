@@ -26,6 +26,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
             
             performSegue(withIdentifier: "Save", sender: nil)
         }
+        else {
+            let alert = UIAlertController(title: "Oh no!", message: "Make sure you fill in all fields", preferredStyle: .alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(OKAction)
+            
+            self.present(alert, animated:true, completion: nil)
+        }
     }
 
     override func viewDidLoad() {

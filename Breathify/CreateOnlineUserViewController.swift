@@ -36,6 +36,7 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
                     print("You have successfully signed up")
                     self.user.email = self.emailField.text!
                     self.user.password = self.passwordField.text!
+                    self.user.optStatus = true
                     
                     self.performSegue(withIdentifier: "Home", sender: nil)
                     

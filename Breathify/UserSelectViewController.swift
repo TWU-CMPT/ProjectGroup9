@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class UserSelectViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -70,7 +72,31 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
                 // lets the tab bar controller know which user has been selected
                 if let indexPath = indexPath {
                     let vc = segue.destination as? TabViewController
-                    vc?.user = users[indexPath.row]
+                    let user = users[indexPath.row]
+                    vc?.user = user
+                    
+                    // automatically sign user into firebase if email and password field works
+                    if user.email != "" && user.password != "" {
+                        //log in
+                        FIRAuth.auth()?.signIn(withEmail: user.email!, password: user.password!) { (user, error) in
+                            
+                            if error == nil {
+                                
+                                //Print into the console if successfully logged in
+                                print("You have successfully logged in")
+                                
+                            } else {
+                                
+                                //Tells the user that there is an error and then gets firebase to tell them the error
+                                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                                
+                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(defaultAction)
+                                
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -23,6 +23,7 @@
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
+		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
 		9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED441E833D260032C8E5 /* LoginViewController.swift */; };
 		9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */; };
 		9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */; };
@@ -80,6 +81,7 @@
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
+		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
 		9BC9ED441E833D260032C8E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
 				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
+				9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */,
 				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
@@ -301,6 +304,7 @@
 				TargetAttributes = {
 					8986A53A1E67941000665557 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Q76PV6YA7W;
 						ProvisioningStyle = Automatic;
 					};
 					8986A5501E67941000665557 = {
@@ -514,6 +518,7 @@
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
 				9BC9ED4E1E833D370032C8E5 /* CreateOnlineUserViewController.swift in Sources */,
 				9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */,
+				9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */,
 				9BC9ED531E833DC10032C8E5 /* UserProfile.swift in Sources */,
 				96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */,
 				9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */,
@@ -676,6 +681,7 @@
 			baseConfigurationReference = 59372572964400DE23160A7B /* Pods-Breathify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;
@@ -689,6 +695,7 @@
 			baseConfigurationReference = AEFEE57CCE61EA1C879F7063 /* Pods-Breathify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;

@@ -11,10 +11,8 @@ import UIKit
 class UserProfile {
     
     var name:String
-    var username:String
-    var email:String
-    var password:String // used for "Remember me" option
-    var id:Int
+    var email:String?
+    var password:String? // used for "Remember me" option
     var gender:String
     var optStatus:Bool
     var onlineStatus:Bool
@@ -24,10 +22,8 @@ class UserProfile {
     
     init() {
         self.name = ""
-        self.username = ""
         self.email = ""
         self.password = ""
-        self.id = 0
         self.gender = ""
         self.optStatus = false
         self.onlineStatus = false
@@ -38,10 +34,8 @@ class UserProfile {
     
     init(name:String, username:String, password:String, email:String, id:Int, gender:String, optStatus:Bool, onlineStatus:Bool) {
         self.name = name
-        self.username = username
         self.email = email
         self.password = password
-        self.id = id
         self.gender = gender
         self.optStatus = optStatus
         self.onlineStatus = onlineStatus
