@@ -176,7 +176,9 @@ class TimerBasedNormalMode: UIViewController {
             
             break
         case "H":
-            timerLabel.text = holdText
+            if(stepTime != 0){
+                timerLabel.text = holdText
+            }
             break
         default:
             break;
@@ -185,7 +187,7 @@ class TimerBasedNormalMode: UIViewController {
         step += 1
         
         if(stepTime != 0){
-            playsound(stepPlay: stepTime)
+            //playsound(stepPlay: stepTime)
         }
         
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
