@@ -8,7 +8,7 @@
 
 import UIKit
 import MBCircularProgressBar
-
+import AVFoundation
 
 class TimerBasedNormalMode: UIViewController {
 
@@ -42,12 +42,22 @@ class TimerBasedNormalMode: UIViewController {
     var step:Int = 0
     var numSteps:Int = 0
     var nextStep:[Any] = []
-    var exercisePeriod:Int = 2
+    var exercisePeriod:Int = 0
     
     var stepTime:Double = 0
     var timer = Timer()
     var startTimer = Timer()
     var startTime:Int = 3
+    
+    var audioTimer0 = AVAudioPlayer()
+    var audioTimer1 = AVAudioPlayer()
+    var audioTimer2 = AVAudioPlayer()
+    var audioTimer3 = AVAudioPlayer()
+    var audioTimer4 = AVAudioPlayer()
+    var audioTimer5 = AVAudioPlayer()
+    var audioTimer6 = AVAudioPlayer()
+    var audioTimer7 = AVAudioPlayer()
+    var audioTimer8 = AVAudioPlayer()
     
     
     
@@ -63,6 +73,29 @@ class TimerBasedNormalMode: UIViewController {
         
         progressBarView.value = 0
         
+        do{
+            audioTimer0 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "zero", ofType: "mp3")!))
+            audioTimer0.prepareToPlay()
+            audioTimer1 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "one", ofType: "mp3")!))
+            audioTimer1.prepareToPlay()
+            audioTimer2 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "two", ofType: "mp3")!))
+            audioTimer2.prepareToPlay()
+            audioTimer3 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "three", ofType: "mp3")!))
+            audioTimer3.prepareToPlay()
+            audioTimer4 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "four", ofType: "mp3")!))
+            audioTimer4.prepareToPlay()
+            audioTimer5 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "five", ofType: "mp3")!))
+            audioTimer5.prepareToPlay()
+            audioTimer6 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "six", ofType: "mp3")!))
+            audioTimer6.prepareToPlay()
+            audioTimer7 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "seven", ofType: "mp3")!))
+            audioTimer7.prepareToPlay()
+            audioTimer8 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "eight", ofType: "mp3")!))
+            audioTimer8.prepareToPlay()
+        }
+        catch{
+            print(error)
+        }
         
     }
     
@@ -98,7 +131,9 @@ class TimerBasedNormalMode: UIViewController {
         stepTime -= 1
         
         timerLabel.text = String(Int(stepTime))
-        
+        if(stepTime != 0){
+            playsound(stepPlay: stepTime)
+        }
         if (stepTime <= 0) {
             timer.invalidate()
             exerciseStep()
@@ -149,6 +184,9 @@ class TimerBasedNormalMode: UIViewController {
         
         step += 1
         
+        if(stepTime != 0){
+            playsound(stepPlay: stepTime)
+        }
         
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         
@@ -201,5 +239,38 @@ class TimerBasedNormalMode: UIViewController {
             timerLabel.text = String(startTime)
         }
         
+    }
+    
+    func playsound(stepPlay:Double){
+        if(stepPlay == 0){
+            audioTimer0.play()
+        }
+        else if(stepPlay == 1){
+            audioTimer1.play()
+        }
+        else if(stepPlay == 2){
+            audioTimer2.play()
+        }
+        else if(stepPlay == 3){
+            audioTimer3.play()
+        }
+        else if(stepPlay == 4){
+            audioTimer4.play()
+        }
+        else if(stepPlay == 5){
+            audioTimer5.play()
+        }
+        else if(stepPlay == 6){
+            audioTimer6.play()
+        }
+        else if(stepPlay == 7){
+            audioTimer7.play()
+        }
+        else if(stepPlay == 8){
+            audioTimer8.play()
+        }
+        else{
+            //audioTimer0.play()
+        }
     }
 }
