@@ -16,6 +16,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var user: UserProfile = UserProfile()
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var ProfilePicture: UIImageView!
+    
     // table cells
     let profileData:[[String]] = [["Settings", "Log In", "Log Out", "Register"]]
     let profileHeader:[String] = ["Account"]
@@ -56,6 +60,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Set user's name Label
         nameLabel.text = user.name
+        ProfilePicture.image = user.profilePicture
     }
     
     // On returning to table view

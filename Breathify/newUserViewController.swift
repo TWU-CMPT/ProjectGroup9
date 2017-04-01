@@ -8,7 +8,7 @@
 
 import UIKit
 
-class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
     
@@ -23,6 +23,19 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // MARK: Actions
     
+    @IBAction func selectPhoto(_ sender: UITapGestureRecognizer) {
+        
+        // Hide keyboard
+        NameField.resignFirstResponder()
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        
+        imagePickerController.delegate = self
+        present(imagePickerController, animated:true, completion: nil)
+        
+    }
+
     @IBAction func Continue(_ sender: Any) {
         
         if NameField.text == "" {
@@ -48,6 +61,24 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
+    // MARK: UIImagePickerController Delegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        //dismiss the picker if the user cancels
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        ProfilePicture.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // UIPickerView Protocol
     
     // the number of components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -65,8 +96,8 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // set user's gender from UIPickerView
         user.gender = pickerData[row]
-        print(pickerData[row])
     }
     
     override func viewDidLoad() {

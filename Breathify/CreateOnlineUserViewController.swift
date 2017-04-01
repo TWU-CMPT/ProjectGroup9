@@ -9,11 +9,14 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
     var user: UserProfile = UserProfile()
+    let ref = FIRDatabase.database().reference(withPath: "User")
+    let storage = FIRStorage.storage()
     
     // MARK: Outlets
     @IBOutlet weak var emailField: UITextField!
@@ -32,15 +35,23 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
         } else {
             FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
                 
+                // Register successful
                 if error == nil {
                     print("You have successfully signed up")
-                    self.user.email = self.emailField.text!
-                    self.user.password = self.passwordField.text!
-                    self.user.optStatus = true
+                    self.user.setEmail(newEmail: self.emailField.text!)
+                    self.user.setPassword(newPassword: self.passwordField.text!)
+                    
+                    let userRef = self.ref.child((user?.uid)!)
+                    userRef.setValue(self.user.toAnyObject())
+                    
+                    // upload profile picture to Firebase Storage
+                    let data = UIImageJPEGRepresentation(self.user.profilePicture, 1)
+                    self.storage.reference().child("images/\(FIRAuth.auth()?.currentUser?.uid).jpg").put(data!, metadata: nil)
                     
                     self.performSegue(withIdentifier: "Home", sender: nil)
-                    
-                } else {
+                }
+                // Not successful
+                else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
