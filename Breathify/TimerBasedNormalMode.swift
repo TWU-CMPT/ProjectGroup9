@@ -48,7 +48,7 @@ class TimerBasedNormalMode: UIViewController {
     var timer = Timer()
     var startTimer = Timer()
     var startTime:Int = 3
-    var muteControl:Int = 0
+    var muteControl:Int = 1
     
     var audioTimer0 = AVAudioPlayer()
     var audioTimer1 = AVAudioPlayer()
@@ -106,6 +106,13 @@ class TimerBasedNormalMode: UIViewController {
         }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopTimerNotification"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if(self.isMovingFromParentViewController){
+            timer.invalidate()
+        }
     }
     
     
@@ -301,4 +308,6 @@ class TimerBasedNormalMode: UIViewController {
     func StopTimerNotification(){
         timer.invalidate()
     }
+    
+    
 }
