@@ -48,6 +48,7 @@ class TimerBasedNormalMode: UIViewController {
     var timer = Timer()
     var startTimer = Timer()
     var startTime:Int = 3
+    var muteControl:Int = 0
     
     var audioTimer0 = AVAudioPlayer()
     var audioTimer1 = AVAudioPlayer()
@@ -139,7 +140,7 @@ class TimerBasedNormalMode: UIViewController {
         stepTime -= 1
         
         timerLabel.text = String(Int(stepTime))
-        if(stepTime != 0){
+        if(stepTime != 0 && muteControl == 1){
             playsound(stepPlay: stepTime)
         }
         if (stepTime <= 0) {
@@ -179,16 +180,23 @@ class TimerBasedNormalMode: UIViewController {
         case "I":
             barValue = 100
             timerLabel.text = inText
-            audioTimerIn.play()
+            if(muteControl == 1){
+                audioTimerIn.play()
+            }
             break
         case "O":
             barValue = 0
             timerLabel.text = outText
-            audioTimerOut.play()
+            if(muteControl == 1){
+                audioTimerOut.play()
+            }
             break
         case "H":
             if(stepTime != 0){
                 timerLabel.text = holdText
+            }
+            if(stepTime != 0 && muteControl == 1){
+                
                 audioTimerHold.play()
             }
             break
