@@ -43,7 +43,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         // If user's name field is not blank
         if (usernameField.text != "") {
             user.setName(newName: usernameField.text!)
-            user.profilePicture = ProfilePicture.image!
+            user.setProfilePicture(newPicture: ProfilePicture.image!)
             
             // If gender was changed inside of UIPicker View
             if selectedGender != "" {
@@ -53,11 +53,12 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
             // If user is authenticated, update user database
             if FIRAuth.auth()?.currentUser != nil {
                 let userRef = ref.child((FIRAuth.auth()?.currentUser?.uid)!)
+                self.user.key = (FIRAuth.auth()?.currentUser?.uid)!
                 userRef.setValue(user.toAnyObject())
                 
                 // upload profile picture to Firebase Storage
                 let data = UIImageJPEGRepresentation(user.profilePicture, 1)
-                storage.reference().child("images/\(FIRAuth.auth()?.currentUser?.uid).jpg").put(data!, metadata: nil)
+                storage.reference().child("images/\(user.key).jpg").put(data!, metadata: nil)
             }
             
             performSegue(withIdentifier: "Save", sender: nil)

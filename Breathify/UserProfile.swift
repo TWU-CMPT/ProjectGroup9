@@ -12,50 +12,62 @@ import FirebaseAuth
 
 class UserProfile {
     
+    var key: String
     var name:String
-    var uid: String
     var gender:String
     var email:String?
     var password:String? // used for "Remember me" option
     var profilePicture: UIImage
     //var exerciseHistory:ExerciseHistory
-    //var friendList:[FriendList] = []
+    var friendList:[String] = []
+    var PhotoURL: String?
+    let ref: FIRDatabaseReference?
     
     // Basic constructor
     init() {
+        self.key = ""
         self.name = ""
         self.gender = ""
-        self.uid = ""
         //self.optStatus = false
 //        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
         self.profilePicture = #imageLiteral(resourceName: "Gender Neutral User-50")
+        self.ref = nil
     }
     
-    init(name:String, uid: String, password:String, email:String, gender:String) {
+    init(name:String, password:String, email:String, gender:String, friendList: [String]) {
+        self.key = ""
         self.name = name
         self.email = email
         self.password = password
         self.gender = gender
-        self.uid = uid
         //self.optStatus = optStatus
 //        self.exerciseHistory = ExerciseHistory()
         //self.friendList = FriendList()
         self.profilePicture = #imageLiteral(resourceName: "Gender Neutral User-50")
+        self.friendList = friendList
+        self.ref = nil
     }
     
-    init(authData: FIRUser, gender: String) {
-        name = authData.displayName!
-        uid = authData.uid
-        email = authData.email
+    init(snapshot: FIRDataSnapshot) {
+        ref = snapshot.ref
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        key = snapshotValue["key"] as! String
+        name = snapshotValue["name"] as! String
+        gender = snapshotValue["gender"] as! String
+        email = snapshotValue["email"] as? String
+        friendList = snapshotValue["friendList"] as! [String]
         profilePicture = #imageLiteral(resourceName: "Gender Neutral User-50")
-        self.gender = gender
     }
     
+    // Function to turn into JSON String
     func toAnyObject() -> Any {
         return [
             "name": name,
-            "gender": gender,
+            "email": email ?? "",
+            "friendList": friendList,
+            "key": key,
+            "gender": gender
         ]
     }
     
@@ -78,5 +90,9 @@ class UserProfile {
     
     func setProfilePicture(newPicture: UIImage) {
         self.profilePicture = newPicture
+    }
+    
+    func setKey(key: String) {
+        self.key = key
     }
 }

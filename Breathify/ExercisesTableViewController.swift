@@ -21,6 +21,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
     var selectedRow = 0
     var exercises:[Exercise] = []
     var user: UserProfile = UserProfile()
+    
     // Firebase database reference
     let ref = FIRDatabase.database().reference(withPath: "Exercise")
     
@@ -29,7 +30,7 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
                 
         // Single offline exercise
-        exercises.append(Exercise(name:"4/7/8 Exercise", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2))
+        exercises.append(Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2))
 
         // Load exercises from Firebase
         ref.observe(.value, with: { snapshot in

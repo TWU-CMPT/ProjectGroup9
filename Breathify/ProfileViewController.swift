@@ -21,9 +21,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var ProfilePicture: UIImageView!
     
     // table cells
-    let profileData:[[String]] = [["Settings", "Log In", "Log Out", "Register"]]
+    let profileData:[[String]] = [["Friends", "Settings", "Log In", "Log Out", "Register"]]
     let profileHeader:[String] = ["Account"]
-    let cellIdentifiers:[[String]] = [["settings", "logIn", "userSelect","createOnlineUser"]]
+    let cellIdentifiers:[[String]] = [["FriendList", "settings", "logIn", "userSelect","createOnlineUser"]]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileData[section].count
@@ -108,6 +108,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         else if (segue.identifier == "createOnlineUser") {
             let newView = segue.destination as! CreateOnlineUserViewController
+            newView.user = user
+        }
+        else if (segue.identifier == "FriendList") {
+            let newView = segue.destination as! FriendsListTableViewController
             newView.user = user
         }
     }

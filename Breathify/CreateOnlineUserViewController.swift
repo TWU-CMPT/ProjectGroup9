@@ -40,13 +40,14 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
                     print("You have successfully signed up")
                     self.user.setEmail(newEmail: self.emailField.text!)
                     self.user.setPassword(newPassword: self.passwordField.text!)
+                    self.user.setKey(key: (FIRAuth.auth()?.currentUser?.uid)!)
                     
                     let userRef = self.ref.child((user?.uid)!)
                     userRef.setValue(self.user.toAnyObject())
                     
                     // upload profile picture to Firebase Storage
                     let data = UIImageJPEGRepresentation(self.user.profilePicture, 1)
-                    self.storage.reference().child("images/\(FIRAuth.auth()?.currentUser?.uid).jpg").put(data!, metadata: nil)
+                    self.storage.reference().child("images/\(self.user.key).jpg").put(data!, metadata: nil)
                     
                     self.performSegue(withIdentifier: "Home", sender: nil)
                 }

@@ -19,7 +19,7 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK: Temporary hard-coded users
     
-    var users = [UserProfile(name:"Offline User", uid: "", password:"", email:"", gender:"Male"), UserProfile(name:"Jim Jim", uid: "", password:"testtest", email:"test2@test.com", gender:"Male")]
+    var users = [UserProfile(name:"Offline User", password:"", email:"", gender:"Male", friendList: []), UserProfile(name:"Jim Jim", password:"testtest", email:"test2@test.com", gender:"Male", friendList:["test@test.com"]), UserProfile(name:"Jean Grey", password:"testtest", email:"test@test.com", gender:"Female", friendList:["test2@test.com"])]
 
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

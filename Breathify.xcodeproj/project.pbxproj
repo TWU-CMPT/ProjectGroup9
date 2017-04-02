@@ -34,6 +34,9 @@
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
+		9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */; };
+		9BC81FF51E905319000AABDC /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */; };
+		9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */; };
 		9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED441E833D260032C8E5 /* LoginViewController.swift */; };
 		9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */; };
 		9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */; };
@@ -102,6 +105,9 @@
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
+		9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
 		9BC9ED441E833D260032C8E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
@@ -183,8 +189,9 @@
 				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
-				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
+				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
+				9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */,
 				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
 				9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */,
 				9BC9ED511E833DC10032C8E5 /* UserProfile.swift */,
@@ -240,6 +247,8 @@
 				9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */,
 				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
+				9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */,
+				9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */,
 				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
 				9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */,
 				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
@@ -560,6 +569,7 @@
 			files = (
 				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
+				9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */,
 				891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */,
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
@@ -570,11 +580,13 @@
 				9BC9ED531E833DC10032C8E5 /* UserProfile.swift in Sources */,
 				96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */,
 				9BC9ED491E833D260032C8E5 /* ProfileViewController.swift in Sources */,
+				9BC81FF51E905319000AABDC /* FriendsListTableViewCell.swift in Sources */,
 				9BC9ED521E833DC10032C8E5 /* UserCollectionViewCell.swift in Sources */,
 				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
+				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,
 				9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */,
 			);
