@@ -11,8 +11,10 @@ import GameplayKit
 
 class GameBasedScene: SKScene {
     
+    static var viewController:GameBasedViewController?
     static var exercise:Exercise?
     static var running:Bool?
+    static var ended:Bool?
     static var shouldReset:Bool?
     static var score:Int?
     
@@ -39,6 +41,7 @@ class GameBasedScene: SKScene {
         GameBasedScene.score = 0
         GameBasedScene.running = false
         GameBasedScene.shouldReset = false
+        GameBasedScene.ended = false
         
         parseSequence(sequence:self.sequence!)
     }
@@ -52,11 +55,14 @@ class GameBasedScene: SKScene {
         GameBasedScene.score = 0
         GameBasedScene.running = false
         GameBasedScene.shouldReset = false
+        GameBasedScene.ended = false
         
         parseSequence(sequence:self.sequence!)
     }
     
     func endGame() {
+        GameBasedScene.ended = true
+        GameBasedScene.viewController!.gameDidEnd()
         print("Game has ended.")
     }
     
