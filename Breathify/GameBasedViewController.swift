@@ -92,7 +92,7 @@ class GameBasedViewController: UIViewController {
     }
     
     func gameDidEnd() {
-        startBtn.setTitle("Quit", for:.normal)
+        startBtn.setTitle("Results", for:.normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
