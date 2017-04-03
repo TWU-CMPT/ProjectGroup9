@@ -34,7 +34,6 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
 
         // Load exercises from Firebase
         ref.observe(.value, with: { snapshot in
-            print(snapshot.value!)
             var newExercises: [Exercise] = []
             
             for item in snapshot.children {

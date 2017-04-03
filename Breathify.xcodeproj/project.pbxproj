@@ -46,6 +46,7 @@
 		9BC9ED521E833DC10032C8E5 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */; };
 		9BC9ED531E833DC10032C8E5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9ED511E833DC10032C8E5 /* UserProfile.swift */; };
 		9BC9ED551E833E400032C8E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */; };
+		9BD4DDCA1E91DE3F00BE9C7A /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */; };
 		A26FD11593EF697322529E23 /* Pods_BreathifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */; };
 		A3774EEA3F571DE47C5779A5 /* Pods_Breathify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE849FB3E37FD798EA5AE03E /* Pods_Breathify.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BC9ED511E833DC10032C8E5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		9BC9ED541E833E400032C8E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		AEFEE57CCE61EA1C879F7063 /* Pods-Breathify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.release.xcconfig"; sourceTree = "<group>"; };
 		B4C9C2CA60FCC53CCEE40FAF /* Pods_BreathifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9C6F899DE743A1D06BB043 /* Pods-BreathifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
+				9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
@@ -585,6 +588,7 @@
 				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
+				9BD4DDCA1E91DE3F00BE9C7A /* CommentsTableViewCell.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,

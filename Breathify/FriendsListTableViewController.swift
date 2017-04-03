@@ -22,6 +22,49 @@ class FriendsListTableViewController: UITableViewController {
     
     @IBOutlet weak var FriendsListTableView: UITableView!
     
+    // MARK: Actions
+    
+    @IBAction func AddFriend(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Follow a Friend", message: "Enter your friend's email address", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let addAction = UIAlertAction(title: "Add", style: .default, handler: { (alert: UIAlertAction) in
+            let emailField = alertController.textFields![0] as UITextField
+            
+            self.ref.queryOrdered(byChild: "email").queryStarting(atValue: emailField.text).queryEnding(atValue: emailField.text).observe(.value, with: { snapshot in
+                // friend already exists in friend's list
+                if self.user.friendList.contains(emailField.text!) {
+                    let alertController2 = UIAlertController(title: "Error", message: "You are already following \(emailField.text!)", preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default)
+                    
+                    alertController2.addAction(OKAction)
+                    
+                    self.present(alertController2, animated: true, completion: nil)
+                }
+                
+                else if snapshot.exists() {
+                    self.user.friendList.append(emailField.text!)
+                }
+                else {
+                    let alertController2 = UIAlertController(title: "Error", message: "User does not exist", preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default)
+                    
+                    alertController2.addAction(OKAction)
+                    
+                    self.present(alertController2, animated:true, completion: nil)
+                }
+                
+            })
+        })
+        
+        alertController.addTextField()
+        alertController.addAction(cancelAction)
+        alertController.addAction(addAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

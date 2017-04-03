@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class ExerciseViewController: UIViewController {
+class ExerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     // MARK: Properties
     
     var exercise:Exercise = Exercise()
     var user: UserProfile = UserProfile()
+    var feedback: [Feedback] = []
+    var ref = FIRDatabase.database().reference(withPath: "Exercise")
     
     // Rating star assets
     let filledStar = UIImage(named: "filled_star")
     let emptyStar = UIImage(named: "empty_star")
+    
+    // MARK: Outlets
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -26,16 +32,7 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var btnRating3: UIButton!
     @IBOutlet weak var btnRating4: UIButton!
     @IBOutlet weak var btnRating5: UIButton!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-        nameLabel.text = exercise.name
-        descriptionTextView.text = exercise.description
-        updateRating(rating: exercise.rating)
-    }
+    @IBOutlet weak var CommentTableView: UITableView!
     
     // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
@@ -95,6 +92,60 @@ class ExerciseViewController: UIViewController {
     @IBAction func didRate5(_ sender: Any) {
         updateRating(rating: 5)
     }
+
+    // MARK: Table View Protocol
+    
+    // Number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feedback.count
+    }
+    
+     // Number of sections
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1
+        }
+    
+     // Get section header
+        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return "Comments"
+        }
+    
+    // Set cell attributes
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentsTableViewCell
+        
+        cell.CommentTextView.text = feedback[indexPath.row].comment
+        cell.NameLabel.text = feedback[indexPath.row].username
+        cell.RatingLabel.text = "\(feedback[indexPath.row].rating)"
+        
+        return cell
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        nameLabel.text = exercise.name
+        descriptionTextView.text = exercise.description
+        updateRating(rating: exercise.rating)
+        
+        let feedbackRef = ref.child(exercise.key).child("feedback")
+        
+        feedbackRef.observe(.value, with: { snapshot in
+            var newFeedback: [Feedback] = []
+            
+            for item in snapshot.children {
+                let feedbackItem = Feedback(snapshot: item as! FIRDataSnapshot)
+                newFeedback.append(feedbackItem)
+            }
+            
+            self.feedback = newFeedback
+            self.CommentTableView.reloadData()
+        })
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -113,16 +164,5 @@ class ExerciseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
