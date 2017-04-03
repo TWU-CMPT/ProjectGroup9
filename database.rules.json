@@ -1,9 +1,0 @@
-{
-  "rules": {
-    ".read": true,
-    ".write": "auth != null",
-    "User": {
-      ".indexOn": "email"
-    }
-  }
-}
