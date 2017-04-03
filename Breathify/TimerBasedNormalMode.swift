@@ -48,6 +48,7 @@ class TimerBasedNormalMode: UIViewController {
     var timer = Timer()
     var startTimer = Timer()
     var startTime:Int = 3
+    var muteControl:Int = 1
     
     var audioTimer0 = AVAudioPlayer()
     var audioTimer1 = AVAudioPlayer()
@@ -58,8 +59,9 @@ class TimerBasedNormalMode: UIViewController {
     var audioTimer6 = AVAudioPlayer()
     var audioTimer7 = AVAudioPlayer()
     var audioTimer8 = AVAudioPlayer()
-    
-    
+    var audioTimerIn = AVAudioPlayer()
+    var audioTimerHold = AVAudioPlayer()
+    var audioTimerOut = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,11 +94,25 @@ class TimerBasedNormalMode: UIViewController {
             audioTimer7.prepareToPlay()
             audioTimer8 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "eight", ofType: "mp3")!))
             audioTimer8.prepareToPlay()
+            audioTimerIn = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "breath", ofType: "mp3")!))
+            audioTimerIn.prepareToPlay()
+            audioTimerHold = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "hold", ofType: "mp3")!))
+            audioTimerHold.prepareToPlay()
+            audioTimerOut = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "out", ofType: "mp3")!))
+            audioTimerOut.prepareToPlay()
         }
         catch{
             print(error)
         }
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopTimerNotification"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if(self.isMovingFromParentViewController){
+            timer.invalidate()
+        }
     }
     
     
@@ -131,7 +147,7 @@ class TimerBasedNormalMode: UIViewController {
         stepTime -= 1
         
         timerLabel.text = String(Int(stepTime))
-        if(stepTime != 0){
+        if(stepTime != 0 && muteControl == 1){
             playsound(stepPlay: stepTime)
         }
         if (stepTime <= 0) {
@@ -143,8 +159,9 @@ class TimerBasedNormalMode: UIViewController {
     func exerciseStep() {
         if (exercisePeriod == 0) {
             // END EXERCISE
-            timerLabel.text = String("END.")
-            nameLabel.text = String(" ")
+            timerLabel.text = String("Breathify")
+            nameLabel.text = String("end")
+            stateButton.setTitle("RESTART", for: .normal)
             state = .stopped
             print("Exercise Ended")
             startTime = 3
@@ -157,6 +174,7 @@ class TimerBasedNormalMode: UIViewController {
             step = 0
         }
         
+                
         nextStep = (exercise.sequence?[step])!
         
         nameLabel.text = String(exercisePeriod) + String(" Breath left")
@@ -169,15 +187,24 @@ class TimerBasedNormalMode: UIViewController {
         case "I":
             barValue = 100
             timerLabel.text = inText
+            if(muteControl == 1){
+                audioTimerIn.play()
+            }
             break
         case "O":
             barValue = 0
             timerLabel.text = outText
-            
+            if(muteControl == 1){
+                audioTimerOut.play()
+            }
             break
         case "H":
             if(stepTime != 0){
                 timerLabel.text = holdText
+            }
+            if(stepTime != 0 && muteControl == 1){
+                
+                audioTimerHold.play()
             }
             break
         default:
@@ -204,6 +231,7 @@ class TimerBasedNormalMode: UIViewController {
         timerLabel.text = String(startTime)
         startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tickS),userInfo: nil, repeats: true)
         stateButton.setTitle("STOP", for: .normal)
+        
         
     }
     
@@ -275,4 +303,11 @@ class TimerBasedNormalMode: UIViewController {
             //audioTimer0.play()
         }
     }
+    
+
+    func StopTimerNotification(){
+        timer.invalidate()
+    }
+    
+    
 }

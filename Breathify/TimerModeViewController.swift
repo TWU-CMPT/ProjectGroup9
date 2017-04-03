@@ -14,6 +14,7 @@ class TimerModeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -27,6 +28,7 @@ class TimerModeViewController: UIViewController {
             let newView = segue.destination as! TimerBasedViewController
             
             newView.exercise = self.exercise
+            
         
         }
         else if(segue.identifier == "timerNormalMode") {
@@ -36,5 +38,6 @@ class TimerModeViewController: UIViewController {
             
         }
     }
+    
     
 }
