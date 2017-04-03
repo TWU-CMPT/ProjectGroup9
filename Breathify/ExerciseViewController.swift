@@ -158,6 +158,10 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
             let newView = segue.destination as! TimerModeViewController
             newView.exercise = self.exercise
         }
+        else if (segue.identifier == "gameMode") {
+            let newView = segue.destination as! GameBasedViewController
+            newView.exercise = self.exercise
+        }
     }
     
     override func didReceiveMemoryWarning() {
