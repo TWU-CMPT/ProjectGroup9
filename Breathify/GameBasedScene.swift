@@ -18,6 +18,7 @@ class GameBasedScene: SKScene {
     
     private var pin:SKSpriteNode?
     private var pinCanMove:Bool?
+    private var scoreLabel:SKLabelNode?
     private var sequence:[[Any]]?
     private var repetitions:Int?
     private var step:Int?
@@ -29,9 +30,12 @@ class GameBasedScene: SKScene {
         self.pin = self.childNode(withName: "playerPin") as? SKSpriteNode
         pin!.position.y = 0
         
+        self.scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
+        scoreLabel!.text = "Score: 0"
+        
         sequence = GameBasedScene.exercise?.sequence
         repetitions = GameBasedScene.exercise?.repetitions
-        step = 0
+        step = 1
         GameBasedScene.score = 0
         GameBasedScene.running = false
         GameBasedScene.shouldReset = false
@@ -44,12 +48,16 @@ class GameBasedScene: SKScene {
         dotAnchor!.removeAllChildren()
         
         pin!.position.y = 0
-        step = 0
+        step = 1
         GameBasedScene.score = 0
         GameBasedScene.running = false
         GameBasedScene.shouldReset = false
         
         parseSequence(sequence:self.sequence!)
+    }
+    
+    func endGame() {
+        print("Game has ended.")
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -86,38 +94,77 @@ class GameBasedScene: SKScene {
         if (GameBasedScene.shouldReset! == true) {
             GameBasedScene.shouldReset! = false
             reset()
+            scoreLabel!.text = "Score: \(GameBasedScene.score!)"
         }
         
         if (GameBasedScene.running! == false || lastTime == nil) {
             lastTime = currentTime
         }
-        // check for next step
+        
+        // Game loop
         while (GameBasedScene.running! == true && (currentTime - lastTime!) >= (1.0 / 60.0)) {
-            print("score: \(GameBasedScene.score)")
-            print("\(dotAnchor!.children[step!+1].position.x)")
-            if (step! < dotAnchor!.children.count) {
-                lastTime! += 1.0 / 60.0
-                lineAnchor!.position.x -= pin!.size.width / 60.0
-                dotAnchor!.position.x -= pin!.size.width / 60.0
-                
-                if (lineAnchor!.children[step!].contains(
-                    CGPoint(x:pin!.position.x + pin!.size.width - lineAnchor!.position.x,
-                            y:pin!.position.y + pin!.size.height / 2))) {
-                    GameBasedScene.score! += 1
-                }
-                
-                if (dotAnchor!.children[step!+1].position.x + dotAnchor!.position.x <= pin!.position.x + pin!.size.width) {
-                    step! += 1
-                }
-            } else {
-                GameBasedScene.running = false
-            }
             
+            // Update score label
+            scoreLabel!.text = "Score: \(GameBasedScene.score!)"
+            
+            // Moving elements
+            lastTime! += 1.0 / 60.0
+            lineAnchor!.position.x -= pin!.size.width / 60.0
+            dotAnchor!.position.x -= pin!.size.width / 60.0
+        
+            // Score detection
+            if (lineAnchor!.children[step!-1].contains(
+                CGPoint(x:pin!.position.x + pin!.size.width - lineAnchor!.position.x,
+                        y:pin!.position.y + pin!.size.height / 2))) {
+                let instrNum = ((step! - 2) % (GameBasedScene.exercise!.sequence?.count)!)
+                
+                if (instrNum >= 0) {
+                    let instrChar = String(GameBasedScene.exercise!.sequence?[instrNum][0] as! Character)
+                    let hitRadius = pin!.size.height / 2
+                    
+                    let w = dotAnchor!.children[step!].position.x - dotAnchor!.children[step! - 1].position.x
+                    let x = w - (dotAnchor!.children[step!].position.x - (-dotAnchor!.position.x) - pin!.size.width)
+                    
+                    switch(instrChar) {
+                    case "H":
+                        GameBasedScene.score! += 1
+                        break
+                    case "I":
+                        let h = dotAnchor!.children[step!].position.y - dotAnchor!.children[step! - 1].position.y
+                        let y = CGFloat(x) / CGFloat(w) * CGFloat(h)
+
+                        if (pin!.position.y <= (y + hitRadius) && pin!.position.y >= (y - hitRadius)) {
+                            GameBasedScene.score! += 1
+                        }
+                        break
+                    case "O":
+                        let h = dotAnchor!.children[step! - 1].position.y - dotAnchor!.children[step!].position.y
+                        let y = CGFloat(h) - (CGFloat(x) / CGFloat(w) * CGFloat(h))
+
+                        if (pin!.position.y <= (y + hitRadius) && pin!.position.y >= (y - hitRadius)) {
+                            GameBasedScene.score! += 1
+                        }
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+        
+            // Check step
+            if (dotAnchor!.children[step!].position.x <= (-dotAnchor!.position.x + pin!.size.width)) {
+                step! += 1
+                
+                if (step! >= dotAnchor!.children.count) {
+                    GameBasedScene.running = false
+                    endGame()
+                }
+            }
         }
     }
     
     func checkPress(pos:CGPoint) {
-        if ((pin) != nil && pin!.contains(pos)) {
+        if ((pin) != nil) {
             pinCanMove = true
         } else {
             pinCanMove = false
@@ -139,7 +186,7 @@ class GameBasedScene: SKScene {
         let dotOutTexture = SKTexture.init(image: UIImage(named: "dot_out")!)
         let dotHoldTexture = SKTexture.init(image: UIImage(named: "dot_hold")!)
         let dotStartTexture = SKTexture.init(image: UIImage(named: "dot_start")!)
-        let lineColor = UIColor.blue
+        let lineColor = SKColor.blue
         let dotColor = UIColor.red
         
         // Setup lines anchor
@@ -161,7 +208,7 @@ class GameBasedScene: SKScene {
         let lineHeight = unitHeight * lineRatio
         let circleRadius = lineHeight * 2
         let height = self.size.height / 2 - pin!.size.height
-        var offset = pin!.size.width / 2 * 3
+        var offset = pin!.size.width
         let minHeight = pin!.size.height / 2
         let maxHeight = self.size.height / 2 - pin!.size.height / 2
         var currHeight = minHeight

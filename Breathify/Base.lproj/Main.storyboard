@@ -117,14 +117,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sId-Ho-qSl">
-                                <rect key="frame" x="164" y="574" width="46" height="30"/>
+                                <rect key="frame" x="164" y="587" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didPressReset:" destination="i5a-yg-QLJ" eventType="touchUpInside" id="DKV-nV-I6q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idB-Gu-nAL">
-                                <rect key="frame" x="164" y="536" width="46" height="30"/>
+                                <rect key="frame" x="164" y="549" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didPressStart:" destination="i5a-yg-QLJ" eventType="touchUpInside" id="h5b-Zo-HvP"/>
@@ -133,12 +133,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YU1-6j-2WR" firstAttribute="centerX" secondItem="2UB-fY-edT" secondAttribute="centerX" id="3WT-Ws-Afn"/>
-                            <constraint firstItem="oc3-zs-xVc" firstAttribute="top" secondItem="sId-Ho-qSl" secondAttribute="bottom" constant="63" id="DbJ-tL-etp"/>
-                            <constraint firstItem="sId-Ho-qSl" firstAttribute="top" secondItem="idB-Gu-nAL" secondAttribute="bottom" constant="8" symbolic="YES" id="M4o-P8-Lp4"/>
-                            <constraint firstItem="idB-Gu-nAL" firstAttribute="leading" secondItem="sId-Ho-qSl" secondAttribute="leading" id="WHS-Pg-otQ"/>
-                            <constraint firstItem="YU1-6j-2WR" firstAttribute="top" secondItem="7dt-c3-JGs" secondAttribute="bottom" constant="8" symbolic="YES" id="aO6-d0-lqS"/>
-                            <constraint firstItem="YU1-6j-2WR" firstAttribute="centerX" secondItem="idB-Gu-nAL" secondAttribute="centerX" id="dMy-Pz-5ai"/>
+                            <constraint firstItem="sId-Ho-qSl" firstAttribute="centerX" secondItem="2UB-fY-edT" secondAttribute="centerX" id="2N4-m7-2LN"/>
+                            <constraint firstItem="YU1-6j-2WR" firstAttribute="top" secondItem="7dt-c3-JGs" secondAttribute="bottom" constant="8" symbolic="YES" id="LXI-AQ-plJ"/>
+                            <constraint firstItem="sId-Ho-qSl" firstAttribute="leading" secondItem="idB-Gu-nAL" secondAttribute="leading" id="RKv-xv-TBS"/>
+                            <constraint firstAttribute="bottom" secondItem="sId-Ho-qSl" secondAttribute="bottom" constant="50" id="SeF-za-EV6"/>
+                            <constraint firstItem="sId-Ho-qSl" firstAttribute="top" secondItem="idB-Gu-nAL" secondAttribute="bottom" constant="8" id="UdQ-Pc-z3d"/>
+                            <constraint firstItem="sId-Ho-qSl" firstAttribute="centerX" secondItem="YU1-6j-2WR" secondAttribute="centerX" id="rhC-Eh-7CS"/>
                         </constraints>
                     </view>
                     <connections>
