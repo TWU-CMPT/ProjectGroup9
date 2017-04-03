@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */; };
 		820B783672B35245464ED730 /* Pods_BreathifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */; };
 		891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317831E6D3D1600C11D71 /* ExerciseCell.swift */; };
 		891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317851E6D429F00C11D71 /* ExerciseViewController.swift */; };
@@ -85,6 +86,7 @@
 		01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5384CA1A75B4D11D9D7B9E /* Pods-BreathifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyTests/Pods-BreathifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		323C840EC0BF886126ADD051 /* Pods-BreathifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		59372572964400DE23160A7B /* Pods-Breathify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.debug.xcconfig"; sourceTree = "<group>"; };
 		891317831E6D3D1600C11D71 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		891317851E6D429F00C11D71 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
 				9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */,
 				9BC9ED511E833DC10032C8E5 /* UserProfile.swift */,
+				5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */,
 				8986A5471E67941000665557 /* Assets.xcassets */,
 				891317871E6D570400C11D71 /* Main.storyboard */,
 				8986A5491E67941000665557 /* LaunchScreen.storyboard */,
@@ -625,6 +628,7 @@
 				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,
 				9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */,
+				5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
