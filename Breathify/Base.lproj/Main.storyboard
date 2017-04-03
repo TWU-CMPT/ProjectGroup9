@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -326,6 +326,10 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamepad" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-pr-Uy1">
                                         <rect key="frame" x="183" y="0.0" width="128" height="128"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dhs-l1-iuT" appends="YES" id="ERp-cf-ctH"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -409,6 +413,11 @@
                 <tapGestureRecognizer id="EYv-gw-Iuh">
                     <connections>
                         <segue destination="oun-rF-qjm" kind="show" identifier="timerMode" id="lks-cz-fEk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Dhs-l1-iuT">
+                    <connections>
+                        <segue destination="i5a-yg-QLJ" kind="show" id="tC4-9E-aMO"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
