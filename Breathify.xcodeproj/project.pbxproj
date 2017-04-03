@@ -21,6 +21,15 @@
 		8986A54B1E67941000665557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8986A5491E67941000665557 /* LaunchScreen.storyboard */; };
 		8986A5561E67941100665557 /* BreathifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5551E67941100665557 /* BreathifyTests.swift */; };
 		8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986A5601E67941100665557 /* BreathifyUITests.swift */; };
+		89C6766A1E91FED400824EC2 /* GameBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C676691E91FED400824EC2 /* GameBasedViewController.swift */; };
+		89C6766B1E91FED400824EC2 /* GameBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C676691E91FED400824EC2 /* GameBasedViewController.swift */; };
+		89C6766C1E91FED400824EC2 /* GameBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C676691E91FED400824EC2 /* GameBasedViewController.swift */; };
+		89C6766E1E91FF1300824EC2 /* GameBasedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */; };
+		89C6766F1E91FF1300824EC2 /* GameBasedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */; };
+		89C676701E91FF1300824EC2 /* GameBasedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */; };
+		89C676721E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
+		89C676731E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
+		89C676741E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
 		9688F3A61E91B52F008A7690 /* breath.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A31E91B52F008A7690 /* breath.mp3 */; };
 		9688F3A71E91B52F008A7690 /* hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A41E91B52F008A7690 /* hold.mp3 */; };
 		9688F3A81E91B52F008A7690 /* out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A51E91B52F008A7690 /* out.mp3 */; };
@@ -96,6 +105,9 @@
 		8986A55C1E67941100665557 /* BreathifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreathifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8986A5601E67941100665557 /* BreathifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathifyUITests.swift; sourceTree = "<group>"; };
 		8986A5621E67941100665557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89C676691E91FED400824EC2 /* GameBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedViewController.swift; sourceTree = "<group>"; };
+		89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedScene.swift; sourceTree = "<group>"; };
+		89C676711E91FF4A00824EC2 /* GameBasedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameBasedScene.sks; sourceTree = "<group>"; };
 		9688F3A31E91B52F008A7690 /* breath.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breath.mp3; sourceTree = "<group>"; };
 		9688F3A41E91B52F008A7690 /* hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hold.mp3; sourceTree = "<group>"; };
 		9688F3A51E91B52F008A7690 /* out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = out.mp3; sourceTree = "<group>"; };
@@ -201,6 +213,8 @@
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
 				9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */,
+				89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */,
+				89C676711E91FF4A00824EC2 /* GameBasedScene.sks */,
 				96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */,
 				9BC9ED501E833DC10032C8E5 /* UserCollectionViewCell.swift */,
 				9BC9ED511E833DC10032C8E5 /* UserProfile.swift */,
@@ -266,6 +280,7 @@
 				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
+				89C676691E91FED400824EC2 /* GameBasedViewController.swift */,
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
@@ -405,6 +420,7 @@
 			files = (
 				891317891E6D570400C11D71 /* Main.storyboard in Resources */,
 				96AA84181E8E4600005F2BDC /* five.mp3 in Resources */,
+				89C676721E91FF4A00824EC2 /* GameBasedScene.sks in Resources */,
 				96AA84171E8E4600005F2BDC /* six.mp3 in Resources */,
 				96AA84191E8E4600005F2BDC /* two.mp3 in Resources */,
 				96AA84161E8E4600005F2BDC /* seven.mp3 in Resources */,
@@ -427,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C676731E91FF4A00824EC2 /* GameBasedScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C676741E91FF4A00824EC2 /* GameBasedScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C6766A1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
 				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
 				9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */,
@@ -599,6 +618,7 @@
 				9BC9ED521E833DC10032C8E5 /* UserCollectionViewCell.swift in Sources */,
 				891317911E6E322100C11D71 /* TimerBasedViewController.swift in Sources */,
 				8913178F1E6D5BA400C11D71 /* Feedback.swift in Sources */,
+				89C6766E1E91FF1300824EC2 /* GameBasedScene.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				9BD4DDCA1E91DE3F00BE9C7A /* CommentsTableViewCell.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
@@ -612,6 +632,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C6766F1E91FF1300824EC2 /* GameBasedScene.swift in Sources */,
+				89C6766B1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
 				8986A5561E67941100665557 /* BreathifyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +642,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C676701E91FF1300824EC2 /* GameBasedScene.swift in Sources */,
+				89C6766C1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
 				8986A5611E67941100665557 /* BreathifyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
