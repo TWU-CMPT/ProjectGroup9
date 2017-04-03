@@ -135,6 +135,13 @@ class GameBasedScene: SKScene {
     }
     
     func parseSequence(sequence:[[Any]]) {
+        let dotInTexture = SKTexture.init(image: UIImage(named: "dot_in")!)
+        let dotOutTexture = SKTexture.init(image: UIImage(named: "dot_out")!)
+        let dotHoldTexture = SKTexture.init(image: UIImage(named: "dot_hold")!)
+        let dotStartTexture = SKTexture.init(image: UIImage(named: "dot_start")!)
+        let lineColor = UIColor.blue
+        let dotColor = UIColor.red
+        
         // Setup lines anchor
         lineAnchor = SKSpriteNode()
         lineAnchor!.anchorPoint = CGPoint(x:0.0, y:0.0)
@@ -161,7 +168,7 @@ class GameBasedScene: SKScene {
         
         // 3 second lead in
         let leadLine = SKSpriteNode()
-        leadLine.color = .black
+        leadLine.color = lineColor
         leadLine.anchorPoint = CGPoint(x:0.0, y:0.5)
         leadLine.position.x = offset
         leadLine.size.height = lineHeight
@@ -171,12 +178,13 @@ class GameBasedScene: SKScene {
         lineAnchor!.addChild(leadLine)
         
         let leadDot = SKShapeNode(circleOfRadius: circleRadius)
-        leadDot.strokeColor = .black
-        leadDot.fillColor = .black
+        leadDot.strokeColor = dotColor
+        leadDot.fillColor = dotColor
         leadDot.position.x = offset
         leadDot.zPosition = -1
         leadDot.isAntialiased = true
         leadDot.position.y = currHeight
+        leadDot.fillTexture = dotStartTexture
         dotAnchor!.addChild(leadDot)
         
         offset += leadLine.size.width
@@ -186,7 +194,7 @@ class GameBasedScene: SKScene {
                 let inLine = SKSpriteNode()
                 
                 // Step line indicator
-                inLine.color = .black
+                inLine.color = lineColor
                 inLine.anchorPoint = CGPoint(x:0.0, y:0.5)
                 inLine.position.x = offset
                 inLine.size.height = lineHeight
@@ -196,26 +204,30 @@ class GameBasedScene: SKScene {
                 
                 // Start of line dot indicator
                 let lineDot = SKShapeNode(circleOfRadius:circleRadius)
-                lineDot.strokeColor = .black
-                lineDot.fillColor = .black
+                lineDot.strokeColor = dotColor
+                lineDot.fillColor = dotColor
                 lineDot.position.x = offset
                 lineDot.zPosition = -1
                 lineDot.isAntialiased = true
                 
                 // Generating sequence lines
+                // Setting dot texture
                 switch(String(sequence[j][0] as! Character)) {
                 case "I":
                     inLine.position.y = minHeight
                     inLine.zRotation = atan(height / base)
                     
                     lineDot.position.y = minHeight
+                    lineDot.fillTexture = dotInTexture
                     
                     currHeight = maxHeight
                     break;
                 case "O":
                     inLine.position.y = maxHeight
                     inLine.zRotation = -atan(height / base)
+                    
                     lineDot.position.y = maxHeight
+                    lineDot.fillTexture = dotOutTexture
                     
                     currHeight = minHeight
                     break;
@@ -224,6 +236,7 @@ class GameBasedScene: SKScene {
                     inLine.size.width = base
                     
                     lineDot.position.y = currHeight
+                    lineDot.fillTexture = dotHoldTexture
                     break;
                 default:
                     break;
@@ -237,8 +250,8 @@ class GameBasedScene: SKScene {
         }
         // End dot
         let lineDot = SKShapeNode(circleOfRadius:circleRadius)
-        lineDot.strokeColor = .black
-        lineDot.fillColor = .black
+        lineDot.strokeColor = dotColor
+        lineDot.fillColor = dotColor
         lineDot.position.x = offset
         lineDot.position.y = currHeight
         lineDot.zPosition = -1
