@@ -79,7 +79,11 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExerciseCell
 
         cell.nameLabel.text = exercises[indexPath.row].name
-        cell.ratingLabel.text = "\(exercises[indexPath.row].rating)"
+        
+        if let ratingText = exercises[indexPath.row].avgRating {
+            print("\(ratingText)")
+            cell.ratingLabel.text = "\(ratingText)"
+        }
         
         return cell
     }
