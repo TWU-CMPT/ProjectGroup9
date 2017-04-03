@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 
 class ExerciseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -37,8 +38,40 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
     // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
         exercise.rating = rating
-        //feedback = Feedback(username: user.name, rating: rating, comment: "")
-        
+
+        // if user is signed in, update Firebase
+        if FIRAuth.auth()?.currentUser != nil {
+            let update = ["username": user.name,
+
+                          "rating": rating] as [String : Any]
+            let childUpdate = ["/\(exercise.key)/feedback/" + (FIRAuth.auth()?.currentUser?.uid)!: update]
+            
+            ref.updateChildValues(childUpdate)
+            
+            let feedbackRef = ref.child(exercise.key).child("feedback")
+            
+            // calculate average rating for exercise
+            var numUsers: Double = 0
+            var sumRating: Double = 0
+            var average: Double = 0
+            
+            feedbackRef.observe(.value, with: { snapshot in
+
+                var feedbackItem = Feedback(username: "", rating: 0, comment: "")
+                
+                for item in snapshot.children {
+                    feedbackItem = Feedback(snapshot: item as! FIRDataSnapshot)
+                    numUsers += 1
+                    sumRating += Double(feedbackItem.rating)
+                }
+                
+                average = sumRating/numUsers
+                
+                self.ref.child("\(self.exercise.key)/avgRating").setValue(average)
+            })
+
+        }
+ 
         btnRating1.setImage(emptyStar, for: .normal)
         btnRating2.setImage(emptyStar, for: .normal)
         btnRating3.setImage(emptyStar, for: .normal)
@@ -77,22 +110,28 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     // Actions for rating buttons
+    
+    
     @IBAction func didRate1(_ sender: Any) {
         updateRating(rating: 1)
     }
+    
     @IBAction func didRate2(_ sender: Any) {
         updateRating(rating: 2)
     }
-    @IBAction func didRate3(_ sender: Any) {
+    
+    @IBAction func updateRating3(_ sender: Any) {
         updateRating(rating: 3)
     }
-    @IBAction func didRate4(_ sender: Any) {
+    
+    @IBAction func updateRating4(_ sender: Any) {
         updateRating(rating: 4)
     }
-    @IBAction func didRate5(_ sender: Any) {
+    
+    @IBAction func updateRating5(_ sender: Any) {
         updateRating(rating: 5)
     }
-
+    
     // MARK: Table View Protocol
     
     // Number of rows
@@ -129,7 +168,6 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         
         nameLabel.text = exercise.name
         descriptionTextView.text = exercise.description
-        updateRating(rating: exercise.rating)
         
         let feedbackRef = ref.child(exercise.key).child("feedback")
         

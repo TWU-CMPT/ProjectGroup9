@@ -15,7 +15,7 @@ class Exercise {
     var name:String
     var rating:Int
     var description:String
-    var avgRating:Float?
+    var avgRating:Double?
     var sequence:[[Any]]?
     var repetitions:Int?
     var key: String
@@ -52,7 +52,7 @@ class Exercise {
     }
     
     // Constructor for online sequence-less exercise
-    init(name:String, rating:Int, avgRating:Float, description:String, feedback:[Feedback]) {
+    init(name:String, rating:Int, avgRating:Double, description:String, feedback:[Feedback]) {
         self.name = name
         self.rating = rating
         self.avgRating = avgRating
@@ -71,7 +71,7 @@ class Exercise {
         key = snapshot.key
         name = snapshotValue["name"] as! String
         self.rating = 0
-        avgRating = snapshotValue["avgRating"] as? Float
+        avgRating = snapshotValue["avgRating"] as? Double
         description = snapshotValue["description"] as! String
         repetitions = snapshotValue["repetitions"] as? Int
         let unparsedSequence: String = snapshotValue["sequence"] as! String
