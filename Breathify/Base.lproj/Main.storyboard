@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,9 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj7-tX-VnJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xj7-tX-VnJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="60" id="m5c-qT-ds9" customClass="ExerciseCell" customModule="Breathify" customModuleProvider="target">
@@ -83,6 +82,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xj7-tX-VnJ" secondAttribute="trailing" id="NYr-sA-hNK"/>
+                            <constraint firstItem="Xj7-tX-VnJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="lCu-4w-7wf"/>
+                            <constraint firstAttribute="bottom" secondItem="Xj7-tX-VnJ" secondAttribute="bottom" id="uch-KI-LBv"/>
+                            <constraint firstItem="Xj7-tX-VnJ" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="yXp-bx-8Tu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Exercise Library" id="O8W-nC-OOc"/>
                     <connections>
@@ -144,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="3304.8000000000002" y="-1746.4767616191905"/>
         </scene>
-        <!--4/7/8 Exercise-->
+        <!--Timer Based View Controller-->
         <scene sceneID="JET-cE-bZ1">
             <objects>
-                <viewController title="4/7/8 Exercise" id="6Td-Yy-CEW" customClass="TimerBasedViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Td-Yy-CEW" customClass="TimerBasedViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Az-2B-uPm"/>
                         <viewControllerLayoutGuide type="bottom" id="2e7-hq-2tb"/>
@@ -461,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="3307" y="-1020"/>
         </scene>
-        <!--4/7/8 Exercise-->
+        <!--Timer Based Normal Mode-->
         <scene sceneID="As1-ei-bCI">
             <objects>
-                <viewController title="4/7/8 Exercise" id="sM7-HZ-cGz" customClass="TimerBasedNormalMode" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sM7-HZ-cGz" customClass="TimerBasedNormalMode" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QXl-hR-iWn"/>
                         <viewControllerLayoutGuide type="bottom" id="yZj-ob-mrh"/>
@@ -1017,29 +1022,37 @@
                                     <constraint firstItem="LBc-LP-5Iz" firstAttribute="leading" secondItem="JHN-XD-m2k" secondAttribute="leadingMargin" id="rP6-EY-wLX"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OWk-Hg-o8k">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-Od-s2v">
                                 <rect key="frame" x="0.0" y="228" width="375" height="439"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="MxY-Ic-oOQ">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MxY-Ic-oOQ" id="ySK-uC-ifz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="eiJ-pE-zOE" id="BTF-BB-FOt"/>
-                                    <outlet property="delegate" destination="eiJ-pE-zOE" id="iSV-LM-hia"/>
-                                </connections>
-                            </tableView>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OWk-Hg-o8k">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="MxY-Ic-oOQ">
+                                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MxY-Ic-oOQ" id="ySK-uC-ifz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="eiJ-pE-zOE" id="BTF-BB-FOt"/>
+                                            <outlet property="delegate" destination="eiJ-pE-zOE" id="iSV-LM-hia"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0n7-Od-s2v" secondAttribute="bottom" id="ABg-2y-Jsg"/>
+                            <constraint firstItem="0n7-Od-s2v" firstAttribute="centerX" secondItem="JHN-XD-m2k" secondAttribute="centerX" id="BZv-6Q-rp5"/>
                             <constraint firstItem="JHN-XD-m2k" firstAttribute="top" secondItem="urj-YD-tJd" secondAttribute="topMargin" constant="72" id="Hi9-lb-Yja"/>
+                            <constraint firstItem="0n7-Od-s2v" firstAttribute="top" secondItem="Kw3-ev-5MK" secondAttribute="bottom" constant="164" id="OWA-HR-O0p"/>
+                            <constraint firstItem="0n7-Od-s2v" firstAttribute="leading" secondItem="urj-YD-tJd" secondAttribute="leading" id="PW8-A7-eog"/>
                             <constraint firstItem="JHN-XD-m2k" firstAttribute="leading" secondItem="urj-YD-tJd" secondAttribute="leadingMargin" constant="8" id="Paf-Rj-TA3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JHN-XD-m2k" secondAttribute="trailing" constant="8" id="iy6-0J-PHG"/>
                         </constraints>
@@ -1447,7 +1460,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z4b-5A-6Ax"/>
+        <segue reference="nDC-2y-ZzS"/>
         <segue reference="6go-sA-ja0"/>
     </inferredMetricsTieBreakers>
 </document>
