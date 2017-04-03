@@ -44,15 +44,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J96-vC-Mje">
-                                                    <rect key="frame" x="267" y="8" width="67" height="43"/>
+                                                    <rect key="frame" x="291" y="8" width="43" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-rj-gvI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="43"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filled_star" translatesAutoresizingMaskIntoConstraints="NO" id="gjD-jR-7FF">
-                                                            <rect key="frame" x="24" y="0.0" width="43" height="43"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star_Icon_Filled" translatesAutoresizingMaskIntoConstraints="NO" id="gjD-jR-7FF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="43" id="CUK-Sz-LyB"/>
                                                                 <constraint firstAttribute="width" constant="43" id="qS0-YA-evm"/>
@@ -60,16 +55,25 @@
                                                         </imageView>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L9-rj-gvI">
+                                                    <rect key="frame" x="248" y="8" width="24" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="aDv-Mo-Ow1" secondAttribute="bottom" constant="8" id="9jY-An-qdr"/>
                                                 <constraint firstItem="aDv-Mo-Ow1" firstAttribute="leading" secondItem="hbY-gU-QwB" secondAttribute="leadingMargin" id="Cor-xj-yXs"/>
                                                 <constraint firstItem="J96-vC-Mje" firstAttribute="top" secondItem="hbY-gU-QwB" secondAttribute="topMargin" id="CsG-qn-0qd"/>
+                                                <constraint firstItem="8L9-rj-gvI" firstAttribute="bottom" secondItem="J96-vC-Mje" secondAttribute="bottom" id="FUg-Dg-pZk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="J96-vC-Mje" secondAttribute="bottom" id="HAE-6s-mTw"/>
                                                 <constraint firstItem="aDv-Mo-Ow1" firstAttribute="top" secondItem="hbY-gU-QwB" secondAttribute="topMargin" constant="8" id="U4J-fr-5mQ"/>
+                                                <constraint firstItem="J96-vC-Mje" firstAttribute="leading" secondItem="8L9-rj-gvI" secondAttribute="trailing" constant="19" id="l7d-cb-IEY"/>
+                                                <constraint firstItem="8L9-rj-gvI" firstAttribute="top" secondItem="J96-vC-Mje" secondAttribute="top" id="mtr-Ya-cI3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="J96-vC-Mje" secondAttribute="trailing" id="sHM-Vq-3nR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="0.69762323940000004" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="aDv-Mo-Ow1" id="GZa-Sv-gm4"/>
                                             <outlet property="ratingLabel" destination="8L9-rj-gvI" id="nYJ-w6-fHJ"/>
@@ -1164,7 +1168,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="MxY-Ic-oOQ">
-                                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MxY-Ic-oOQ" id="ySK-uC-ifz">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1657,15 +1661,15 @@
         <image name="Email_Icon" width="2083" height="1394"/>
         <image name="Game_Icon" width="2084" height="985"/>
         <image name="Password_Icon" width="467" height="653"/>
+        <image name="Star_Icon_Filled" width="2084" height="2084"/>
         <image name="Star_Icon_Unfilled" width="2084" height="2084"/>
         <image name="Timer_Icon" width="1753" height="2086"/>
         <image name="Username_Icon" width="780" height="805"/>
-        <image name="filled_star" width="150" height="150"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yYx-Fl-xIa"/>
+        <segue reference="XHX-PG-ctE"/>
         <segue reference="6go-sA-ja0"/>
     </inferredMetricsTieBreakers>
 </document>
