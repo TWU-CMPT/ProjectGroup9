@@ -16,6 +16,7 @@ class GameBasedViewController: UIViewController {
     var running:Bool?
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var resetBtn: UIButton!
     
@@ -23,9 +24,12 @@ class GameBasedViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        exercise = Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2)
         
         nameLabel.text = exercise!.name
         startBtn.setTitle("Start", for:.normal)
+        resetBtn.isEnabled = false
+        resetBtn.setTitle("Reset", for:.normal)
         
         running = false
         
@@ -41,10 +45,10 @@ class GameBasedViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
             
-            view.showsPhysics = true
+//            view.showsPhysics = true
         }
     }
     
@@ -69,19 +73,19 @@ class GameBasedViewController: UIViewController {
             GameBasedScene.running = true
             running = true
             startBtn.setTitle("Stop", for:.normal)
-            resetBtn.isHidden = true
+            resetBtn.isEnabled = false
         } else {
             GameBasedScene.running = false
             running = false
             startBtn.setTitle("Start", for:.normal)
-            resetBtn.isHidden = false
+            resetBtn.isEnabled = true
         }
     }
     
     @IBAction func didPressReset(_ sender: Any) {
         if (running! == false) {
             GameBasedScene.shouldReset = true
-            resetBtn.isHidden = true
+            resetBtn.isEnabled = false
         }
     }
     
