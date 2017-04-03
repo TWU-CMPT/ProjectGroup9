@@ -30,6 +30,7 @@
 		89C676721E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
 		89C676731E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
 		89C676741E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
+		89C676761E92CA7300824EC2 /* ResultsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */; };
 		9688F3A61E91B52F008A7690 /* breath.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A31E91B52F008A7690 /* breath.mp3 */; };
 		9688F3A71E91B52F008A7690 /* hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A41E91B52F008A7690 /* hold.mp3 */; };
 		9688F3A81E91B52F008A7690 /* out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A51E91B52F008A7690 /* out.mp3 */; };
@@ -108,6 +109,7 @@
 		89C676691E91FED400824EC2 /* GameBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedViewController.swift; sourceTree = "<group>"; };
 		89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedScene.swift; sourceTree = "<group>"; };
 		89C676711E91FF4A00824EC2 /* GameBasedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameBasedScene.sks; sourceTree = "<group>"; };
+		89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsScreenViewController.swift; sourceTree = "<group>"; };
 		9688F3A31E91B52F008A7690 /* breath.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breath.mp3; sourceTree = "<group>"; };
 		9688F3A41E91B52F008A7690 /* hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hold.mp3; sourceTree = "<group>"; };
 		9688F3A51E91B52F008A7690 /* out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = out.mp3; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
 				89C676691E91FED400824EC2 /* GameBasedViewController.swift */,
+				89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */,
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
@@ -621,6 +624,7 @@
 				89C6766E1E91FF1300824EC2 /* GameBasedScene.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				9BD4DDCA1E91DE3F00BE9C7A /* CommentsTableViewCell.swift in Sources */,
+				89C676761E92CA7300824EC2 /* ResultsScreenViewController.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,

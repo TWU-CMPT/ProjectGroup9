@@ -145,11 +145,124 @@
                         <outlet property="nameLabel" destination="YU1-6j-2WR" id="osh-lB-JIA"/>
                         <outlet property="resetBtn" destination="sId-Ho-qSl" id="oMk-vx-Jwq"/>
                         <outlet property="startBtn" destination="idB-Gu-nAL" id="rqn-Jj-oD4"/>
+                        <segue destination="ocb-ib-l6t" kind="show" identifier="resultsScreen" id="gTY-wv-3yZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPa-Se-Zgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3304.8000000000002" y="-1746.4767616191905"/>
+        </scene>
+        <!--Results Screen View Controller-->
+        <scene sceneID="Oao-0W-Cfn">
+            <objects>
+                <viewController id="ocb-ib-l6t" customClass="ResultsScreenViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJv-hu-IR1"/>
+                        <viewControllerLayoutGuide type="bottom" id="xQg-K2-1mE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vc6-ft-UpP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-Cp-tZv">
+                                <rect key="frame" x="154" y="28" width="67" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6G2-Ej-AKN">
+                                <rect key="frame" x="16" y="162" width="343" height="179"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJl-fy-rPw">
+                                <rect key="frame" x="165" y="84" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r34-vK-fgn">
+                                <rect key="frame" x="170" y="349" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFK-cT-1Sn">
+                                <rect key="frame" x="150" y="133" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Das-SH-VU1">
+                                <rect key="frame" x="163" y="378" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="empty_star"/>
+                                <connections>
+                                    <action selector="didRate3:" destination="ocb-ib-l6t" eventType="touchUpInside" id="8Ja-7V-nnD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbv-WP-1Nj">
+                                <rect key="frame" x="309" y="378" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="empty_star"/>
+                                <connections>
+                                    <action selector="didRate5:" destination="ocb-ib-l6t" eventType="touchUpInside" id="Orn-di-3IU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItS-Jo-bfW">
+                                <rect key="frame" x="237" y="378" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="empty_star"/>
+                                <connections>
+                                    <action selector="didRate4:" destination="ocb-ib-l6t" eventType="touchUpInside" id="y1l-Ip-pu3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmw-VC-9x5">
+                                <rect key="frame" x="16" y="378" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="empty_star"/>
+                                <connections>
+                                    <action selector="didRate1:" destination="ocb-ib-l6t" eventType="touchUpInside" id="4ER-rJ-etz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ci-hO-lFZ">
+                                <rect key="frame" x="90" y="378" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="empty_star"/>
+                                <connections>
+                                    <action selector="didRate2:" destination="ocb-ib-l6t" eventType="touchUpInside" id="cP0-5m-ixc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIs-RC-X3r">
+                                <rect key="frame" x="163" y="451" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="didPressSubmit:" destination="ocb-ib-l6t" eventType="touchUpInside" id="jGC-UW-g6e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnRating1" destination="qmw-VC-9x5" id="cbX-dp-5Vz"/>
+                        <outlet property="btnRating2" destination="3ci-hO-lFZ" id="lPY-JV-Or9"/>
+                        <outlet property="btnRating3" destination="Das-SH-VU1" id="r73-vx-8Fs"/>
+                        <outlet property="btnRating4" destination="ItS-Jo-bfW" id="O9Y-Gi-EhY"/>
+                        <outlet property="btnRating5" destination="cbv-WP-1Nj" id="7Bj-jw-5OV"/>
+                        <outlet property="commentField" destination="6G2-Ej-AKN" id="PQr-uO-SN2"/>
+                        <outlet property="scoreLabel" destination="DJl-fy-rPw" id="KIn-Ax-mTa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVR-5L-A9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4128.8000000000002" y="-2182.7586206896553"/>
         </scene>
         <!--Timer Based View Controller-->
         <scene sceneID="JET-cE-bZ1">
@@ -266,9 +379,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-ZK-2VE">
-
-                                <rect key="frame" x="16" y="253" width="343" height="170.5"/>
-
+                                <rect key="frame" x="16" y="253" width="343" height="140.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-xU-uVQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -365,7 +476,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qJb-eg-spx">
-                                <rect key="frame" x="209" y="349.5" width="150" height="30"/>
+                                <rect key="frame" x="209" y="393.5" width="150" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19F-yz-oIR">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
