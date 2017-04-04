@@ -88,6 +88,11 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // Delegate row select
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print("\(indexPath.section) | \(indexPath.row)")

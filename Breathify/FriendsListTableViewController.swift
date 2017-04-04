@@ -91,6 +91,11 @@ class FriendsListTableViewController: UITableViewController {
             
         }
     }
+    
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

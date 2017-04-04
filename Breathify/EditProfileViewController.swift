@@ -112,6 +112,11 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         selectedGender = pickerData[row]
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Default
     
     override func viewDidLoad() {

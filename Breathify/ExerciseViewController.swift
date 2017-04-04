@@ -160,6 +160,10 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,11 @@ class TabViewController: UITabBarController {
     // This is the user that has been selected from previous view
     var user: UserProfile = UserProfile()
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
