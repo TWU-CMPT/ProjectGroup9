@@ -37,6 +37,8 @@ class TimerBasedViewController: UIViewController {
     var nextStep:[Any] = []
     var step:Int = 0
     
+    var HoldComplete:Int = 0
+    
     @IBOutlet weak var ProgressBarView: MBCircularProgressBarView!
     @IBOutlet weak var TimerLabel: UILabel!
     
@@ -69,7 +71,7 @@ class TimerBasedViewController: UIViewController {
         
         timer.invalidate()
         
-        if(time != 0){
+        if(time != 0 || HoldComplete == 0){
             //error checking
             timer3.invalidate()
             TimerLabel.text = errDet
@@ -125,7 +127,7 @@ class TimerBasedViewController: UIViewController {
         
         if(breathPattern != 0){
         //breath in Process
-            
+            HoldComplete = 0
             nextStep = (exercise.sequence?[step])!
             let breathIn = Double(nextStep[1] as! Int)
             
@@ -154,6 +156,7 @@ class TimerBasedViewController: UIViewController {
                     else{
                         self.TimerLabel.text = String("Release to Breath Out")
                         self.time = 0
+                        self.HoldComplete = 1
                     }
                 }
             }))
@@ -207,6 +210,7 @@ class TimerBasedViewController: UIViewController {
         else{
             TimerLabel.text = String("Release to Breath Out")
             timer.invalidate()
+            HoldComplete = 1
         }
     }
     

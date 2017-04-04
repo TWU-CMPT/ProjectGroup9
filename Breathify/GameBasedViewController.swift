@@ -16,7 +16,6 @@ class GameBasedViewController: UIViewController {
     var running:Bool?
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var resetBtn: UIButton!
     
@@ -24,7 +23,7 @@ class GameBasedViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        exercise = Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2)
+//        exercise = Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2)
         
         nameLabel.text = exercise!.name
         startBtn.setTitle("Start", for:.normal)
@@ -39,6 +38,7 @@ class GameBasedViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 GameBasedScene.exercise = self.exercise
+                GameBasedScene.viewController = self
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -74,6 +74,8 @@ class GameBasedViewController: UIViewController {
             running = true
             startBtn.setTitle("Stop", for:.normal)
             resetBtn.isEnabled = false
+        } else if (GameBasedScene.ended! == true) {
+            performSegue(withIdentifier: "resultsScreen", sender: nil)
         } else {
             GameBasedScene.running = false
             running = false
@@ -86,6 +88,18 @@ class GameBasedViewController: UIViewController {
         if (running! == false) {
             GameBasedScene.shouldReset = true
             resetBtn.isEnabled = false
+        }
+    }
+    
+    func gameDidEnd() {
+        startBtn.setTitle("Results", for:.normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "resultsScreen") {
+            let newView = segue.destination as! ResultsScreenViewController
+            newView.exercise = self.exercise
+            newView.score = GameBasedScene.score!
         }
     }
     
