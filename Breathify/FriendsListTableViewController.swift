@@ -15,6 +15,7 @@ class FriendsListTableViewController: UITableViewController {
     // MARK: Properties
     
     var user: UserProfile = UserProfile()
+    var updatedFriendList: [String]?
     var Friends: [UserProfile] = []
     let ref = FIRDatabase.database().reference(withPath: "User")
     
@@ -23,6 +24,11 @@ class FriendsListTableViewController: UITableViewController {
     @IBOutlet weak var FriendsListTableView: UITableView!
     
     // MARK: Actions
+    
+    
+    @IBAction func BackButton(_ sender: Any) {
+        performSegue(withIdentifier: "Home", sender: nil)
+    }
     
     @IBAction func AddFriend(_ sender: Any) {
         
@@ -44,7 +50,17 @@ class FriendsListTableViewController: UITableViewController {
                 }
                 
                 else if snapshot.exists() {
+                    print(snapshot.value!)
+                    var newFriends: [UserProfile] = []
+                    for item in snapshot.children {
+                        let friendItem = UserProfile(snapshot: item as! FIRDataSnapshot)
+                        newFriends.append(friendItem)
+                    }
+                    self.Friends += newFriends
+                    let newIndexPath = IndexPath(row: self.user.friendList.count, section: 0)
                     self.user.friendList.append(emailField.text!)
+                    self.FriendsListTableView.insertRows(at: [newIndexPath], with: .automatic)
+                    
                 }
                 else {
                     let alertController2 = UIAlertController(title: "Error", message: "User does not exist", preferredStyle: .alert)
@@ -73,6 +89,9 @@ class FriendsListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let nvc = self.navigationController as! FriendListViewController
+        user = nvc.user
         
         for email in user.friendList {
             
@@ -169,6 +188,9 @@ class FriendsListTableViewController: UITableViewController {
                 let newView = segue.destination as! FriendDetailViewController
                 newView.friend = Friends[indexPath.row]
             }
+        }
+        else if segue.identifier == "Home" {
+            updatedFriendList = user.friendList
         }
     }
     

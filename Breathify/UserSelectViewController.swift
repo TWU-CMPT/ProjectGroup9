@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 import Firebase
 import FirebaseAuth
 
@@ -19,8 +20,10 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK: Temporary hard-coded users
     
-    var users = [UserProfile(name:"Offline User", password:"", email:"", gender:"Male", friendList: []), UserProfile(name:"Jim Jim", password:"testtest", email:"test2@test.com", gender:"Male", friendList:["test@test.com"]), UserProfile(name:"Jean Grey", password:"testtest", email:"test@test.com", gender:"Female", friendList:["test2@test.com"])]
+    var users: [UserProfile] = []
 
+    // MARK: Collection View Protocol
+    
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.users.count
@@ -50,6 +53,14 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if let savedUsers = loadUsers() {
+            users += savedUsers
+        }
+        else {
+            users = loadSampleUser()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +68,21 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: Actions
+    
+    @IBAction func rewindToOpening(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.source as? newUserViewController, let user = sourceViewController.user {
+            
+            let newIndexPath = IndexPath(item: users.count, section: 0)
+            
+            users.append(user)
+            UserCollectionView.insertItems(at: [newIndexPath])
+            
+            saveUsers()
+        }
+        
+    }
 
     // MARK: - Navigation
 
@@ -73,33 +98,57 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
                     let vc = segue.destination as? TabViewController
                     let user = users[indexPath.row]
                     vc?.user = user
+                    vc?.users = users
+                    vc?.selectedIndexPath = indexPath.row
                     
                     // automatically sign user into firebase if email and password field works
                     if user.email != "" && user.password != "" {
-                        //log in
-                        FIRAuth.auth()?.signIn(withEmail: user.email!, password: user.password!) { (user, error) in
-                            
-                            if error == nil {
-                                
-                                //Print into the console if successfully logged in
-                                print("You have successfully logged in")
-                                
-                            } else {
-                                
-                                //Tells the user that there is an error and then gets firebase to tell them the error
-                                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                                
-                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                                alertController.addAction(defaultAction)
-                                
-                                self.present(alertController, animated: true, completion: nil)
-                            }
-                        }
+                        LogIn(email: user.email, password: user.password)
                     }
                 }
             }
         }
     }
+    
+    // MARK: Private Methods
+    
+    private func LogIn(email: String, password: String) {
+        //log in
+        FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            
+            if error == nil {
+                
+                //Print into the console if successfully logged in
+                print("You have successfully logged in")
+                
+            } else {
+                
+                //Tells the user that there is an error and then gets firebase to tell them the error
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func saveUsers() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(users, toFile: UserProfile.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Users successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
 
-
+    private func loadUsers() -> [UserProfile]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: UserProfile.ArchiveURL.path) as? [UserProfile]
+    }
+    
+    private func loadSampleUser() -> [UserProfile] {
+        let sampleUsers = [UserProfile(name: "Sample User", password: "testtest", email: "test2@test.com", gender: "Male", profilePicture: #imageLiteral(resourceName: "Gender Neutral User-50"))]
+        return sampleUsers
+    }
 }

@@ -19,11 +19,13 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
     var pickerData: [String] = []
     let ref = FIRDatabase.database().reference(withPath: "User")
     let storage = FIRStorage.storage()
+    var updatedUser: UserProfile?
     
     // MARK: Outlets
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var GenderPicker: UIPickerView!
     @IBOutlet weak var ProfilePicture: UIImageView!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
 
     // MARK: Actions
     
@@ -39,41 +41,16 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         present(imagePickerController, animated:true, completion: nil)
     }
     
-    @IBAction func Save(_ sender: Any) {
-        // If user's name field is not blank
-        if (usernameField.text != "") {
-            user.setName(newName: usernameField.text!)
-            user.setProfilePicture(newPicture: ProfilePicture.image!)
-            
-            // If gender was changed inside of UIPicker View
-            if selectedGender != "" {
-                user.setGender(newGender: selectedGender)
-            }
 
-            // If user is authenticated, update user database
-            if FIRAuth.auth()?.currentUser != nil {
-                let userRef = ref.child((FIRAuth.auth()?.currentUser?.uid)!)
-                self.user.key = (FIRAuth.auth()?.currentUser?.uid)!
-                userRef.setValue(user.toAnyObject())
-                
-                // upload profile picture to Firebase Storage
-                let data = UIImageJPEGRepresentation(user.profilePicture, 1)
-                storage.reference().child("images/\(user.key).jpg").put(data!, metadata: nil)
-            }
-            
-            performSegue(withIdentifier: "Save", sender: nil)
-        }
-        else {
-            let alert = UIAlertController(title: "Oh no!", message: "Make sure you fill in all fields", preferredStyle: .alert)
-            
-            let OKAction = UIAlertAction(title: "OK", style: .default)
-            alert.addAction(OKAction)
-            
-            self.present(alert, animated:true, completion: nil)
-        }
+    @IBAction func Save(_ sender: Any) {
+        user.name = usernameField.text!
+        user.gender = selectedGender
+        user.profilePicture = ProfilePicture.image!
+        
+        performSegue(withIdentifier: "Save", sender: nil)
     }
 
-    // MARK: UIPickerController Delegate
+    // MARK: UIImagePickerController Delegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
@@ -86,11 +63,24 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        ProfilePicture.image = selectedImage
+        ProfilePicture.image = resizeImage(image: selectedImage, newWidth: 128)
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: UIImagePickerView Protocol
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    // MARK: UIPickerView Protocol
     
     // the number of components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -108,7 +98,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
         selectedGender = pickerData[row]
     }
     
@@ -120,6 +109,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         // Do any additional setup after loading the view.
         usernameField.text = user.name
         ProfilePicture.image = user.profilePicture
+        selectedGender = user.gender
+        usernameField.delegate = self
         
         //Gender UIPickerView Setup
         
@@ -130,6 +121,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         
         let index = pickerData.index(of: user.gender)
         GenderPicker.selectRow(index!, inComponent: 0, animated: true)
+        
+        updateButtonStatus()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,11 +130,20 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        SaveButton.isEnabled = false
+    }
 
     // Exit software Keyboard when user presses Done form the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateButtonStatus()
     }
     
     // Exit the software keyboard if the user touches the view that is not the keyboard
@@ -156,10 +158,15 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UIPicker
 
         // pass on user to next views
         if (segue.identifier == "Save") {
-            let newView = segue.destination as! TabViewController
-            newView.user = user
+            updatedUser = user
         }
     }
  
-
+    // MARK: Private Methods
+    
+    private func updateButtonStatus() {
+        let text = usernameField.text ?? ""
+        SaveButton.isEnabled = !text.isEmpty
+    }
+    
 }

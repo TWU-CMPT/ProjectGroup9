@@ -45,6 +45,7 @@
 		96AA841B1E8E4600005F2BDC /* four.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96AA84141E8E4600005F2BDC /* four.mp3 */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
+		9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */; };
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
 		9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */; };
 		9BC81FF51E905319000AABDC /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */; };
@@ -123,6 +124,7 @@
 		96AA84141E8E4600005F2BDC /* four.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = four.mp3; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
+		9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
 		9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
 				9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */,
 				9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */,
+				9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */,
 				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
 				9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */,
 				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
@@ -608,6 +611,7 @@
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
+				9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */,
 				9BC9ED4E1E833D370032C8E5 /* CreateOnlineUserViewController.swift in Sources */,
 				9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */,
 				9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */,

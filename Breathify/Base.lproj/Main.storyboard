@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Enu-wO-evE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,20 +111,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU1-6j-2WR">
-                                <rect key="frame" x="166" y="28" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="28" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sId-Ho-qSl">
-                                <rect key="frame" x="164" y="587" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="587" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didPressReset:" destination="i5a-yg-QLJ" eventType="touchUpInside" id="DKV-nV-I6q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idB-Gu-nAL">
-                                <rect key="frame" x="164" y="549" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="549" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didPressStart:" destination="i5a-yg-QLJ" eventType="touchUpInside" id="h5b-Zo-HvP"/>
@@ -266,9 +266,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="qxw-ZK-2VE">
-
-                                <rect key="frame" x="16" y="253" width="343" height="170.5"/>
-
+                                <rect key="frame" x="16" y="253" width="343" height="140.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-xU-uVQ">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -365,7 +363,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qJb-eg-spx">
-                                <rect key="frame" x="209" y="349.5" width="150" height="30"/>
+                                <rect key="frame" x="209" y="393.5" width="150" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19F-yz-oIR">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -930,7 +928,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8mt-Ix-hgY">
-                                <rect key="frame" x="24" y="84" width="327" height="417.5"/>
+                                <rect key="frame" x="24" y="36" width="327" height="517.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC5-xI-TxE">
                                         <rect key="frame" x="110.5" y="0.0" width="106" height="29"/>
@@ -959,7 +957,7 @@
                                         <rect key="frame" x="0.0" y="201.5" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7t2-N2-hRQ">
                                         <rect key="frame" x="3.5" y="239.5" width="320" height="140"/>
@@ -967,17 +965,45 @@
                                             <constraint firstAttribute="height" constant="140" id="oCI-KF-b37"/>
                                         </constraints>
                                     </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cae-n6-UlB">
+                                        <rect key="frame" x="0.0" y="387.5" width="327" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Online Users" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo6-f9-ACk">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online users will be able to connect with friends and leave feedback" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAf-h5-iBw">
+                                                <rect key="frame" x="0.0" y="20.5" width="327" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYt-1B-7nN">
-                                        <rect key="frame" x="0.0" y="387.5" width="327" height="30"/>
-                                        <state key="normal" title="Continue"/>
+                                        <rect key="frame" x="0.0" y="449.5" width="327" height="30"/>
+                                        <state key="normal" title="Continue as Basic User"/>
                                         <connections>
-                                            <action selector="Continue:" destination="6ij-8C-o4a" eventType="touchUpInside" id="2Zh-iU-yun"/>
+                                            <action selector="BasicContinue:" destination="6ij-8C-o4a" eventType="touchUpInside" id="UAS-Rx-at7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhP-lU-Run">
+                                        <rect key="frame" x="0.0" y="487.5" width="327" height="30"/>
+                                        <state key="normal" title="Continue as Online User"/>
+                                        <connections>
+                                            <action selector="OnlineContinue:" destination="6ij-8C-o4a" eventType="touchUpInside" id="iO0-Ab-iLJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vWC-3q-kuU" firstAttribute="leading" secondItem="8mt-Ix-hgY" secondAttribute="leadingMargin" id="0At-aT-eJy"/>
+                                    <constraint firstAttribute="trailing" secondItem="bhP-lU-Run" secondAttribute="trailing" id="4D2-uU-fr4"/>
                                     <constraint firstItem="jYt-1B-7nN" firstAttribute="leading" secondItem="8mt-Ix-hgY" secondAttribute="leadingMargin" id="6iy-l8-sJF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cae-n6-UlB" secondAttribute="trailing" id="7x6-nb-yAw"/>
+                                    <constraint firstItem="bhP-lU-Run" firstAttribute="leading" secondItem="8mt-Ix-hgY" secondAttribute="leading" id="BjJ-ol-kxi"/>
+                                    <constraint firstItem="Cae-n6-UlB" firstAttribute="leading" secondItem="8mt-Ix-hgY" secondAttribute="leading" id="LKy-SE-9Eo"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="DuH-w5-nes" secondAttribute="trailing" id="QBA-A2-IKF"/>
                                     <constraint firstItem="DuH-w5-nes" firstAttribute="leading" secondItem="8mt-Ix-hgY" secondAttribute="leadingMargin" id="bNX-D2-5Zu"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="jYt-1B-7nN" secondAttribute="trailing" id="bto-f1-Ty1"/>
@@ -989,18 +1015,21 @@
                         <constraints>
                             <constraint firstItem="8mt-Ix-hgY" firstAttribute="leading" secondItem="0bb-et-Ufm" secondAttribute="leadingMargin" constant="8" id="RWd-ui-eSf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8mt-Ix-hgY" secondAttribute="trailing" constant="8" id="T8T-2h-Rdf"/>
-                            <constraint firstItem="8mt-Ix-hgY" firstAttribute="top" secondItem="RPc-nO-b0u" secondAttribute="bottom" constant="64" id="hBV-lS-RaZ"/>
+                            <constraint firstItem="8mt-Ix-hgY" firstAttribute="top" secondItem="RPc-nO-b0u" secondAttribute="bottom" constant="16" id="hBV-lS-RaZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BasicUserButton" destination="jYt-1B-7nN" id="YXH-R8-Gql"/>
                         <outlet property="GenderPicker" destination="7t2-N2-hRQ" id="A7L-Vk-ody"/>
                         <outlet property="NameField" destination="DuH-w5-nes" id="zUd-SJ-HSZ"/>
+                        <outlet property="OnlineUserButton" destination="bhP-lU-Run" id="T4z-bu-343"/>
                         <outlet property="ProfilePicture" destination="uRt-s7-mIr" id="eUB-7Y-h3y"/>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="Home" id="nDC-2y-ZzS"/>
-                        <segue destination="3aH-nU-Bbb" kind="show" identifier="OnlineUser" id="Vln-FJ-VSk"/>
+                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="BasicUser" unwindAction="rewindToOpeningWithSegue:" id="aec-oX-n2Z"/>
+                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="OnlineUser" unwindAction="rewindToOpeningWithSegue:" id="ub6-IM-pVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9C-uG-nys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KGH-Wv-rSe" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Rns-vE-dP8">
                     <connections>
                         <action selector="selectPhoto:" destination="6ij-8C-o4a" id="vud-JS-ZBq"/>
@@ -1081,15 +1110,17 @@
                     <navigationItem key="navigationItem" title="Profile" id="cj0-Nl-EO9"/>
                     <connections>
                         <outlet property="ProfilePicture" destination="fNb-F9-Ldc" id="oLI-Ha-iS1"/>
+                        <outlet property="ProfileTableView" destination="OWk-Hg-o8k" id="TZK-SU-8yG"/>
                         <outlet property="nameLabel" destination="LBc-LP-5Iz" id="cS6-MM-CbV"/>
-                        <segue destination="5xv-KC-rhC" kind="show" identifier="logIn" id="hf7-BC-7ms"/>
-                        <segue destination="8tj-3J-SQT" kind="show" identifier="settings" id="QVT-bZ-hrk"/>
-                        <segue destination="Enu-wO-evE" kind="showDetail" identifier="userSelect" id="Mxu-2Q-ZCB"/>
-                        <segue destination="3aH-nU-Bbb" kind="show" identifier="createOnlineUser" id="6go-sA-ja0"/>
-                        <segue destination="oHk-c9-TxJ" kind="show" identifier="FriendList" id="yKu-c9-IH8"/>
+                        <segue destination="5xv-KC-rhC" kind="presentation" identifier="logIn" id="hf7-BC-7ms"/>
+                        <segue destination="8tj-3J-SQT" kind="presentation" identifier="settings" id="QVT-bZ-hrk"/>
+                        <segue destination="3aH-nU-Bbb" kind="presentation" identifier="createOnlineUser" id="6go-sA-ja0"/>
+                        <segue destination="niK-eN-QTc" kind="show" identifier="FriendList" id="yKu-c9-IH8"/>
+                        <segue destination="1Im-1U-X1F" kind="unwind" identifier="userSelect" unwindAction="rewindToOpeningWithSegue:" id="0QD-fd-w8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJy-tE-VH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1Im-1U-X1F" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="1096.1019490254873"/>
         </scene>
@@ -1172,6 +1203,24 @@
                                     <constraint firstItem="1vA-za-9YT" firstAttribute="width" secondItem="gDa-Vd-7KI" secondAttribute="width" id="pZN-2c-2SM"/>
                                 </constraints>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-qN-4dS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="UmH-kR-PIi">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="AL3-cv-xf1">
+                                            <connections>
+                                                <segue destination="wPR-mG-zcg" kind="unwind" unwindAction="rewindToProfileWithSegue:" id="L5w-lA-zPG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="AMR-Y6-B7I">
+                                            <connections>
+                                                <action selector="Save:" destination="8tj-3J-SQT" id="OYP-3j-SJH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1180,21 +1229,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gDa-Vd-7KI" secondAttribute="trailing" constant="8" id="sNb-Jk-eH4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="Eez-NV-djF">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="1Fo-uD-eCJ">
-                            <connections>
-                                <action selector="Save:" destination="8tj-3J-SQT" id="dBq-6N-YtJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="Eez-NV-djF"/>
                     <connections>
                         <outlet property="GenderPicker" destination="xMK-Xz-nvj" id="I0e-6F-f8l"/>
                         <outlet property="ProfilePicture" destination="e8N-Cy-fVU" id="jOb-aC-k8P"/>
+                        <outlet property="SaveButton" destination="AMR-Y6-B7I" id="DyW-SP-Pwj"/>
                         <outlet property="usernameField" destination="1vA-za-9YT" id="kX8-tf-l9L"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="Save" id="M6C-s7-1fQ"/>
+                        <segue destination="wPR-mG-zcg" kind="unwind" identifier="Save" unwindAction="unwindToTabBarWithSegue:" id="uHx-X8-WeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr2-uc-djA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wPR-mG-zcg" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="7Es-qX-BGf">
                     <connections>
                         <action selector="selectPhoto:" destination="8tj-3J-SQT" id="9aE-K5-aMm"/>
@@ -1211,22 +1256,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="syx-mR-zrz">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Friends" id="tzl-bP-IVy">
-                                    <barButtonItem key="rightBarButtonItem" title="Add" id="FTd-kx-Fhe">
-                                        <connections>
-                                            <action selector="AddFriend:" destination="oHk-c9-TxJ" id="zgK-ti-ImE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" id="eTq-8a-wCG" customClass="FriendsListTableViewCell" customModule="Breathify" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eTq-8a-wCG" id="EHG-fJ-2lV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1252,13 +1284,27 @@
                             <outlet property="delegate" destination="oHk-c9-TxJ" id="Fr9-i8-Pz2"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Ngm-ZD-w1g">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="cgI-jy-RFz">
+                            <connections>
+                                <action selector="BackButton:" destination="oHk-c9-TxJ" id="c0B-0o-Ov0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="FTd-kx-Fhe">
+                            <connections>
+                                <action selector="AddFriend:" destination="oHk-c9-TxJ" id="zgK-ti-ImE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="FriendsListTableView" destination="Kcm-91-OgZ" id="F0R-4I-3kf"/>
+                        <segue destination="BMt-8e-thN" kind="unwind" identifier="Home" unwindAction="unwindToTabBarWithSegue:" id="vd4-md-icC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmU-kx-7Io" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BMt-8e-thN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="1836.4317841079462"/>
+            <point key="canvasLocation" x="4276" y="1835.5322338830586"/>
         </scene>
         <!--Friend Detail View Controller-->
         <scene sceneID="OO8-54-65J">
@@ -1309,7 +1355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9d-Wm-FVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3562" y="1836"/>
+            <point key="canvasLocation" x="5164" y="1835.5322338830586"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="t6V-ZH-s2Q">
@@ -1370,6 +1416,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-DS-JKo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="wa6-SL-snr">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="o2z-nJ-2iJ">
+                                            <connections>
+                                                <segue destination="PG4-HW-Ln2" kind="unwind" unwindAction="rewindToProfileWithSegue:" id="ER7-7h-yWd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1386,18 +1445,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="LoginButton" destination="LYu-bF-xKC" id="1gd-ns-ZBI"/>
                         <outlet property="emailField" destination="U6j-0h-PXA" id="683-M7-SOz"/>
                         <outlet property="passwordField" destination="BO7-DD-9Pu" id="DNu-Tn-H5X"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="Home" id="z4b-5A-6Ax"/>
+                        <segue destination="PG4-HW-Ln2" kind="unwind" identifier="Home" unwindAction="unwindToTabBarWithSegue:" id="nai-KE-utL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aA-k4-zaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PG4-HW-Ln2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1686" y="1836"/>
         </scene>
         <!--Create Online User View Controller-->
         <scene sceneID="O0o-1y-A53">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ff-sU-bjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fnd-Gv-Cje" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="3aH-nU-Bbb" customClass="CreateOnlineUserViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sam-ag-Wcc"/>
@@ -1430,7 +1493,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-ZJ-b5o">
                                         <rect key="frame" x="0.0" y="76" width="327" height="30"/>
-                                        <state key="normal" title="Create Online User"/>
+                                        <state key="normal" title="Register"/>
                                         <connections>
                                             <action selector="createUser:" destination="3aH-nU-Bbb" eventType="touchUpInside" id="0Dk-83-Mjf"/>
                                         </connections>
@@ -1440,7 +1503,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="sWT-xQ-NYl">
                                 <rect key="frame" x="16" y="64" width="343" height="160"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Online User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsi-G0-HY0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsi-G0-HY0">
                                         <rect key="frame" x="0.0" y="112" width="343" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
@@ -1448,6 +1511,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNF-BF-Xxq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="Qy6-Ys-VKH">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="d0h-eU-bDX">
+                                            <connections>
+                                                <segue destination="Fnd-Gv-Cje" kind="unwind" unwindAction="rewindToProfileWithSegue:" id="0Rr-sf-45c"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1460,15 +1536,35 @@
                             <constraint firstItem="sWT-xQ-NYl" firstAttribute="height" secondItem="0pA-KI-p6E" secondAttribute="height" multiplier="0.24" id="zru-Vs-kza"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="RegisterButton" destination="ZYx-ZJ-b5o" id="otA-A9-2lC"/>
                         <outlet property="emailField" destination="gkb-Mr-Wjf" id="QE3-NM-EKl"/>
                         <outlet property="passwordField" destination="B86-Ej-VyG" id="rxv-lU-IVD"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="Home" id="yYx-Fl-xIa"/>
+                        <segue destination="Fnd-Gv-Cje" kind="unwind" identifier="Home" unwindAction="unwindToTabBarWithSegue:" id="amR-CH-CRt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ff-sU-bjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748" y="1836"/>
+        </scene>
+        <!--Friend List View Controller-->
+        <scene sceneID="NHS-Nt-4DH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="niK-eN-QTc" customClass="FriendListViewController" customModule="Breathify" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Skl-Pc-QOP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oHk-c9-TxJ" kind="relationship" relationship="rootViewController" id="e26-WG-HoM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANQ-qH-cQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3336.8000000000002" y="1835.5322338830586"/>
         </scene>
     </scenes>
     <resources>
@@ -1480,8 +1576,4 @@
         <image name="gamepad" width="400" height="400"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nDC-2y-ZzS"/>
-        <segue reference="6go-sA-ja0"/>
-    </inferredMetricsTieBreakers>
 </document>
