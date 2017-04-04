@@ -14,6 +14,7 @@ class GameBasedViewController: UIViewController {
     
     var exercise:Exercise?
     var running:Bool?
+    var user: UserProfile?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
@@ -100,6 +101,7 @@ class GameBasedViewController: UIViewController {
             let newView = segue.destination as! ResultsScreenViewController
             newView.exercise = self.exercise
             newView.score = GameBasedScene.score!
+            newView.user = self.user!
         }
     }
     

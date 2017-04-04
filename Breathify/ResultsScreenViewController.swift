@@ -13,6 +13,11 @@ import FirebaseDatabase
 
 class ResultsScreenViewController: UIViewController {
 
+    // MARK: Properties
+    
+    var user: UserProfile = UserProfile()
+    let ref = FIRDatabase.database().reference(withPath: "Exercise")
+
     // Rating star assets
     let filledStar = UIImage(named: "filled_star")
     let emptyStar = UIImage(named: "empty_star")
@@ -40,45 +45,47 @@ class ResultsScreenViewController: UIViewController {
     
     
     @IBAction func didPressSubmit(_ sender: Any) {
+        
+        
+        // If user is logged in, update FIREBASE
+        if FIRAuth.auth()?.currentUser != nil {
+            
+            let update = ["username": user.name,
+                          "rating": exercise?.rating ?? 5,
+                          "comment": commentField.text] as [String : Any]
+            
+            let childUpdate = ["/" + (exercise?.key)! + "/feedback/" + (FIRAuth.auth()?.currentUser?.uid)!: update]
+            
+            ref.updateChildValues(childUpdate)
+            
+            let feedbackRef = ref.child((exercise?.key)!).child("feedback")
+            
+            var numUsers: Double = 0
+            var sumRating: Double = 0
+            var average: Double = 0
+            
+            feedbackRef.observe(.value, with: { snapshot in
+                
+                var feedbackItem = Feedback(username: "", rating: 0, comment: "")
+                
+                for item in snapshot.children {
+                    feedbackItem = Feedback(snapshot: item as! FIRDataSnapshot)
+                    numUsers += 1
+                    sumRating += Double(feedbackItem.rating)
+                }
+                
+                average = sumRating/numUsers
+                
+                self.ref.child("/" + (self.exercise?.key)! + "/avgRating").setValue(average)
+            })
+        }
+        
     }
     
     // Change the rating of the exercise and update rating star states
     func updateRating(rating:Int) {
         exercise!.rating = rating
-        
-        // if user is signed in, update Firebase
-//        if FIRAuth.auth()?.currentUser != nil {
-//            let update = ["username": user.name,
-//                          
-//                          "rating": rating] as [String : Any]
-//            let childUpdate = ["/\(exercise.key)/feedback/" + (FIRAuth.auth()?.currentUser?.uid)!: update]
-//            
-//            ref.updateChildValues(childUpdate)
-//            
-//            let feedbackRef = ref.child(exercise.key).child("feedback")
-//            
-//            // calculate average rating for exercise
-//            var numUsers: Double = 0
-//            var sumRating: Double = 0
-//            var average: Double = 0
-//            
-//            feedbackRef.observe(.value, with: { snapshot in
-//                
-//                var feedbackItem = Feedback(username: "", rating: 0, comment: "")
-//                
-//                for item in snapshot.children {
-//                    feedbackItem = Feedback(snapshot: item as! FIRDataSnapshot)
-//                    numUsers += 1
-//                    sumRating += Double(feedbackItem.rating)
-//                }
-//                
-//                average = sumRating/numUsers
-//                
-//                self.ref.child("\(self.exercise.key)/avgRating").setValue(average)
-//            })
-//            
-//        }
-        
+
         btnRating1.setImage(emptyStar, for: .normal)
         btnRating2.setImage(emptyStar, for: .normal)
         btnRating3.setImage(emptyStar, for: .normal)

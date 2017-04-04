@@ -199,6 +199,7 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         else if (segue.identifier == "gameMode") {
             let newView = segue.destination as! GameBasedViewController
             newView.exercise = self.exercise
+            newView.user = self.user
         }
     }
     
