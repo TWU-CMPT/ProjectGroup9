@@ -42,7 +42,6 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         // if user is signed in, update Firebase
         if FIRAuth.auth()?.currentUser != nil {
             let update = ["username": user.name,
-
                           "rating": rating] as [String : Any]
             let childUpdate = ["/\(exercise.key)/feedback/" + (FIRAuth.auth()?.currentUser?.uid)!: update]
             
@@ -203,6 +202,7 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         else if (segue.identifier == "gameMode") {
             let newView = segue.destination as! GameBasedViewController
             newView.exercise = self.exercise
+            newView.user = self.user
         }
     }
     

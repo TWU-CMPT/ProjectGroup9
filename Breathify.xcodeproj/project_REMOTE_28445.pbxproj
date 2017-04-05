@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */; };
 		820B783672B35245464ED730 /* Pods_BreathifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */; };
 		891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317831E6D3D1600C11D71 /* ExerciseCell.swift */; };
 		891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317851E6D429F00C11D71 /* ExerciseViewController.swift */; };
@@ -47,7 +46,6 @@
 		96AA841B1E8E4600005F2BDC /* four.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96AA84141E8E4600005F2BDC /* four.mp3 */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
-		9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */; };
 		9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */; };
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
 		9B7DD4E21E94554A00723D3E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */; };
@@ -92,7 +90,6 @@
 		01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5384CA1A75B4D11D9D7B9E /* Pods-BreathifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyTests/Pods-BreathifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		323C840EC0BF886126ADD051 /* Pods-BreathifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		59372572964400DE23160A7B /* Pods-Breathify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.debug.xcconfig"; sourceTree = "<group>"; };
 		891317831E6D3D1600C11D71 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		891317851E6D429F00C11D71 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +129,6 @@
 		96AA84141E8E4600005F2BDC /* four.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = four.mp3; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
-		9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLibraryViewController.swift; sourceTree = "<group>"; };
 		9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
 		9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +219,6 @@
 				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */,
-				5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */,
 				9B7DD4E31E94572C00723D3E /* Contact.swift */,
 				9B7DD4E51E9458C900723D3E /* ContactTableViewCell.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
@@ -304,7 +299,6 @@
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
-				9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -622,7 +616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C6766A1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
-				9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */,
 				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
 				9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */,
@@ -652,7 +645,6 @@
 				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,
 				9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */,
-				5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +803,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -826,7 +817,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;
 				PRODUCT_NAME = "$(TARGET_NAME)";

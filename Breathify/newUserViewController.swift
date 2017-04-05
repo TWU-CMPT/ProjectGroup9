@@ -7,21 +7,77 @@
 //
 
 import UIKit
+import os.log
+import Firebase
+import FirebaseAuth
 
 class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: Properties
     
     var pickerData: [String] = [String]()
-    var user: UserProfile = UserProfile()
+    var user: UserProfile?
+    var selectedGender = "Male"
+    var email: String?
+    var password: String?
     
     // MARK: Outlets
     
     @IBOutlet weak var GenderPicker: UIPickerView!
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var NameField: UITextField!
+    @IBOutlet weak var BasicUserButton: UIButton!
+    @IBOutlet weak var OnlineUserButton: UIButton!
     
     // MARK: Actions
+    
+    @IBAction func BasicContinue(_ sender: Any) {
+        performSegue(withIdentifier: "BasicUser", sender: nil)
+    }
+    
+    @IBAction func OnlineContinue(_ sender: Any) {
+        let alertController = UIAlertController(title: "Register", message: "", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: { _ in
+            let emailField = alertController.textFields![0]
+            let passwordField = alertController.textFields![1]
+            
+            FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user,error) in
+                
+                if error == nil {
+                    print("You have successfuly signed up")
+                    
+                    self.email = emailField.text
+                    self.password = passwordField.text
+                    
+                    self.performSegue(withIdentifier: "OnlineUser", sender: nil)
+                }
+                else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+        })
+        
+        alertController.addTextField { textEmail in
+            textEmail.placeholder = "Email"
+        }
+        
+        alertController.addTextField { textPassword in
+            textPassword.isSecureTextEntry = true
+            textPassword.placeholder = "Password"
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(doneAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+
     
     @IBAction func selectPhoto(_ sender: UITapGestureRecognizer) {
         
@@ -35,33 +91,24 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         present(imagePickerController, animated:true, completion: nil)
         
     }
-
-    @IBAction func Continue(_ sender: Any) {
-        
-        if NameField.text == "" {
-            let alertController = UIAlertController(title: "Who are you?", message: "Please enter your name", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .cancel)
-            
-            alertController.addAction(OKAction)
-            
-            present(alertController, animated: true, completion: nil)
-        }
-        else {
-            let alertController = UIAlertController(title: "Would you like to register?", message: "Registered users will be able to connect with friends", preferredStyle: .alert)
-            let onlineAction = UIAlertAction(title: "Yes", style: .default, handler: {action in self.performSegue(withIdentifier: "OnlineUser", sender: nil)})
-            let offlineAction = UIAlertAction(title: "No", style: .default, handler: {action in self.performSegue(withIdentifier: "Home", sender: nil)})
-            
-            alertController.addAction(offlineAction)
-            alertController.addAction(onlineAction)
-            
-            user.name = NameField.text!
-            user.profilePicture = ProfilePicture.image!
-            
-            present(alertController, animated:true, completion:nil)
-        }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        BasicUserButton.isEnabled = false
+        OnlineUserButton.isEnabled = false
     }
     
-    // MARK: UIImagePickerController Delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        ContinueButtonState()
+    }
+    
+    // MARK: UIImagePickerController Functions
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
@@ -74,11 +121,24 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        ProfilePicture.image = selectedImage
+        ProfilePicture.image = resizeImage(image: selectedImage, newWidth: 128)
         dismiss(animated: true, completion: nil)
     }
     
-    // UIPickerView Protocol
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    // MARK: UIPickerView Protocol
     
     // the number of components
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -97,7 +157,7 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // set user's gender from UIPickerView
-        user.gender = pickerData[row]
+        selectedGender = pickerData[row]
     }
     
     // Sets the colour font of the status bar to be white
@@ -119,10 +179,14 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NameField.delegate = self
+        
         self.GenderPicker.delegate = self
         self.GenderPicker.dataSource = self
         
         pickerData = ["Male", "Female", "Transgender", "Other", "Prefer not to answer"]
+        
+        ContinueButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,16 +202,24 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if (segue.identifier == "Home") {
-            let vc = segue.destination as! TabViewController
-            vc.user = user
+        // Configure the destination view controller only when either continue button is pressed.
+        if segue.identifier == "BasicUser" {
+            
+            user = UserProfile(name: NameField.text!, gender: selectedGender, profilePicture: ProfilePicture.image!)
         }
-        else if (segue.identifier == "Online") {
-            let vc = segue.destination as! CreateOnlineUserViewController
-            vc.user = user
+            
+        else if segue.identifier == "OnlineUser" {
+            
+            user = UserProfile(name: NameField.text!, password: password!, email: email!, gender: selectedGender, profilePicture: ProfilePicture.image!)
         }
         
     }
     
-
+    // MARK: Private methods
+    
+    private func ContinueButtonState() {
+        let text = NameField.text ?? ""
+        BasicUserButton.isEnabled = !text.isEmpty
+        OnlineUserButton.isEnabled = !text.isEmpty
+    }
 }

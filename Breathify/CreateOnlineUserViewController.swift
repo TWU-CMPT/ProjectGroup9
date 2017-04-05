@@ -17,51 +17,54 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
     var user: UserProfile = UserProfile()
     let ref = FIRDatabase.database().reference(withPath: "User")
     let storage = FIRStorage.storage()
+    var updatedUser: UserProfile?
     
     // MARK: Outlets
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var RegisterButton: UIButton!
     
     // MARK: Actions
     @IBAction func createUser(_ sender: Any) {
-        if emailField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+
+        FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
             
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            present(alertController, animated: true, completion: nil)
-            
-        } else {
-            FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
+            // Register successful
+            if error == nil {
+                print("You have successfully signed up")
+                self.user.setEmail(newEmail: self.emailField.text!)
+                self.user.setPassword(newPassword: self.passwordField.text!)
                 
-                // Register successful
-                if error == nil {
-                    print("You have successfully signed up")
-                    self.user.setEmail(newEmail: self.emailField.text!)
-                    self.user.setPassword(newPassword: self.passwordField.text!)
-                    self.user.setKey(key: (FIRAuth.auth()?.currentUser?.uid)!)
+                FIRAuth.auth()?.signIn(withEmail: self.user.email, password: self.user.password, completion: { (user,error) in
                     
-                    let userRef = self.ref.child((user?.uid)!)
-                    userRef.setValue(self.user.toAnyObject())
+                    if(error == nil) {
+                        print("You have successfully logged in")
+                    }
+                    else {
+                        print("Login failed")
+                    }
                     
-                    // upload profile picture to Firebase Storage
-                    let data = UIImageJPEGRepresentation(self.user.profilePicture, 1)
-                    self.storage.reference().child("images/\(self.user.key).jpg").put(data!, metadata: nil)
-                    
-                    self.performSegue(withIdentifier: "Home", sender: nil)
-                }
-                // Not successful
-                else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                }
+                })
+
+                self.performSegue(withIdentifier: "Home", sender: nil)
+            }
+            // Not successful
+            else {
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
             }
         }
+
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        RegisterButton.isEnabled = false
     }
     
     // Sets the colour font of the status bar to be white
@@ -72,7 +75,11 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
     // Exit software Keyboard when user presses Done form the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return false
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateButtonStatus()
     }
     
     // Exit the software keyboard if the user touches the view that is not the keyboard
@@ -83,9 +90,12 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailField.delegate = self
+        passwordField.delegate = self
+        
         // Do any additional setup after loading the view.
-        self.emailField.text = user.email
-        self.passwordField.text = user.password
+        
+        updateButtonStatus()
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,11 +111,20 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
         if segue.identifier == "Home" {
-            let vc = segue.destination as! TabViewController
-            vc.user = user
+            updatedUser = UserProfile(key: user.key, name: user.name, gender: user.gender, email: user.email, password: user.password, profilePicture: user.profilePicture, friendList: user.friendList)
         }
+        
     }
     
-
+    // MARK: Private Methods
+    
+    private func updateButtonStatus() {
+        
+        let text = emailField.text ?? ""
+        let text2 = passwordField.text ?? ""
+        
+        RegisterButton.isEnabled = (!text.isEmpty && !text2.isEmpty)
+    }
 }

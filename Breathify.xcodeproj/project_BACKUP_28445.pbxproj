@@ -47,8 +47,11 @@
 		96AA841B1E8E4600005F2BDC /* four.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96AA84141E8E4600005F2BDC /* four.mp3 */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
+<<<<<<< HEAD
 		9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */; };
+=======
 		9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */; };
+>>>>>>> origin/game-based-trainer
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
 		9B7DD4E21E94554A00723D3E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */; };
 		9B7DD4E41E94572C00723D3E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E31E94572C00723D3E /* Contact.swift */; };
@@ -132,8 +135,11 @@
 		96AA84141E8E4600005F2BDC /* four.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = four.mp3; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLibraryViewController.swift; sourceTree = "<group>"; };
+=======
 		9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+>>>>>>> origin/game-based-trainer
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
 		9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		9B7DD4E31E94572C00723D3E /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -223,9 +229,12 @@
 				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */,
+<<<<<<< HEAD
 				5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */,
+=======
 				9B7DD4E31E94572C00723D3E /* Contact.swift */,
 				9B7DD4E51E9458C900723D3E /* ContactTableViewCell.swift */,
+>>>>>>> origin/game-based-trainer
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,

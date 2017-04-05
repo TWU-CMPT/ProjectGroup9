@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */; };
 		820B783672B35245464ED730 /* Pods_BreathifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */; };
 		891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317831E6D3D1600C11D71 /* ExerciseCell.swift */; };
 		891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891317851E6D429F00C11D71 /* ExerciseViewController.swift */; };
@@ -31,7 +30,6 @@
 		89C676721E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
 		89C676731E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
 		89C676741E91FF4A00824EC2 /* GameBasedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89C676711E91FF4A00824EC2 /* GameBasedScene.sks */; };
-		89C676761E92CA7300824EC2 /* ResultsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */; };
 		9688F3A61E91B52F008A7690 /* breath.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A31E91B52F008A7690 /* breath.mp3 */; };
 		9688F3A71E91B52F008A7690 /* hold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A41E91B52F008A7690 /* hold.mp3 */; };
 		9688F3A81E91B52F008A7690 /* out.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9688F3A51E91B52F008A7690 /* out.mp3 */; };
@@ -47,12 +45,7 @@
 		96AA841B1E8E4600005F2BDC /* four.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96AA84141E8E4600005F2BDC /* four.mp3 */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
-		9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */; };
-		9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */; };
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
-		9B7DD4E21E94554A00723D3E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */; };
-		9B7DD4E41E94572C00723D3E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E31E94572C00723D3E /* Contact.swift */; };
-		9B7DD4E61E9458C900723D3E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DD4E51E9458C900723D3E /* ContactTableViewCell.swift */; };
 		9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */; };
 		9BC81FF51E905319000AABDC /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */; };
 		9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */; };
@@ -92,7 +85,6 @@
 		01EAA0ABE24AA7AED5826843 /* Pods_BreathifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreathifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D5384CA1A75B4D11D9D7B9E /* Pods-BreathifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyTests/Pods-BreathifyTests.release.xcconfig"; sourceTree = "<group>"; };
 		323C840EC0BF886126ADD051 /* Pods-BreathifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreathifyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BreathifyUITests/Pods-BreathifyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		59372572964400DE23160A7B /* Pods-Breathify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Breathify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Breathify/Pods-Breathify.debug.xcconfig"; sourceTree = "<group>"; };
 		891317831E6D3D1600C11D71 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		891317851E6D429F00C11D71 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +108,6 @@
 		89C676691E91FED400824EC2 /* GameBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedViewController.swift; sourceTree = "<group>"; };
 		89C6766D1E91FF1300824EC2 /* GameBasedScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBasedScene.swift; sourceTree = "<group>"; };
 		89C676711E91FF4A00824EC2 /* GameBasedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameBasedScene.sks; sourceTree = "<group>"; };
-		89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsScreenViewController.swift; sourceTree = "<group>"; };
 		9688F3A31E91B52F008A7690 /* breath.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breath.mp3; sourceTree = "<group>"; };
 		9688F3A41E91B52F008A7690 /* hold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hold.mp3; sourceTree = "<group>"; };
 		9688F3A51E91B52F008A7690 /* out.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = out.mp3; sourceTree = "<group>"; };
@@ -132,12 +123,7 @@
 		96AA84141E8E4600005F2BDC /* four.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = four.mp3; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
-		9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLibraryViewController.swift; sourceTree = "<group>"; };
-		9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
-		9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
-		9B7DD4E31E94572C00723D3E /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		9B7DD4E51E9458C900723D3E /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
@@ -223,9 +209,6 @@
 				9B68F4851E85E77500DE1E36 /* Controllers */,
 				8986A53E1E67941000665557 /* AppDelegate.swift */,
 				9BD4DDC91E91DE3F00BE9C7A /* CommentsTableViewCell.swift */,
-				5726C9F11E92F7C4008209F4 /* DesignableTextField.swift */,
-				9B7DD4E31E94572C00723D3E /* Contact.swift */,
-				9B7DD4E51E9458C900723D3E /* ContactTableViewCell.swift */,
 				8913178A1E6D5AE600C11D71 /* Exercise.swift */,
 				891317831E6D3D1600C11D71 /* ExerciseCell.swift */,
 				8913178E1E6D5BA400C11D71 /* Feedback.swift */,
@@ -286,25 +269,21 @@
 		9B68F4851E85E77500DE1E36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9B7DD4E11E94554A00723D3E /* ContactsTableViewController.swift */,
 				9BC9ED4C1E833D370032C8E5 /* CreateOnlineUserViewController.swift */,
 				9BC9ED4D1E833D370032C8E5 /* EditProfileViewController.swift */,
 				891317851E6D429F00C11D71 /* ExerciseViewController.swift */,
 				8986A5401E67941000665557 /* ExercisesTableViewController.swift */,
 				9BC81FF61E9069AE000AABDC /* FriendDetailViewController.swift */,
 				9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */,
-				9B1AB67B1E9356450077A5FC /* FriendListViewController.swift */,
 				9BC9ED441E833D260032C8E5 /* LoginViewController.swift */,
 				9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */,
 				9BC9ED451E833D260032C8E5 /* ProfileViewController.swift */,
 				8986A5421E67941000665557 /* ResourcesViewController.swift */,
 				9BC9ED471E833D260032C8E5 /* TabViewController.swift */,
 				89C676691E91FED400824EC2 /* GameBasedViewController.swift */,
-				89C676751E92CA7300824EC2 /* ResultsScreenViewController.swift */,
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
-				9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -622,18 +601,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C6766A1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
-				9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */,
 				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
 				9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */,
 				891317861E6D429F00C11D71 /* ExerciseViewController.swift in Sources */,
 				891317841E6D3D1600C11D71 /* ExerciseCell.swift in Sources */,
-				9B7DD4E61E9458C900723D3E /* ContactTableViewCell.swift in Sources */,
-				9B7DD4E21E94554A00723D3E /* ContactsTableViewController.swift in Sources */,
 				8986A53F1E67941000665557 /* AppDelegate.swift in Sources */,
-				9B7DD4E41E94572C00723D3E /* Contact.swift in Sources */,
 				8986A5411E67941000665557 /* ExercisesTableViewController.swift in Sources */,
-				9B1AB67C1E9356450077A5FC /* FriendListViewController.swift in Sources */,
 				9BC9ED4E1E833D370032C8E5 /* CreateOnlineUserViewController.swift in Sources */,
 				9BC9ED4A1E833D260032C8E5 /* UserSelectViewController.swift in Sources */,
 				9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */,
@@ -647,12 +621,10 @@
 				89C6766E1E91FF1300824EC2 /* GameBasedScene.swift in Sources */,
 				96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */,
 				9BD4DDCA1E91DE3F00BE9C7A /* CommentsTableViewCell.swift in Sources */,
-				89C676761E92CA7300824EC2 /* ResultsScreenViewController.swift in Sources */,
 				8913178B1E6D5AE600C11D71 /* Exercise.swift in Sources */,
 				9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */,
 				9BC9ED4B1E833D260032C8E5 /* TabViewController.swift in Sources */,
 				9BC9ED481E833D260032C8E5 /* LoginViewController.swift in Sources */,
-				5726C9F21E92F7C4008209F4 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +783,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -826,7 +797,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q76PV6YA7W;
 				INFOPLIST_FILE = Breathify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.groupnein.Breathify;
 				PRODUCT_NAME = "$(TARGET_NAME)";

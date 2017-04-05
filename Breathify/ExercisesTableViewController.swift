@@ -30,10 +30,11 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
                 
         // Single offline exercise
-        exercises.append(Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.\nInhale: 4\nHold: 7\nExhale: 8", sequence:"I4,H7,O8",repetitions: 2))
+        exercises.append(Exercise(name:"4/7/8", rating:5, description:"A simple breathing exercise that acts like a sleeping pill. Inhale through your nose for four seconds, hold your breath for seven seconds, then exhale through your mouth for eight seconds.  Feel relaxed in no time.", sequence:"I4,H7,O8",repetitions: 2))
 
         // Load exercises from Firebase
         ref.observe(.value, with: { snapshot in
+            print(snapshot.value!)
             var newExercises: [Exercise] = []
             
             for item in snapshot.children {
@@ -81,8 +82,8 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         cell.nameLabel.text = exercises[indexPath.row].name
         
         if let ratingText = exercises[indexPath.row].avgRating {
-            print("\(ratingText)")
-            cell.ratingLabel.text = "\(ratingText)"
+            let truncated = Double(round(ratingText * 10) / 10)
+            cell.ratingLabel.text = "\(truncated)"
         }
         
         return cell
@@ -119,7 +120,6 @@ class ExercisesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

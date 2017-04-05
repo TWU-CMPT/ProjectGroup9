@@ -15,15 +15,38 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: Properties
     
     var user: UserProfile = UserProfile()
+    var selectedIndexPath = -1
+    
+    // table cells
+    var profileData:[[String]] = [["Friends", "Settings", "Log In", "Log Out", "Register"]]
+    let profileHeader:[String] = ["Account"]
+    var cellIdentifiers:[[String]] = [["FriendList", "settings", "logIn", "userSelect","createOnlineUser"]]
     
     // MARK: Outlets
     
     @IBOutlet weak var ProfilePicture: UIImageView!
+    @IBOutlet weak var ProfileTableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    // table cells
-    let profileData:[[String]] = [["Friends", "Settings", "Log In", "Log Out", "Register"]]
-    let profileHeader:[String] = ["Account"]
-    let cellIdentifiers:[[String]] = [["FriendList", "settings", "logIn", "userSelect","createOnlineUser"]]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Load in user from Tab Bar Controller
+        let tbvc = self.tabBarController as? TabViewController
+        user = (tbvc?.user)!
+        selectedIndexPath = (tbvc?.selectedIndexPath)!
+        
+        // Set user's name Label
+        nameLabel.text = user.name
+        ProfilePicture.image = user.profilePicture
+        
+        if(FIRAuth.auth()?.currentUser != nil) {
+            profileData = [["Friends", "Settings", "Log out"]]
+            cellIdentifiers = [["FriendList", "settings", "userSelect"]]
+        }
+        ProfileTableView.reloadData()
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileData[section].count
@@ -56,24 +79,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         return .lightContent
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Load in user from Tab Bar Controller
-        let tbvc = self.tabBarController as? TabViewController
-        user = (tbvc?.user)!
-        
-        // Set user's name Label
-        nameLabel.text = user.name
-        ProfilePicture.image = user.profilePicture
-    }
-    
     // On returning to table view
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         // Reload data that may have changed in detailed view
         nameLabel.text = user.name
+        ProfilePicture.image = user.profilePicture
+        
+        ProfileTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +95,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Actions
+    
+    @IBAction func rewindToProfile(segue: UIStoryboardSegue) {
+        
+    }
 
     // MARK: - Navigation
 
@@ -99,12 +118,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             if FIRAuth.auth()?.currentUser != nil {
                 do {
                     try FIRAuth.auth()?.signOut()
-                    
-                    // go back to Home (maybe change to go back to user select page?)
-                    /*
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabHome")
-                    present(vc, animated: true, completion: nil)
-                    */
+
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }
@@ -116,7 +130,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             newView.user = user
         }
         else if (segue.identifier == "FriendList") {
-            let newView = segue.destination as! FriendsListTableViewController
+            let newView = segue.destination as! FriendListViewController
             newView.user = user
         }
     }

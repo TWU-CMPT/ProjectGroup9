@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import os.log
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 
 class TabViewController: UITabBarController {
 
@@ -14,6 +18,55 @@ class TabViewController: UITabBarController {
     
     // This is the user that has been selected from previous view
     var user: UserProfile = UserProfile()
+    var users: [UserProfile] = []
+    var selectedIndexPath = -1
+    let ref = FIRDatabase.database().reference(withPath: "User")
+    let storage = FIRStorage.storage()
+    
+    // MARK: Actions
+    
+    @IBAction func unwindToTabBar(segue: UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.source as? CreateOnlineUserViewController, let updatedUser = sourceViewController.updatedUser {
+            
+            users[selectedIndexPath] = updatedUser
+            saveUsers()
+            
+            user = users[selectedIndexPath]
+            if FIRAuth.auth()?.currentUser != nil {
+                updateDatabase(user: user)
+                uploadProfilePicture(user: user)
+            }
+        }
+        else if let sourceViewController = segue.source as? LoginViewController, let updatedUser = sourceViewController.updatedUser {
+            
+            users[selectedIndexPath] = updatedUser
+            saveUsers()
+            
+            user = users[selectedIndexPath]
+            if FIRAuth.auth()?.currentUser != nil {
+                updateDatabase(user: user)
+            }        }
+        else if let sourceViewController = segue.source as? LoginViewController, let updatedUser = sourceViewController.updatedUser {
+            
+            users[selectedIndexPath] = updatedUser
+            saveUsers()
+            
+            user = users[selectedIndexPath]
+            if FIRAuth.auth()?.currentUser != nil {
+                updateDatabase(user: user)
+            }        }
+        else if let sourceViewController = segue.source as? FriendsListTableViewController, let updatedFriendList = sourceViewController.updatedFriendList{
+            
+            users[selectedIndexPath].friendList = updatedFriendList
+            saveUsers()
+            
+            user = users[selectedIndexPath]
+//            if FIRAuth.auth()?.currentUser != nil {
+//                updateDatabase(user: user)
+//            }
+        }
+    }
     
     // Sets the colour font of the status bar to be white
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -42,4 +95,24 @@ class TabViewController: UITabBarController {
     }
     */
 
+    // MARK: Private Methods
+    
+    private func saveUsers() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(users, toFile: UserProfile.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Users successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func updateDatabase(user: UserProfile) {
+        let userRef = ref.child(user.key)
+        userRef.setValue(user.toAnyObject())
+    }
+    
+    private func uploadProfilePicture(user: UserProfile) {
+        let data = UIImageJPEGRepresentation(user.profilePicture, 1)
+        storage.reference().child("images/" + user.key + ".jpg").put(data!, metadata: nil)
+    }
 }
