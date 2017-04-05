@@ -25,8 +25,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Actions
     
+    
     @IBAction func Login(_ sender: Any) {
-            
+        
         FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!) { (user, error) in
             
             if error == nil {
@@ -50,8 +51,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-
+        
     }
+
     
     @IBAction func ForgotPassword(_ sender: Any) {
         
@@ -108,8 +110,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated:true, completion:nil)
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     // MARK: UITextFieldDelegate
-    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         LoginButton.isEnabled = false
@@ -118,6 +124,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // Exit software Keyboard when user presses Done form the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+
         return true
     }
     

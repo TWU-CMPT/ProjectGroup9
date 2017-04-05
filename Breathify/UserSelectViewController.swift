@@ -49,6 +49,11 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
         performSegue(withIdentifier: "UserSelected", sender: self)
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

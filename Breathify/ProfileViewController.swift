@@ -71,6 +71,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         self.performSegue(withIdentifier: vc, sender: nil)
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // On returning to table view
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

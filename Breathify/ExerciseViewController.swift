@@ -21,8 +21,8 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
     var ref = FIRDatabase.database().reference(withPath: "Exercise")
     
     // Rating star assets
-    let filledStar = UIImage(named: "filled_star")
-    let emptyStar = UIImage(named: "empty_star")
+    let filledStar = UIImage(named: "Star_Icon_Rated")
+    let emptyStar = UIImage(named: "Star_Icon_Unfilled")
     
     // MARK: Outlets
     
@@ -159,6 +159,10 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

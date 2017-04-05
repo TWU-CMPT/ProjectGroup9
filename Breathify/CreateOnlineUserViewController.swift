@@ -67,6 +67,11 @@ class CreateOnlineUserViewController: UIViewController, UITextFieldDelegate {
         RegisterButton.isEnabled = false
     }
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // Exit software Keyboard when user presses Done form the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

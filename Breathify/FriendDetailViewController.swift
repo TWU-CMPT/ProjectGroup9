@@ -23,6 +23,11 @@ class FriendDetailViewController: UIViewController {
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var GenderLabel: UILabel!
     
+    // Sets the colour font of the status bar to be white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
