@@ -25,8 +25,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Actions
     
+    
     @IBAction func Login(_ sender: Any) {
-            
+        
         FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!) { (user, error) in
             
             if error == nil {
@@ -50,8 +51,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-
+        
     }
+
     
     @IBAction func ForgotPassword(_ sender: Any) {
         
