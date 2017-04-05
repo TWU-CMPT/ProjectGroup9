@@ -63,6 +63,20 @@ class TimerBasedNormalMode: UIViewController {
     var audioTimerHold = AVAudioPlayer()
     var audioTimerOut = AVAudioPlayer()
     
+    @IBOutlet weak var muteButton: UIButton!
+    
+    @IBAction func mutePress(_ sender: Any) {
+        
+        if (muteControl == 1){
+            muteControl = 0
+            muteButton.setTitle("Unmute", for: .normal)
+        }
+        else{
+            muteControl = 1
+            muteButton.setTitle("Mute", for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -106,6 +120,9 @@ class TimerBasedNormalMode: UIViewController {
         }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopTimerNotification"), object: nil)
+        
+        muteButton.setTitle("Mute", for: .normal)
+        muteControl = 1
     }
     
     override func viewWillDisappear(_ animated: Bool) {

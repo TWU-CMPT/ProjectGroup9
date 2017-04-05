@@ -693,6 +693,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-J1-n1A">
                                 <rect key="frame" x="295" y="20" width="72" height="35"/>
                                 <state key="normal" title="unmute"/>
+                                <connections>
+                                    <action selector="mutePress:" destination="sM7-HZ-cGz" eventType="touchUpInside" id="kO2-gQ-72m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -734,6 +737,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="muteButton" destination="2f2-J1-n1A" id="Az2-J2-POs"/>
                         <outlet property="nameLabel" destination="FFm-uJ-LRu" id="V6p-fw-tyc"/>
                         <outlet property="progressBarView" destination="O3q-zX-98t" id="dey-XD-0hJ"/>
                         <outlet property="stateButton" destination="MJU-y4-5Xp" id="jJy-3s-EjN"/>
