@@ -99,11 +99,6 @@ class newUserViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         OnlineUserButton.isEnabled = false
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         ContinueButtonState()
     }

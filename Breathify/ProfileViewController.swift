@@ -70,9 +70,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let vc = cellIdentifiers[indexPath.section][indexPath.row]
         self.performSegue(withIdentifier: vc, sender: nil)
     }
-
-    // Variables labels to display user information
-    @IBOutlet weak var nameLabel: UILabel!
     
     // Sets the colour font of the status bar to be white
     override var preferredStatusBarStyle: UIStatusBarStyle {
