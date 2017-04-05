@@ -21,12 +21,14 @@ class FriendDetailViewController: UIViewController {
     
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var ProfilePicture: UIImageView!
+    @IBOutlet weak var GenderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         NameLabel.text = friend.name
+        GenderLabel.text = friend.gender
         
         let imageRef = storage.reference().child("images/\(friend.key).jpg")
         imageRef.data(withMaxSize: 10 * 1024 * 1024) { data, error in

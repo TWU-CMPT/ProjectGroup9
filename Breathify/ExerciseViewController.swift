@@ -42,7 +42,6 @@ class ExerciseViewController: UIViewController, UITableViewDelegate, UITableView
         // if user is signed in, update Firebase
         if FIRAuth.auth()?.currentUser != nil {
             let update = ["username": user.name,
-
                           "rating": rating] as [String : Any]
             let childUpdate = ["/\(exercise.key)/feedback/" + (FIRAuth.auth()?.currentUser?.uid)!: update]
             
