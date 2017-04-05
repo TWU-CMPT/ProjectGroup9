@@ -46,6 +46,7 @@
 		96AA841B1E8E4600005F2BDC /* four.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96AA84141E8E4600005F2BDC /* four.mp3 */; };
 		96B699191E81EC9D0055716D /* TimerModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B699181E81EC9D0055716D /* TimerModeViewController.swift */; };
 		96B6991B1E81F1790055716D /* TimerBasedNormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */; };
+		9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */; };
 		9B4DD2891E8C7F78004735B6 /* newUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */; };
 		9BC81FF31E9027FE000AABDC /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */; };
 		9BC81FF51E905319000AABDC /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */; };
@@ -125,6 +126,7 @@
 		96AA84141E8E4600005F2BDC /* four.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = four.mp3; sourceTree = "<group>"; };
 		96B699181E81EC9D0055716D /* TimerModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerModeViewController.swift; sourceTree = "<group>"; };
 		96B6991A1E81F1790055716D /* TimerBasedNormalMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerBasedNormalMode.swift; sourceTree = "<group>"; };
+		9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLibraryViewController.swift; sourceTree = "<group>"; };
 		9B4DD2881E8C7F78004735B6 /* newUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newUserViewController.swift; sourceTree = "<group>"; };
 		9BC81FF21E9027FE000AABDC /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		9BC81FF41E905319000AABDC /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				891317901E6E322100C11D71 /* TimerBasedViewController.swift */,
 				96B699181E81EC9D0055716D /* TimerModeViewController.swift */,
 				9BC9ED461E833D260032C8E5 /* UserSelectViewController.swift */,
+				9A599EC61E9570FC0065BA3F /* ResourceLibraryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89C6766A1E91FED400824EC2 /* GameBasedViewController.swift in Sources */,
+				9A599EC71E9570FC0065BA3F /* ResourceLibraryViewController.swift in Sources */,
 				9BC9ED4F1E833D370032C8E5 /* EditProfileViewController.swift in Sources */,
 				8986A5431E67941000665557 /* ResourcesViewController.swift in Sources */,
 				9BC81FF71E9069AE000AABDC /* FriendDetailViewController.swift in Sources */,
