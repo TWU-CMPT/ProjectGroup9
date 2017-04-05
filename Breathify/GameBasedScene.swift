@@ -31,6 +31,7 @@ class GameBasedScene: SKScene {
     override func didMove(to view: SKView) {
         self.pin = self.childNode(withName: "playerPin") as? SKSpriteNode
         pin!.position.y = 0
+        pin!.color = UIColor.black
         
         self.scoreLabel = self.childNode(withName: "scoreLabel") as? SKLabelNode
         scoreLabel!.text = "Score: 0"
@@ -193,7 +194,7 @@ class GameBasedScene: SKScene {
         let dotHoldTexture = SKTexture.init(image: UIImage(named: "dot_hold")!)
         let dotStartTexture = SKTexture.init(image: UIImage(named: "dot_start")!)
         let lineColor = SKColor.blue
-        let dotColor = UIColor.red
+        let dotColor = UIColor.white
         
         // Setup lines anchor
         lineAnchor = SKSpriteNode()
