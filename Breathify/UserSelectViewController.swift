@@ -16,9 +16,10 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
     let reuseIdentifier = "userCell"
     
     // MARK: Outlets
+    
     @IBOutlet weak var UserCollectionView: UICollectionView!
     
-    // MARK: Temporary hard-coded users
+    // MARK: Properties
     
     var users: [UserProfile] = []
 
@@ -153,7 +154,7 @@ class UserSelectViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     private func loadSampleUser() -> [UserProfile] {
-        let sampleUsers = [UserProfile(name: "Sample User", password: "testtest", email: "test2@test.com", gender: "Male", profilePicture: #imageLiteral(resourceName: "Gender Neutral User-50"))]
+        let sampleUsers = [UserProfile(name: "Sample User", password: "testtest", email: "test2@test.com", gender: "Male", profilePicture: #imageLiteral(resourceName: "DefaultProfileFace2"))]
         return sampleUsers
     }
 }

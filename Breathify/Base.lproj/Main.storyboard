@@ -1241,7 +1241,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="UserCollectionView" destination="3od-Ov-h5c" id="vGp-g1-7FY"/>
+                        <outlet property="UserCollectionView" destination="3od-Ov-h5c" id="bDo-du-uHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGa-FG-NiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1340,7 +1340,6 @@
                                         </state>
                                         <connections>
                                             <action selector="BasicContinue:" destination="6ij-8C-o4a" eventType="touchUpInside" id="Z7B-N0-pgQ"/>
-                                            <action selector="Continue:" destination="6ij-8C-o4a" eventType="touchUpInside" id="2Zh-iU-yun"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhP-lU-Run">
@@ -1380,8 +1379,8 @@
                         <outlet property="NameField" destination="DuH-w5-nes" id="zUd-SJ-HSZ"/>
                         <outlet property="OnlineUserButton" destination="bhP-lU-Run" id="T4z-bu-343"/>
                         <outlet property="ProfilePicture" destination="uRt-s7-mIr" id="eUB-7Y-h3y"/>
-                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="BasicUser" unwindAction="rewindToOpeningWithSegue:" id="aec-oX-n2Z"/>
-                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="OnlineUser" unwindAction="rewindToOpeningWithSegue:" id="ub6-IM-pVJ"/>
+                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="OnlineUser" unwindAction="rewindToOpeningWithSegue:" id="ypm-hq-UVg"/>
+                        <segue destination="KGH-Wv-rSe" kind="unwind" identifier="BasicUser" unwindAction="rewindToOpeningWithSegue:" id="Lc3-QT-gqo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9C-uG-nys" userLabel="First Responder" sceneMemberID="firstResponder"/>
