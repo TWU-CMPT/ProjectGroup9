@@ -1899,13 +1899,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background_IPadRetina" translatesAutoresizingMaskIntoConstraints="NO" id="S9L-ui-hTe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="367" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CA5-JZ-S6k">
-                                <rect key="frame" x="24" y="256" width="327" height="76"/>
+                                <rect key="frame" x="16" y="256" width="335" height="106"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkb-Mr-Wjf" customClass="DesignableTextField" customModule="Breathify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.69762323940000004" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1921,7 +1921,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B86-Ej-VyG" customClass="DesignableTextField" customModule="Breathify" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="38" width="327" height="30"/>
+                                        <rect key="frame" x="0.0" y="38" width="335" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.69762323940000004" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1937,7 +1937,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-ZJ-b5o">
-                                        <rect key="frame" x="0.0" y="76" width="327" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="76" width="335" height="30"/>
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <action selector="createUser:" destination="3aH-nU-Bbb" eventType="touchUpInside" id="0Dk-83-Mjf"/>
@@ -1973,14 +1973,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S9L-ui-hTe" firstAttribute="top" secondItem="0pA-KI-p6E" secondAttribute="top" id="0Ck-X3-kJW"/>
-                            <constraint firstItem="ZYx-ZJ-b5o" firstAttribute="leading" secondItem="0pA-KI-p6E" secondAttribute="leadingMargin" constant="71" id="1Oq-uX-3i1"/>
+                            <constraint firstItem="ZYx-ZJ-b5o" firstAttribute="leading" secondItem="0pA-KI-p6E" secondAttribute="leadingMargin" id="1Oq-uX-3i1"/>
                             <constraint firstItem="sWT-xQ-NYl" firstAttribute="leading" secondItem="0pA-KI-p6E" secondAttribute="leadingMargin" id="9Lz-o2-Dyx"/>
-                            <constraint firstItem="CA5-JZ-S6k" firstAttribute="leading" secondItem="0pA-KI-p6E" secondAttribute="leadingMargin" constant="8" id="Hgu-2R-lMI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CA5-JZ-S6k" secondAttribute="trailing" constant="8" id="Hn5-N1-d3J"/>
                             <constraint firstItem="ZYx-ZJ-b5o" firstAttribute="centerX" secondItem="CA5-JZ-S6k" secondAttribute="centerX" id="K18-nW-hDe"/>
                             <constraint firstItem="CA5-JZ-S6k" firstAttribute="top" secondItem="sWT-xQ-NYl" secondAttribute="bottom" constant="32" id="Oc5-O6-gjV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sWT-xQ-NYl" secondAttribute="trailing" id="TaV-1J-4y4"/>
-                            <constraint firstItem="ZYx-ZJ-b5o" firstAttribute="top" secondItem="CA5-JZ-S6k" secondAttribute="bottom" constant="8" symbolic="YES" id="Thw-Wg-sxi"/>
                             <constraint firstItem="sWT-xQ-NYl" firstAttribute="top" secondItem="0pA-KI-p6E" secondAttribute="topMargin" constant="64" id="blw-EI-h7g"/>
                             <constraint firstAttribute="bottom" secondItem="S9L-ui-hTe" secondAttribute="bottom" id="lSY-Q2-RWJ"/>
                             <constraint firstItem="S9L-ui-hTe" firstAttribute="leading" secondItem="0pA-KI-p6E" secondAttribute="leading" id="ubL-zo-Wnk"/>
